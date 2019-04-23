@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F2FAC18-09E6-4918-B8D3-7EB461CC5831}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PRMMain.GUI.My.MyApplication</StartupObject>
+    <RootNamespace>PRMMain.GUI</RootNamespace>
+    <AssemblyName>PRMMain.GUI</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PRMMain.GUI.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PRMMain.GUI.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Data.AdoDotNetInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="genClass">
+      <HintPath>C:\GIT\genClass\bin\Debug\genClass.dll</HintPath>
+    </Reference>
+    <Reference Include="iShowRoomComponents">
+      <HintPath>C:\GIT\iShowroomComponents\bin\Debug\iShowRoomComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Forms\SharedFroms\AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SharedFroms\AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SharedFroms\FrmEmailOptions.designer.vb">
+      <DependentUpon>FrmEmailOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SharedFroms\FrmEmailOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SharedFroms\FrmRecordAudit.designer.vb">
+      <DependentUpon>FrmRecordAudit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SharedFroms\FrmRecordAudit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SharedFroms\FrmReport.designer.vb">
+      <DependentUpon>FrmReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SharedFroms\FrmReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SharedFroms\SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SharedFroms\SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmcmp.Designer.vb">
+      <DependentUpon>FrmPrmcmp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmcmp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmpro.Designer.vb">
+      <DependentUpon>FrmPrmpro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmpro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmreg.Designer.vb">
+      <DependentUpon>FrmPrmreg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmreg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmuser.Designer.vb">
+      <DependentUpon>FrmPrmuser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmuser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmcmp01.Designer.vb">
+      <DependentUpon>FrmPrmcmp01.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmcmp01.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmpro01.Designer.vb">
+      <DependentUpon>FrmPrmpro01.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmpro01.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmreg01.Designer.vb">
+      <DependentUpon>FrmPrmreg01.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmreg01.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmuser01.Designer.vb">
+      <DependentUpon>FrmPrmuser01.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TableMaintainers\FrmPrmuser01.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.vb">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\SharedFroms\AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SharedFroms\FrmEmailOptions.resx">
+      <DependentUpon>FrmEmailOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SharedFroms\FrmRecordAudit.resx">
+      <DependentUpon>FrmRecordAudit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SharedFroms\FrmReport.resx">
+      <DependentUpon>FrmReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SharedFroms\SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TableMaintainers\FrmPrmcmp.resx">
+      <DependentUpon>FrmPrmcmp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TableMaintainers\FrmPrmpro.resx">
+      <DependentUpon>FrmPrmpro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TableMaintainers\FrmPrmreg.resx">
+      <DependentUpon>FrmPrmreg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TableMaintainers\FrmPrmuser.resx">
+      <DependentUpon>FrmPrmuser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TableMaintainers\FrmPrmcmp01.resx">
+      <DependentUpon>FrmPrmcmp01.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TableMaintainers\FrmPrmpro01.resx">
+      <DependentUpon>FrmPrmpro01.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TableMaintainers\FrmPrmreg01.resx">
+      <DependentUpon>FrmPrmreg01.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TableMaintainers\FrmPrmuser01.resx">
+      <DependentUpon>FrmPrmuser01.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PRMMain.BLL\PRMMain.BLL.vbproj">
+      <Project>{8ECBD1F5-A800-4D9B-8C6E-AAC3946E9661}</Project>
+      <Name>PRMMain.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PRMMain.DAL\PRMMain.DAL.vbproj">
+      <Project>{8B367BC8-BA08-4ABB-ABEA-02DF3886E94D}</Project>
+      <Name>PRMMain.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PRMMain.GenFun\PRMMain.GenFun.vbproj">
+      <Project>{466B0EB7-543B-4071-A8F2-753347AA1CA9}</Project>
+      <Name>PRMMain.GenFun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PRMMain.Model\PRMMain.Model.vbproj">
+      <Project>{4C5D155B-166C-46AF-8DFC-61FAF05D6564}</Project>
+      <Name>PRMMain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PRMMain.Report\PRMMain.Report.vbproj">
+      <Project>{844F99B3-3580-440C-B974-5ABDB984AB7B}</Project>
+      <Name>PRMMain.Report</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\networkoffline16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\networkonline16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\networkoffline16.png" />
+    <Content Include="Images\networkonline16.png" />
+    <Content Include="Images\window16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
