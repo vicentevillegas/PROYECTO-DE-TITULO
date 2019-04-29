@@ -123,17 +123,17 @@ Public Class FrmPrmreg
             newrow.Item("edtbut") = "+"
             newrow.Item("delbut") = "+"
             '
-		'Code to Get the newrow.Items Column for Main Grid.
-		'
-			newrow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
+            'Code to Get the newrow.Items Column for Main Grid.
+            '
+            newrow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
             newrow.Item("prmpro") = If(objectBO.prmpro Is Nothing, "", PrmproBLL.GetUnique(New PrmproBO With {.prmpro = objectBO.prmpro.Trim()}).prmpro)
             newrow.Item("prmuser") = If(objectBO.prmuser Is Nothing, "", PrmuserBLL.GetUnique(New PrmuserBO With {.prmuser = objectBO.prmuser.Trim()}).prmuser)
             newrow.Item("strdate") = objectBO.strdate
 			newrow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
 			newrow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
-		'
-		'End Code.
-		'
+            '
+            'End Code.
+            '
             table.Rows.Add(newrow)
             grid.myGrid.CurrentCell = grid.myGrid(0, addedRow)
             grid.myGrid.CurrentRow.Selected = True
@@ -981,8 +981,8 @@ Public Class FrmPrmreg
         sqlQuery = $"select 
                             {sqlButtons}                                         
                             crsfile.Prmreg.wknum as wknum,
-							crsfile.Prmpro.descript as prmpro,
-							crsfile.Prmuser.descript as prmuser,
+							crsfile.Prmpro.descr as prmpro,
+							crsfile.Prmuser.descr as prmuser,
 							crsfile.Prmreg.strdate as strdate,
 							crsfile.Prmreg.wrkhrs as wrkhrs,
 							crsfile.Prmreg.active as active                            

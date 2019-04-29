@@ -22,16 +22,16 @@ Partial Class FrmPrmreg
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrmreg))
         Me.gbFilter = New System.Windows.Forms.GroupBox()
         Me.btnClear = New System.Windows.Forms.LinkLabel()
-        		Me.txtWknum = New iShowRoomComponents.AlphaNumericUpper(Me.components)
-		Me.lblWknum = New System.Windows.Forms.Label()
-		Me.txtPrmpro = New iShowRoomComponents.AlphaNumericUpper(Me.components)
-		Me.lblPrmpro = New System.Windows.Forms.Label()
-		Me.txtPrmuser = New iShowRoomComponents.AlphaNumericUpper(Me.components)
-		Me.lblPrmuser = New System.Windows.Forms.Label()
-
+        Me.txtWknum = New iShowRoomComponents.AlphaNumericUpper(Me.components)
+        Me.lblWknum = New System.Windows.Forms.Label()
+        Me.txtPrmpro = New iShowRoomComponents.AlphaNumericUpper(Me.components)
+        Me.lblPrmpro = New System.Windows.Forms.Label()
+        Me.txtPrmuser = New iShowRoomComponents.AlphaNumericUpper(Me.components)
+        Me.lblPrmuser = New System.Windows.Forms.Label()
         Me.bgwLoadData = New System.ComponentModel.BackgroundWorker()
         Me.statusForm = New System.Windows.Forms.StatusStrip()
         Me.cbcActiveRecrods = New System.Windows.Forms.ToolStripDropDownButton()
@@ -57,13 +57,12 @@ Partial Class FrmPrmreg
         'gbFilter
         '
         Me.gbFilter.Controls.Add(Me.btnClear)
-        		Me.gbFilter.Controls.Add(Me.txtWknum)
-		Me.gbFilter.Controls.Add(Me.lblWknum)
-		Me.gbFilter.Controls.Add(Me.txtPrmpro)
-		Me.gbFilter.Controls.Add(Me.lblPrmpro)
-		Me.gbFilter.Controls.Add(Me.txtPrmuser)
-		Me.gbFilter.Controls.Add(Me.lblPrmuser)
-
+        Me.gbFilter.Controls.Add(Me.txtWknum)
+        Me.gbFilter.Controls.Add(Me.lblWknum)
+        Me.gbFilter.Controls.Add(Me.txtPrmpro)
+        Me.gbFilter.Controls.Add(Me.lblPrmpro)
+        Me.gbFilter.Controls.Add(Me.txtPrmuser)
+        Me.gbFilter.Controls.Add(Me.lblPrmuser)
         Me.gbFilter.Dock = System.Windows.Forms.DockStyle.Top
         Me.gbFilter.Location = New System.Drawing.Point(0, 3)
         Me.gbFilter.Name = "gbFilter"
@@ -81,67 +80,66 @@ Partial Class FrmPrmreg
         Me.btnClear.TabIndex = 172
         Me.btnClear.TabStop = True
         Me.btnClear.Text = "Clear Filter(s)."
-        		'
-		'txtWknum
-		'
-		Me.txtWknum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-		Me.txtWknum.ForeColor = System.Drawing.Color.Navy
-		Me.txtWknum.Location = New System.Drawing.Point(9, 33)
-		Me.txtWknum.MaxLength = 20
-		Me.txtWknum.Name = "txtWknum"
-		Me.txtWknum.Size = New System.Drawing.Size(110, 20)
-		Me.txtWknum.TabIndex = 1
-		'
-		'lblWknum
-		'
-		Me.lblWknum.AutoSize = True
-		lblWknum.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblWknum.Location = New System.Drawing.Point(9, 19)
-		lblWknum.Name = "lblWknum"
-		lblWknum.Size = New System.Drawing.Size(110, 13)
-		lblWknum.TabIndex = 171
-		lblWknum.Text = "Week Number"
-		'
-		'txtPrmpro
-		'
-		Me.txtPrmpro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-		Me.txtPrmpro.ForeColor = System.Drawing.Color.Navy
-		Me.txtPrmpro.Location = New System.Drawing.Point(129, 33)
-		Me.txtPrmpro.MaxLength = 20
-		Me.txtPrmpro.Name = "txtPrmpro"
-		Me.txtPrmpro.Size = New System.Drawing.Size(110, 20)
-		Me.txtPrmpro.TabIndex = 1
-		'
-		'lblPrmpro
-		'
-		Me.lblPrmpro.AutoSize = True
-		lblPrmpro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblPrmpro.Location = New System.Drawing.Point(129, 19)
-		lblPrmpro.Name = "lblPrmpro"
-		lblPrmpro.Size = New System.Drawing.Size(110, 13)
-		lblPrmpro.TabIndex = 171
-		lblPrmpro.Text = "Project Id"
-		'
-		'txtPrmuser
-		'
-		Me.txtPrmuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-		Me.txtPrmuser.ForeColor = System.Drawing.Color.Navy
-		Me.txtPrmuser.Location = New System.Drawing.Point(249, 33)
-		Me.txtPrmuser.MaxLength = 20
-		Me.txtPrmuser.Name = "txtPrmuser"
-		Me.txtPrmuser.Size = New System.Drawing.Size(110, 20)
-		Me.txtPrmuser.TabIndex = 1
-		'
-		'lblPrmuser
-		'
-		Me.lblPrmuser.AutoSize = True
-		lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblPrmuser.Location = New System.Drawing.Point(249, 19)
-		lblPrmuser.Name = "lblPrmuser"
-		lblPrmuser.Size = New System.Drawing.Size(110, 13)
-		lblPrmuser.TabIndex = 171
-		lblPrmuser.Text = "User Id"
-
+        '
+        'txtWknum
+        '
+        Me.txtWknum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtWknum.ForeColor = System.Drawing.Color.Navy
+        Me.txtWknum.Location = New System.Drawing.Point(9, 33)
+        Me.txtWknum.MaxLength = 20
+        Me.txtWknum.Name = "txtWknum"
+        Me.txtWknum.Size = New System.Drawing.Size(110, 20)
+        Me.txtWknum.TabIndex = 1
+        '
+        'lblWknum
+        '
+        Me.lblWknum.AutoSize = True
+        Me.lblWknum.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWknum.Location = New System.Drawing.Point(9, 19)
+        Me.lblWknum.Name = "lblWknum"
+        Me.lblWknum.Size = New System.Drawing.Size(87, 13)
+        Me.lblWknum.TabIndex = 171
+        Me.lblWknum.Text = "Week Number"
+        '
+        'txtPrmpro
+        '
+        Me.txtPrmpro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPrmpro.ForeColor = System.Drawing.Color.Navy
+        Me.txtPrmpro.Location = New System.Drawing.Point(129, 33)
+        Me.txtPrmpro.MaxLength = 20
+        Me.txtPrmpro.Name = "txtPrmpro"
+        Me.txtPrmpro.Size = New System.Drawing.Size(110, 20)
+        Me.txtPrmpro.TabIndex = 1
+        '
+        'lblPrmpro
+        '
+        Me.lblPrmpro.AutoSize = True
+        Me.lblPrmpro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrmpro.Location = New System.Drawing.Point(129, 19)
+        Me.lblPrmpro.Name = "lblPrmpro"
+        Me.lblPrmpro.Size = New System.Drawing.Size(62, 13)
+        Me.lblPrmpro.TabIndex = 171
+        Me.lblPrmpro.Text = "Project Id"
+        '
+        'txtPrmuser
+        '
+        Me.txtPrmuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPrmuser.ForeColor = System.Drawing.Color.Navy
+        Me.txtPrmuser.Location = New System.Drawing.Point(249, 33)
+        Me.txtPrmuser.MaxLength = 20
+        Me.txtPrmuser.Name = "txtPrmuser"
+        Me.txtPrmuser.Size = New System.Drawing.Size(110, 20)
+        Me.txtPrmuser.TabIndex = 1
+        '
+        'lblPrmuser
+        '
+        Me.lblPrmuser.AutoSize = True
+        Me.lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrmuser.Location = New System.Drawing.Point(249, 19)
+        Me.lblPrmuser.Name = "lblPrmuser"
+        Me.lblPrmuser.Size = New System.Drawing.Size(48, 13)
+        Me.lblPrmuser.TabIndex = 171
+        Me.lblPrmuser.Text = "User Id"
         '
         'bgwLoadData
         '

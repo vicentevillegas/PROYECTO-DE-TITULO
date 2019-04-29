@@ -54,9 +54,9 @@ Partial Class FrmPrmpro01
         Me.ToolStripButtons.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStripButtons.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStripButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSave, Me.btnReset, Me.btnClose, Me.btnAudit, Me.loadProgress})
-        Me.ToolStripButtons.Location = New System.Drawing.Point(725, 0)
+        Me.ToolStripButtons.Location = New System.Drawing.Point(705, 0)
         Me.ToolStripButtons.Name = "ToolStripButtons"
-        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 220)
+        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 221)
         Me.ToolStripButtons.TabIndex = 0
         Me.ToolStripButtons.Text = "ToolStrip1"
         '
@@ -164,12 +164,12 @@ Partial Class FrmPrmpro01
         Me.grpActive.Controls.Add(Me.rdbActiveNo)
         Me.grpActive.Controls.Add(Me.rdbActiveYes)
         Me.grpActive.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.grpActive.Location = New System.Drawing.Point(0, 174)
+        Me.grpActive.Location = New System.Drawing.Point(0, 175)
         Me.grpActive.Margin = New System.Windows.Forms.Padding(2)
         Me.grpActive.MinimumSize = New System.Drawing.Size(143, 46)
         Me.grpActive.Name = "grpActive"
         Me.grpActive.Padding = New System.Windows.Forms.Padding(2)
-        Me.grpActive.Size = New System.Drawing.Size(725, 46)
+        Me.grpActive.Size = New System.Drawing.Size(705, 46)
         Me.grpActive.TabIndex = 9
         Me.grpActive.TabStop = False
         Me.grpActive.Text = "Active:"
@@ -301,7 +301,7 @@ Partial Class FrmPrmpro01
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(786, 220)
+        Me.ClientSize = New System.Drawing.Size(766, 221)
         Me.Controls.Add(Me.grpActive)
         Me.Controls.Add(Me.grpNotes)
         Me.Controls.Add(Me.ToolStripButtons)
@@ -317,6 +317,7 @@ Partial Class FrmPrmpro01
         Me.Controls.Add(Me.lblDescr)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MinimumSize = New System.Drawing.Size(782, 260)
         Me.Name = "FrmPrmpro01"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.ToolStripButtons.ResumeLayout(False)

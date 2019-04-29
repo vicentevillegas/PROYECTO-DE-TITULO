@@ -14,7 +14,7 @@ Public Class FrmPrmreg01
     Public iUserLoc As String = "PRMMain"
     Public settingUp As Boolean = False
     Public wasDone As Boolean = False
-    Public objectBO As New PrmregBO
+    Public objectBO As PrmregBO
 
 #End Region
 
@@ -411,13 +411,13 @@ Public Class FrmPrmreg01
 		cboPrmuser.Enabled = False
 		cboPrmpro.DisplayMember = "descript"
 		cboPrmpro.ValueMember = "prmpro"
-        cboPrmpro.DataSource = PrmproBLL.GetTable($"select trim(prmpro) as prmpro, trim(descript) as descript from crsfile.prmpro where trim(descript) <> '' and active = 'T' order by prmpro asc")
+        cboPrmpro.DataSource = PrmproBLL.GetTable($"select trim(prmpro) as prmpro, trim(descr) as descript from crsfile.prmpro where trim(descr) <> '' and active = 'T' order by prmpro asc")
         cboPrmpro.SelectedIndex = -1
 		RecalculateDropDownBoxWidth(cboPrmpro)
 		cboPrmpro.Enabled = True
 		cboPrmuser.DisplayMember = "descript"
 		cboPrmuser.ValueMember = "prmuser"
-        cboPrmuser.DataSource = PrmuserBLL.GetTable($"select trim(prmuser) as prmuser, trim(descript) as descript from crsfile.prmuser where trim(descript) <> '' and active = 'T' order by prmuser asc")
+        cboPrmuser.DataSource = PrmuserBLL.GetTable($"select trim(prmuser) as prmuser, trim(descr) as descript from crsfile.prmuser where trim(descr) <> '' and active = 'T' order by prmuser asc")
         cboPrmuser.SelectedIndex = -1
 		RecalculateDropDownBoxWidth(cboPrmuser)
 		cboPrmuser.Enabled = True
