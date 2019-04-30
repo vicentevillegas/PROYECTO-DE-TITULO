@@ -50,20 +50,22 @@ Public Class PrmregBO
 		End Set
 	End Property
 
-	<Display(Name:="Start Date", ShortName:="strdate")>
-	<Required(ErrorMessage:="Start Date is required.")>
-	<Column(Order:=4)>
-	Private _strdate As DateTime
-	Public Property strdate() As DateTime
-		Get
-			Return _strdate
-		End Get
-		Set(ByVal value As DateTime)
-			_strdate = value
-		End Set
-	End Property
+    <Display(Name:="Start Date", ShortName:="strdate")>
+    <Required(ErrorMessage:="Start Date is required.")>
+    <Column(Order:=4)>
+    Protected _strdate As String = "0001-01-01"
+    Public Overridable Property strdate() As String
+        Get
+            Return _strdate
+        End Get
+        Set(ByVal value As String)
+            Dim _date As Date = value
+            value = _date.ToString("yyyy-MM-dd")
+            _strdate = value
+        End Set
+    End Property
 
-	<Display(Name:="Work Hours", ShortName:="wrkhrs")>
+    <Display(Name:="Work Hours", ShortName:="wrkhrs")>
 	<Required(ErrorMessage:="Work Hours is required.")>
 	<Column(Order:=5)>
 	<MaxLength(4)>

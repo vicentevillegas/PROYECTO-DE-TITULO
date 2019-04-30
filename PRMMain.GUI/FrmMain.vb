@@ -11,7 +11,10 @@ Public Class FrmMain
     Public Shared SoftwareVersion As String = "Version 1.00"
     Public Shared TestEnviroment As Boolean = False
 
+
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim _thisUser As String = GenfunBLL.GetUserID(" ").Trim
 
         LoadWindowPosition()
         Me.Text = $"TJMMain - {SoftwareVersion} - [{SecusrBO.secusr.ToUpper}]"
@@ -24,6 +27,11 @@ Public Class FrmMain
             ToolStripStatusLabel.Text = $"Ready in test mode."
 
         End If
+
+        'SecusrBO.secapp = appName.Trim
+        'SecusrBO.secusr = _thisUser.Trim
+
+        'SecusrBO = secusrbll
 
     End Sub
 

@@ -14,20 +14,17 @@ Partial Class FrmPrmuser
         End Try
     End Sub
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
-
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrmuser))
         Me.gbFilter = New System.Windows.Forms.GroupBox()
         Me.btnClear = New System.Windows.Forms.LinkLabel()
-        		Me.txtPrmuser = New iShowRoomComponents.AlphaNumericUpper(Me.components)
-		Me.lblPrmuser = New System.Windows.Forms.Label()
-
+        Me.txtPrmuser = New iShowRoomComponents.AlphaNumericUpper(Me.components)
+        Me.lblPrmuser = New System.Windows.Forms.Label()
         Me.bgwLoadData = New System.ComponentModel.BackgroundWorker()
         Me.statusForm = New System.Windows.Forms.StatusStrip()
         Me.cbcActiveRecrods = New System.Windows.Forms.ToolStripDropDownButton()
@@ -53,9 +50,8 @@ Partial Class FrmPrmuser
         'gbFilter
         '
         Me.gbFilter.Controls.Add(Me.btnClear)
-        		Me.gbFilter.Controls.Add(Me.txtPrmuser)
-		Me.gbFilter.Controls.Add(Me.lblPrmuser)
-
+        Me.gbFilter.Controls.Add(Me.txtPrmuser)
+        Me.gbFilter.Controls.Add(Me.lblPrmuser)
         Me.gbFilter.Dock = System.Windows.Forms.DockStyle.Top
         Me.gbFilter.Location = New System.Drawing.Point(0, 3)
         Me.gbFilter.Name = "gbFilter"
@@ -73,27 +69,26 @@ Partial Class FrmPrmuser
         Me.btnClear.TabIndex = 172
         Me.btnClear.TabStop = True
         Me.btnClear.Text = "Clear Filter(s)."
-        		'
-		'txtPrmuser
-		'
-		Me.txtPrmuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-		Me.txtPrmuser.ForeColor = System.Drawing.Color.Navy
-		Me.txtPrmuser.Location = New System.Drawing.Point(9, 33)
-		Me.txtPrmuser.MaxLength = 20
-		Me.txtPrmuser.Name = "txtPrmuser"
-		Me.txtPrmuser.Size = New System.Drawing.Size(110, 20)
-		Me.txtPrmuser.TabIndex = 1
-		'
-		'lblPrmuser
-		'
-		Me.lblPrmuser.AutoSize = True
-		lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblPrmuser.Location = New System.Drawing.Point(9, 19)
-		lblPrmuser.Name = "lblPrmuser"
-		lblPrmuser.Size = New System.Drawing.Size(110, 13)
-		lblPrmuser.TabIndex = 171
-		lblPrmuser.Text = "User Id"
-
+        '
+        'txtPrmuser
+        '
+        Me.txtPrmuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPrmuser.ForeColor = System.Drawing.Color.Navy
+        Me.txtPrmuser.Location = New System.Drawing.Point(9, 33)
+        Me.txtPrmuser.MaxLength = 20
+        Me.txtPrmuser.Name = "txtPrmuser"
+        Me.txtPrmuser.Size = New System.Drawing.Size(110, 20)
+        Me.txtPrmuser.TabIndex = 1
+        '
+        'lblPrmuser
+        '
+        Me.lblPrmuser.AutoSize = True
+        Me.lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrmuser.Location = New System.Drawing.Point(9, 19)
+        Me.lblPrmuser.Name = "lblPrmuser"
+        Me.lblPrmuser.Size = New System.Drawing.Size(48, 13)
+        Me.lblPrmuser.TabIndex = 171
+        Me.lblPrmuser.Text = "User Id"
         '
         'bgwLoadData
         '
@@ -254,6 +249,7 @@ Partial Class FrmPrmuser
         Me.grid.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.grid.BackColor = System.Drawing.Color.Transparent
         Me.grid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.grid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.grid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grid.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid.Location = New System.Drawing.Point(0, 62)
@@ -290,8 +286,8 @@ Partial Class FrmPrmuser
     End Sub
     Friend WithEvents grid As iShowRoomComponents.gridTemplate
     Friend WithEvents gbFilter As GroupBox
-    	Friend WithEvents txtPrmuser As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblPrmuser As Label
+    Friend WithEvents txtPrmuser As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblPrmuser As Label
 
     Friend WithEvents bgwLoadData As System.ComponentModel.BackgroundWorker
     Friend WithEvents statusForm As StatusStrip
@@ -310,4 +306,5 @@ Partial Class FrmPrmuser
     Friend WithEvents btnClear As LinkLabel
     Friend WithEvents btnSelect As ToolStripButton
     Friend WithEvents btnClose As ToolStripButton
+    Private components As System.ComponentModel.IContainer
 End Class

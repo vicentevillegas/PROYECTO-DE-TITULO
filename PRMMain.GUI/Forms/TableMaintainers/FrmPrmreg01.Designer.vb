@@ -11,142 +11,41 @@ Partial Class FrmPrmreg01
         MyBase.Dispose(disposing)
     End Sub
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
-
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrmreg01))
         Me.ToolStripButtons = New System.Windows.Forms.ToolStrip()
         Me.btnSave = New System.Windows.Forms.ToolStripButton()
-        Me.btnAudit = New System.Windows.Forms.ToolStripButton()
         Me.btnReset = New System.Windows.Forms.ToolStripButton()
         Me.btnClose = New System.Windows.Forms.ToolStripButton()
+        Me.btnAudit = New System.Windows.Forms.ToolStripButton()
+        Me.loadProgress = New System.Windows.Forms.ToolStripProgressBar()
         Me.grpNotes = New System.Windows.Forms.GroupBox()
         Me.btnDate = New System.Windows.Forms.Button()
         Me.txtNotes = New System.Windows.Forms.TextBox()
         Me.grpActive = New System.Windows.Forms.GroupBox()
         Me.rdbActiveNo = New System.Windows.Forms.RadioButton()
         Me.rdbActiveYes = New System.Windows.Forms.RadioButton()
-        Me.loadProgress = New System.Windows.Forms.ToolStripProgressBar()
-        		Me.txtWknum = New iShowRoomComponents.AlphaNumericUpper()
-		Me.lblWknum = New System.Windows.Forms.Label()
-		Me.txtPrmpro = New iShowRoomComponents.AlphaNumericUpper()
-		Me.lblPrmpro = New System.Windows.Forms.Label()
-		Me.txtPrmuser = New iShowRoomComponents.AlphaNumericUpper()
-		Me.lblPrmuser = New System.Windows.Forms.Label()
-		Me.dteStrdate = New System.Windows.Forms.DateTimePicker()
-		Me.lblStrdate = New System.Windows.Forms.Label()
-		Me.txtWrkhrs = New System.Windows.Forms.TextBox()
-		Me.lblWrkhrs = New System.Windows.Forms.Label()
-
+        Me.txtWknum = New iShowRoomComponents.AlphaNumericUpper(Me.components)
+        Me.lblWknum = New System.Windows.Forms.Label()
+        Me.txtPrmpro = New iShowRoomComponents.AlphaNumericUpper(Me.components)
+        Me.lblPrmpro = New System.Windows.Forms.Label()
+        Me.txtPrmuser = New iShowRoomComponents.AlphaNumericUpper(Me.components)
+        Me.lblPrmuser = New System.Windows.Forms.Label()
+        Me.dteStrdate = New System.Windows.Forms.DateTimePicker()
+        Me.lblStrdate = New System.Windows.Forms.Label()
+        Me.txtWrkhrs = New System.Windows.Forms.TextBox()
+        Me.lblWrkhrs = New System.Windows.Forms.Label()
+        Me.cboPrmuser = New System.Windows.Forms.ComboBox()
+        Me.cboPrmpro = New System.Windows.Forms.ComboBox()
         Me.ToolStripButtons.SuspendLayout()
         Me.grpNotes.SuspendLayout()
         Me.grpActive.SuspendLayout()
         Me.SuspendLayout()
-        		'
-		'txtWknum
-		'
-		Me.txtWknum.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
-		Me.txtWknum.ForeColor = System.Drawing.Color.Navy
-		Me.txtWknum.Location = New System.Drawing.Point(127, 20)
-		Me.txtWknum.MaxLength = 20
-		Me.txtWknum.Name = "txtWknum"
-		Me.txtWknum.Size = New System.Drawing.Size(250, 20)
-		Me.txtWknum.TabIndex = 1
-		'
-		'lblWknum
-		'
-		Me.lblWknum.AutoSize = True
-		lblWknum.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblWknum.Location = New System.Drawing.Point(8, 20)
-		lblWknum.Name = "lblWknum"
-		lblWknum.Size = New System.Drawing.Size(110, 13)
-		lblWknum.TabIndex = 0
-		lblWknum.Text = "Week Number:"
-		'
-		'cboPrmpro
-		'
-		Me.cboPrmpro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-		Me.cboPrmpro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-		Me.cboPrmpro.Location = New System.Drawing.Point(127, 44)
-		Me.cboPrmpro.FormattingEnabled = True
-		Me.cboPrmpro.Name = "txtPrmpro"
-		Me.cboPrmpro.Size = New System.Drawing.Size(250, 20)
-		Me.cboPrmpro.TabIndex = 2
-		'
-		'lblPrmpro
-		'
-		Me.lblPrmpro.AutoSize = True
-		lblPrmpro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblPrmpro.Location = New System.Drawing.Point(8, 44)
-		lblPrmpro.Name = "lblPrmpro"
-		lblPrmpro.Size = New System.Drawing.Size(110, 13)
-		lblPrmpro.TabIndex = 0
-		lblPrmpro.Text = "Prmpro:"
-		'
-		'cboPrmuser
-		'
-		Me.cboPrmuser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-		Me.cboPrmuser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-		Me.cboPrmuser.Location = New System.Drawing.Point(127, 68)
-		Me.cboPrmuser.FormattingEnabled = True
-		Me.cboPrmuser.Name = "txtPrmuser"
-		Me.cboPrmuser.Size = New System.Drawing.Size(250, 20)
-		Me.cboPrmuser.TabIndex = 3
-		'
-		'lblPrmuser
-		'
-		Me.lblPrmuser.AutoSize = True
-		lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblPrmuser.Location = New System.Drawing.Point(8, 68)
-		lblPrmuser.Name = "lblPrmuser"
-		lblPrmuser.Size = New System.Drawing.Size(110, 13)
-		lblPrmuser.TabIndex = 0
-		lblPrmuser.Text = "Prmuser:"
-		'
-		'dteStrdate
-		'
-		Me.dteStrdate.CustomFormat = "dd MMM yyyy"
-		Me.dteStrdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-		Me.dteStrdate.Location = New System.Drawing.Point(127, 92)
-		Me.dteStrdate.Name = "dteStrdate"
-		Me.dteStrdate.Size = New System.Drawing.Size(250, 20)
-		Me.dteStrdate.TabIndex = 4
-		'
-		'lblStrdate
-		'
-		Me.lblStrdate.AutoSize = True
-		lblStrdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblStrdate.Location = New System.Drawing.Point(8, 92)
-		lblStrdate.Name = "lblStrdate"
-		lblStrdate.Size = New System.Drawing.Size(110, 13)
-		lblStrdate.TabIndex = 0
-		lblStrdate.Text = "Start Date:"
-		'
-		'txtWrkhrs
-		'
-		Me.txtWrkhrs.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
-		Me.txtWrkhrs.ForeColor = System.Drawing.Color.Navy
-		Me.txtWrkhrs.Location = New System.Drawing.Point(127, 116)
-		Me.txtWrkhrs.MaxLength = 4
-		Me.txtWrkhrs.Name = "txtWrkhrs"
-		Me.txtWrkhrs.Size = New System.Drawing.Size(250, 20)
-		Me.txtWrkhrs.TabIndex = 5
-		'
-		'lblWrkhrs
-		'
-		Me.lblWrkhrs.AutoSize = True
-		lblWrkhrs.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblWrkhrs.Location = New System.Drawing.Point(8, 116)
-		lblWrkhrs.Name = "lblWrkhrs"
-		lblWrkhrs.Size = New System.Drawing.Size(110, 13)
-		lblWrkhrs.TabIndex = 0
-		lblWrkhrs.Text = "Work Hours:"
-
         '
         'ToolStripButtons
         '
@@ -154,9 +53,9 @@ Partial Class FrmPrmreg01
         Me.ToolStripButtons.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStripButtons.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStripButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSave, Me.btnReset, Me.btnClose, Me.btnAudit, Me.loadProgress})
-        Me.ToolStripButtons.Location = New System.Drawing.Point(927, 0)
+        Me.ToolStripButtons.Location = New System.Drawing.Point(746, 0)
         Me.ToolStripButtons.Name = "ToolStripButtons"
-        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 540)
+        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 328)
         Me.ToolStripButtons.TabIndex = 0
         Me.ToolStripButtons.Text = "ToolStrip1"
         '
@@ -297,29 +196,142 @@ Partial Class FrmPrmreg01
         Me.rdbActiveYes.Text = "Yes"
         Me.rdbActiveYes.UseVisualStyleBackColor = True
         '
+        'txtWknum
+        '
+        Me.txtWknum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtWknum.ForeColor = System.Drawing.Color.Navy
+        Me.txtWknum.Location = New System.Drawing.Point(127, 20)
+        Me.txtWknum.MaxLength = 20
+        Me.txtWknum.Name = "txtWknum"
+        Me.txtWknum.Size = New System.Drawing.Size(250, 20)
+        Me.txtWknum.TabIndex = 1
+        '
+        'lblWknum
+        '
+        Me.lblWknum.AutoSize = True
+        Me.lblWknum.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWknum.Location = New System.Drawing.Point(34, 20)
+        Me.lblWknum.Name = "lblWknum"
+        Me.lblWknum.Size = New System.Drawing.Size(91, 13)
+        Me.lblWknum.TabIndex = 0
+        Me.lblWknum.Text = "Week Number:"
+        '
+        'txtPrmpro
+        '
+        Me.txtPrmpro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPrmpro.Location = New System.Drawing.Point(0, 0)
+        Me.txtPrmpro.Name = "txtPrmpro"
+        Me.txtPrmpro.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrmpro.TabIndex = 0
+        '
+        'lblPrmpro
+        '
+        Me.lblPrmpro.AutoSize = True
+        Me.lblPrmpro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrmpro.Location = New System.Drawing.Point(74, 44)
+        Me.lblPrmpro.Name = "lblPrmpro"
+        Me.lblPrmpro.Size = New System.Drawing.Size(50, 13)
+        Me.lblPrmpro.TabIndex = 0
+        Me.lblPrmpro.Text = "Prmpro:"
+        '
+        'txtPrmuser
+        '
+        Me.txtPrmuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPrmuser.Location = New System.Drawing.Point(0, 0)
+        Me.txtPrmuser.Name = "txtPrmuser"
+        Me.txtPrmuser.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrmuser.TabIndex = 0
+        '
+        'lblPrmuser
+        '
+        Me.lblPrmuser.AutoSize = True
+        Me.lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrmuser.Location = New System.Drawing.Point(68, 68)
+        Me.lblPrmuser.Name = "lblPrmuser"
+        Me.lblPrmuser.Size = New System.Drawing.Size(56, 13)
+        Me.lblPrmuser.TabIndex = 0
+        Me.lblPrmuser.Text = "Prmuser:"
+        '
+        'dteStrdate
+        '
+        Me.dteStrdate.CustomFormat = "dd MMM yyyy"
+        Me.dteStrdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dteStrdate.Location = New System.Drawing.Point(127, 92)
+        Me.dteStrdate.Name = "dteStrdate"
+        Me.dteStrdate.Size = New System.Drawing.Size(250, 20)
+        Me.dteStrdate.TabIndex = 4
+        '
+        'lblStrdate
+        '
+        Me.lblStrdate.AutoSize = True
+        Me.lblStrdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStrdate.Location = New System.Drawing.Point(66, 92)
+        Me.lblStrdate.Name = "lblStrdate"
+        Me.lblStrdate.Size = New System.Drawing.Size(58, 13)
+        Me.lblStrdate.TabIndex = 0
+        Me.lblStrdate.Text = "Start Date:"
+        '
+        'txtWrkhrs
+        '
+        Me.txtWrkhrs.ForeColor = System.Drawing.Color.Navy
+        Me.txtWrkhrs.Location = New System.Drawing.Point(127, 116)
+        Me.txtWrkhrs.MaxLength = 4
+        Me.txtWrkhrs.Name = "txtWrkhrs"
+        Me.txtWrkhrs.Size = New System.Drawing.Size(250, 20)
+        Me.txtWrkhrs.TabIndex = 5
+        '
+        'lblWrkhrs
+        '
+        Me.lblWrkhrs.AutoSize = True
+        Me.lblWrkhrs.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWrkhrs.Location = New System.Drawing.Point(58, 116)
+        Me.lblWrkhrs.Name = "lblWrkhrs"
+        Me.lblWrkhrs.Size = New System.Drawing.Size(67, 13)
+        Me.lblWrkhrs.TabIndex = 0
+        Me.lblWrkhrs.Text = "Work Hours:"
+        '
+        'cboPrmuser
+        '
+        Me.cboPrmuser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboPrmuser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboPrmuser.FormattingEnabled = True
+        Me.cboPrmuser.Location = New System.Drawing.Point(127, 68)
+        Me.cboPrmuser.Name = "cboPrmuser"
+        Me.cboPrmuser.Size = New System.Drawing.Size(250, 21)
+        Me.cboPrmuser.TabIndex = 3
+        '
+        'cboPrmpro
+        '
+        Me.cboPrmpro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboPrmpro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboPrmpro.FormattingEnabled = True
+        Me.cboPrmpro.Location = New System.Drawing.Point(127, 44)
+        Me.cboPrmpro.Name = "cboPrmpro"
+        Me.cboPrmpro.Size = New System.Drawing.Size(250, 21)
+        Me.cboPrmpro.TabIndex = 2
+        '
         'FrmPrmreg01
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(988, 540)
+        Me.ClientSize = New System.Drawing.Size(807, 328)
         Me.Controls.Add(Me.grpActive)
         Me.Controls.Add(Me.grpNotes)
         Me.Controls.Add(Me.ToolStripButtons)
-        		Me.Controls.Add(Me.txtWknum)
-		Me.Controls.Add(Me.lblWknum)
-		Me.Controls.Add(Me.cboPrmpro)
-		Me.Controls.Add(Me.lblPrmpro)
-		Me.Controls.Add(Me.cboPrmuser)
-		Me.Controls.Add(Me.lblPrmuser)
-		Me.Controls.Add(Me.dteStrdate)
-		Me.Controls.Add(Me.lblStrdate)
-		Me.Controls.Add(Me.txtWrkhrs)
-		Me.Controls.Add(Me.lblWrkhrs)
-
+        Me.Controls.Add(Me.txtWknum)
+        Me.Controls.Add(Me.lblWknum)
+        Me.Controls.Add(Me.cboPrmpro)
+        Me.Controls.Add(Me.lblPrmpro)
+        Me.Controls.Add(Me.cboPrmuser)
+        Me.Controls.Add(Me.lblPrmuser)
+        Me.Controls.Add(Me.dteStrdate)
+        Me.Controls.Add(Me.lblStrdate)
+        Me.Controls.Add(Me.txtWrkhrs)
+        Me.Controls.Add(Me.lblWrkhrs)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(520, 367)
+        Me.MinimumSize = New System.Drawing.Size(823, 367)
         Me.Name = "FrmPrmreg01"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.ToolStripButtons.ResumeLayout(False)
@@ -329,6 +341,7 @@ Partial Class FrmPrmreg01
         Me.grpActive.ResumeLayout(False)
         Me.grpActive.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -348,13 +361,13 @@ Partial Class FrmPrmreg01
     Friend WithEvents cboPrmpro As ComboBox
     Friend WithEvents cboPrmuser As ComboBox
     Friend WithEvents lblWknum As Label
-	Friend WithEvents txtPrmpro As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblPrmpro As Label
-	Friend WithEvents txtPrmuser As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblPrmuser As Label
-	Friend WithEvents dteStrdate As DateTimePicker
-	Friend WithEvents lblStrdate As Label
-	Friend WithEvents txtWrkhrs As TextBox
-	Friend WithEvents lblWrkhrs As Label
-
+    Friend WithEvents txtPrmpro As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblPrmpro As Label
+    Friend WithEvents txtPrmuser As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblPrmuser As Label
+    Friend WithEvents dteStrdate As DateTimePicker
+    Friend WithEvents lblStrdate As Label
+    Friend WithEvents txtWrkhrs As TextBox
+    Friend WithEvents lblWrkhrs As Label
+    Private components As System.ComponentModel.IContainer
 End Class

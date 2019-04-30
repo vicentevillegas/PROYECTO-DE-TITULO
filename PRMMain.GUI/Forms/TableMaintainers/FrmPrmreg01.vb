@@ -215,8 +215,8 @@ Public Class FrmPrmreg01
             txtNotes.Text = txtNotes.Text.Trim & vbCrLf & vbCrLf & Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") & " by " & FrmMain.SecusrBO.Secnam.Trim & ControlChars.NewLine
             txtNotes.SelectionStart = txtNotes.TextLength + 1
             txtNotes.Select()
-        Else
-            txtNotes.Text = Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") & " by " & FrmMain.SecusrBO.Secnam.Trim & ControlChars.NewLine
+        Else                                                                                         'no esta creado el bll
+            txtNotes.Text = Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") ' & " by " & FrmMain.SecusrBO.Secnam.Trim & ControlChars.NewLine
             txtNotes.SelectionStart = txtNotes.TextLength + 1
             txtNotes.Select()
         End If
@@ -409,15 +409,15 @@ Public Class FrmPrmreg01
 		'
 		cboPrmpro.Enabled = False
 		cboPrmuser.Enabled = False
-		cboPrmpro.DisplayMember = "descript"
-		cboPrmpro.ValueMember = "prmpro"
-        cboPrmpro.DataSource = PrmproBLL.GetTable($"select trim(prmpro) as prmpro, trim(descript) as descript from crsfile.prmpro where trim(descript) <> '' and active = 'T' order by prmpro asc")
+        cboPrmpro.DisplayMember = "descr"
+        cboPrmpro.ValueMember = "prmpro"
+        cboPrmpro.DataSource = PrmproBLL.GetTable($"select trim(prmpro) as prmpro, trim(descr) as descr from crsfile.prmpro where trim(descr) <> '' and active = 'T' order by prmpro asc")
         cboPrmpro.SelectedIndex = -1
 		RecalculateDropDownBoxWidth(cboPrmpro)
 		cboPrmpro.Enabled = True
-		cboPrmuser.DisplayMember = "descript"
-		cboPrmuser.ValueMember = "prmuser"
-        cboPrmuser.DataSource = PrmuserBLL.GetTable($"select trim(prmuser) as prmuser, trim(descript) as descript from crsfile.prmuser where trim(descript) <> '' and active = 'T' order by prmuser asc")
+        cboPrmuser.DisplayMember = "descr"
+        cboPrmuser.ValueMember = "prmuser"
+        cboPrmuser.DataSource = PrmuserBLL.GetTable($"select trim(prmuser) as prmuser, trim(descr) as descr from crsfile.prmuser where trim(descr) <> '' and active = 'T' order by prmuser asc")
         cboPrmuser.SelectedIndex = -1
 		RecalculateDropDownBoxWidth(cboPrmuser)
 		cboPrmuser.Enabled = True

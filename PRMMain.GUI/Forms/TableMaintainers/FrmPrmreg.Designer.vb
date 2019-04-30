@@ -14,9 +14,6 @@ Partial Class FrmPrmreg
         End Try
     End Sub
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
-
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
@@ -24,14 +21,13 @@ Partial Class FrmPrmreg
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrmreg))
         Me.gbFilter = New System.Windows.Forms.GroupBox()
+        Me.txtPrmpro = New System.Windows.Forms.TextBox()
+        Me.txtPrmuser = New System.Windows.Forms.TextBox()
+        Me.txtWknum = New System.Windows.Forms.TextBox()
         Me.btnClear = New System.Windows.Forms.LinkLabel()
-        		Me.txtWknum = New iShowRoomComponents.AlphaNumericUpper(Me.components)
-		Me.lblWknum = New System.Windows.Forms.Label()
-		Me.txtPrmpro = New iShowRoomComponents.AlphaNumericUpper(Me.components)
-		Me.lblPrmpro = New System.Windows.Forms.Label()
-		Me.txtPrmuser = New iShowRoomComponents.AlphaNumericUpper(Me.components)
-		Me.lblPrmuser = New System.Windows.Forms.Label()
-
+        Me.lblWknum = New System.Windows.Forms.Label()
+        Me.lblPrmpro = New System.Windows.Forms.Label()
+        Me.lblPrmuser = New System.Windows.Forms.Label()
         Me.bgwLoadData = New System.ComponentModel.BackgroundWorker()
         Me.statusForm = New System.Windows.Forms.StatusStrip()
         Me.cbcActiveRecrods = New System.Windows.Forms.ToolStripDropDownButton()
@@ -56,14 +52,13 @@ Partial Class FrmPrmreg
         '
         'gbFilter
         '
+        Me.gbFilter.Controls.Add(Me.txtPrmpro)
+        Me.gbFilter.Controls.Add(Me.txtPrmuser)
+        Me.gbFilter.Controls.Add(Me.txtWknum)
         Me.gbFilter.Controls.Add(Me.btnClear)
-        		Me.gbFilter.Controls.Add(Me.txtWknum)
-		Me.gbFilter.Controls.Add(Me.lblWknum)
-		Me.gbFilter.Controls.Add(Me.txtPrmpro)
-		Me.gbFilter.Controls.Add(Me.lblPrmpro)
-		Me.gbFilter.Controls.Add(Me.txtPrmuser)
-		Me.gbFilter.Controls.Add(Me.lblPrmuser)
-
+        Me.gbFilter.Controls.Add(Me.lblWknum)
+        Me.gbFilter.Controls.Add(Me.lblPrmpro)
+        Me.gbFilter.Controls.Add(Me.lblPrmuser)
         Me.gbFilter.Dock = System.Windows.Forms.DockStyle.Top
         Me.gbFilter.Location = New System.Drawing.Point(0, 3)
         Me.gbFilter.Name = "gbFilter"
@@ -72,76 +67,66 @@ Partial Class FrmPrmreg
         Me.gbFilter.TabStop = False
         Me.gbFilter.Text = "Filter By:"
         '
+        'txtPrmpro
+        '
+        Me.txtPrmpro.Location = New System.Drawing.Point(132, 36)
+        Me.txtPrmpro.Name = "txtPrmpro"
+        Me.txtPrmpro.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrmpro.TabIndex = 174
+        '
+        'txtPrmuser
+        '
+        Me.txtPrmuser.Location = New System.Drawing.Point(252, 35)
+        Me.txtPrmuser.Name = "txtPrmuser"
+        Me.txtPrmuser.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrmuser.TabIndex = 175
+        '
+        'txtWknum
+        '
+        Me.txtWknum.Location = New System.Drawing.Point(12, 36)
+        Me.txtWknum.Name = "txtWknum"
+        Me.txtWknum.Size = New System.Drawing.Size(100, 20)
+        Me.txtWknum.TabIndex = 173
+        '
         'btnClear
         '
         Me.btnClear.AutoSize = True
         Me.btnClear.Location = New System.Drawing.Point(378, 36)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(70, 13)
-        Me.btnClear.TabIndex = 172
+        Me.btnClear.TabIndex = 176
         Me.btnClear.TabStop = True
         Me.btnClear.Text = "Clear Filter(s)."
-        		'
-		'txtWknum
-		'
-		Me.txtWknum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-		Me.txtWknum.ForeColor = System.Drawing.Color.Navy
-		Me.txtWknum.Location = New System.Drawing.Point(9, 33)
-		Me.txtWknum.MaxLength = 20
-		Me.txtWknum.Name = "txtWknum"
-		Me.txtWknum.Size = New System.Drawing.Size(110, 20)
-		Me.txtWknum.TabIndex = 1
-		'
-		'lblWknum
-		'
-		Me.lblWknum.AutoSize = True
-		lblWknum.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblWknum.Location = New System.Drawing.Point(9, 19)
-		lblWknum.Name = "lblWknum"
-		lblWknum.Size = New System.Drawing.Size(110, 13)
-		lblWknum.TabIndex = 171
-		lblWknum.Text = "Week Number"
-		'
-		'txtPrmpro
-		'
-		Me.txtPrmpro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-		Me.txtPrmpro.ForeColor = System.Drawing.Color.Navy
-		Me.txtPrmpro.Location = New System.Drawing.Point(129, 33)
-		Me.txtPrmpro.MaxLength = 20
-		Me.txtPrmpro.Name = "txtPrmpro"
-		Me.txtPrmpro.Size = New System.Drawing.Size(110, 20)
-		Me.txtPrmpro.TabIndex = 1
-		'
-		'lblPrmpro
-		'
-		Me.lblPrmpro.AutoSize = True
-		lblPrmpro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblPrmpro.Location = New System.Drawing.Point(129, 19)
-		lblPrmpro.Name = "lblPrmpro"
-		lblPrmpro.Size = New System.Drawing.Size(110, 13)
-		lblPrmpro.TabIndex = 171
-		lblPrmpro.Text = "Project Id"
-		'
-		'txtPrmuser
-		'
-		Me.txtPrmuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-		Me.txtPrmuser.ForeColor = System.Drawing.Color.Navy
-		Me.txtPrmuser.Location = New System.Drawing.Point(249, 33)
-		Me.txtPrmuser.MaxLength = 20
-		Me.txtPrmuser.Name = "txtPrmuser"
-		Me.txtPrmuser.Size = New System.Drawing.Size(110, 20)
-		Me.txtPrmuser.TabIndex = 1
-		'
-		'lblPrmuser
-		'
-		Me.lblPrmuser.AutoSize = True
-		lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblPrmuser.Location = New System.Drawing.Point(249, 19)
-		lblPrmuser.Name = "lblPrmuser"
-		lblPrmuser.Size = New System.Drawing.Size(110, 13)
-		lblPrmuser.TabIndex = 171
-		lblPrmuser.Text = "User Id"
-
+        '
+        'lblWknum
+        '
+        Me.lblWknum.AutoSize = True
+        Me.lblWknum.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWknum.Location = New System.Drawing.Point(9, 19)
+        Me.lblWknum.Name = "lblWknum"
+        Me.lblWknum.Size = New System.Drawing.Size(87, 13)
+        Me.lblWknum.TabIndex = 171
+        Me.lblWknum.Text = "Week Number"
+        '
+        'lblPrmpro
+        '
+        Me.lblPrmpro.AutoSize = True
+        Me.lblPrmpro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrmpro.Location = New System.Drawing.Point(129, 19)
+        Me.lblPrmpro.Name = "lblPrmpro"
+        Me.lblPrmpro.Size = New System.Drawing.Size(62, 13)
+        Me.lblPrmpro.TabIndex = 171
+        Me.lblPrmpro.Text = "Project Id"
+        '
+        'lblPrmuser
+        '
+        Me.lblPrmuser.AutoSize = True
+        Me.lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrmuser.Location = New System.Drawing.Point(249, 19)
+        Me.lblPrmuser.Name = "lblPrmuser"
+        Me.lblPrmuser.Size = New System.Drawing.Size(48, 13)
+        Me.lblPrmuser.TabIndex = 171
+        Me.lblPrmuser.Text = "User Id"
         '
         'bgwLoadData
         '
@@ -302,6 +287,7 @@ Partial Class FrmPrmreg
         Me.grid.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.grid.BackColor = System.Drawing.Color.Transparent
         Me.grid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.grid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.grid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grid.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid.Location = New System.Drawing.Point(0, 62)
@@ -338,12 +324,12 @@ Partial Class FrmPrmreg
     End Sub
     Friend WithEvents grid As iShowRoomComponents.gridTemplate
     Friend WithEvents gbFilter As GroupBox
-    	Friend WithEvents txtWknum As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblWknum As Label
-	Friend WithEvents txtPrmpro As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblPrmpro As Label
-	Friend WithEvents txtPrmuser As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblPrmuser As Label
+    'Friend WithEvents txtWknum As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblWknum As Label
+    ' Friend WithEvents txtPrmpro As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblPrmpro As Label
+    ' Friend WithEvents txtPrmuser As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblPrmuser As Label
 
     Friend WithEvents bgwLoadData As System.ComponentModel.BackgroundWorker
     Friend WithEvents statusForm As StatusStrip
@@ -362,4 +348,8 @@ Partial Class FrmPrmreg
     Friend WithEvents btnClear As LinkLabel
     Friend WithEvents btnSelect As ToolStripButton
     Friend WithEvents btnClose As ToolStripButton
+    Private components As System.ComponentModel.IContainer
+    Friend WithEvents txtPrmuser As TextBox
+    Friend WithEvents txtWknum As TextBox
+    Friend WithEvents txtPrmpro As TextBox
 End Class

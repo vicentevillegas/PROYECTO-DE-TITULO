@@ -14,9 +14,6 @@ Partial Class FrmPrmpro
         End Try
     End Sub
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
-
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
@@ -300,6 +297,7 @@ Partial Class FrmPrmpro
         Me.grid.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.grid.BackColor = System.Drawing.Color.Transparent
         Me.grid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.grid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.grid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grid.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid.Location = New System.Drawing.Point(0, 62)
@@ -336,12 +334,12 @@ Partial Class FrmPrmpro
     End Sub
     Friend WithEvents grid As iShowRoomComponents.gridTemplate
     Friend WithEvents gbFilter As GroupBox
-    	Friend WithEvents txtPrmpro As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblPrmpro As Label
-	Friend WithEvents txtPrmsts As TextBox
-	Friend WithEvents lblPrmsts As Label
-	Friend WithEvents txtPrmcmp As TextBox
-	Friend WithEvents lblPrmcmp As Label
+    Friend WithEvents txtPrmpro As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblPrmpro As Label
+    Friend WithEvents txtPrmsts As TextBox
+    Friend WithEvents lblPrmsts As Label
+    Friend WithEvents txtPrmcmp As TextBox
+    Friend WithEvents lblPrmcmp As Label
 
     Friend WithEvents bgwLoadData As System.ComponentModel.BackgroundWorker
     Friend WithEvents statusForm As StatusStrip
@@ -360,4 +358,5 @@ Partial Class FrmPrmpro
     Friend WithEvents btnClear As LinkLabel
     Friend WithEvents btnSelect As ToolStripButton
     Friend WithEvents btnClose As ToolStripButton
+    Private components As System.ComponentModel.IContainer
 End Class

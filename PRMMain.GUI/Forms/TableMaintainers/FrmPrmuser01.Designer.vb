@@ -11,77 +11,33 @@ Partial Class FrmPrmuser01
         MyBase.Dispose(disposing)
     End Sub
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
-
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrmuser01))
         Me.ToolStripButtons = New System.Windows.Forms.ToolStrip()
         Me.btnSave = New System.Windows.Forms.ToolStripButton()
-        Me.btnAudit = New System.Windows.Forms.ToolStripButton()
         Me.btnReset = New System.Windows.Forms.ToolStripButton()
         Me.btnClose = New System.Windows.Forms.ToolStripButton()
+        Me.btnAudit = New System.Windows.Forms.ToolStripButton()
+        Me.loadProgress = New System.Windows.Forms.ToolStripProgressBar()
         Me.grpNotes = New System.Windows.Forms.GroupBox()
         Me.btnDate = New System.Windows.Forms.Button()
         Me.txtNotes = New System.Windows.Forms.TextBox()
         Me.grpActive = New System.Windows.Forms.GroupBox()
         Me.rdbActiveNo = New System.Windows.Forms.RadioButton()
         Me.rdbActiveYes = New System.Windows.Forms.RadioButton()
-        Me.loadProgress = New System.Windows.Forms.ToolStripProgressBar()
-        		Me.txtPrmuser = New iShowRoomComponents.AlphaNumericUpper()
-		Me.lblPrmuser = New System.Windows.Forms.Label()
-		Me.txtDescr = New System.Windows.Forms.TextBox()
-		Me.lblDescr = New System.Windows.Forms.Label()
-
+        Me.txtPrmuser = New iShowRoomComponents.AlphaNumericUpper(Me.components)
+        Me.lblPrmuser = New System.Windows.Forms.Label()
+        Me.txtDescr = New System.Windows.Forms.TextBox()
+        Me.lblDescr = New System.Windows.Forms.Label()
         Me.ToolStripButtons.SuspendLayout()
         Me.grpNotes.SuspendLayout()
         Me.grpActive.SuspendLayout()
         Me.SuspendLayout()
-        		'
-		'txtPrmuser
-		'
-		Me.txtPrmuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
-		Me.txtPrmuser.ForeColor = System.Drawing.Color.Navy
-		Me.txtPrmuser.Location = New System.Drawing.Point(127, 20)
-		Me.txtPrmuser.MaxLength = 20
-		Me.txtPrmuser.Name = "txtPrmuser"
-		Me.txtPrmuser.Size = New System.Drawing.Size(250, 20)
-		Me.txtPrmuser.TabIndex = 1
-		'
-		'lblPrmuser
-		'
-		Me.lblPrmuser.AutoSize = True
-		lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblPrmuser.Location = New System.Drawing.Point(8, 20)
-		lblPrmuser.Name = "lblPrmuser"
-		lblPrmuser.Size = New System.Drawing.Size(110, 13)
-		lblPrmuser.TabIndex = 0
-		lblPrmuser.Text = "User Id:"
-		'
-		'txtDescr
-		'
-		Me.txtDescr.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
-		Me.txtDescr.ForeColor = System.Drawing.Color.Navy
-		Me.txtDescr.Location = New System.Drawing.Point(127, 44)
-		Me.txtDescr.MaxLength = 100
-		Me.txtDescr.Name = "txtDescr"
-		Me.txtDescr.Size = New System.Drawing.Size(250, 20)
-		Me.txtDescr.TabIndex = 2
-		'
-		'lblDescr
-		'
-		Me.lblDescr.AutoSize = True
-		lblDescr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblDescr.Location = New System.Drawing.Point(8, 44)
-		lblDescr.Name = "lblDescr"
-		lblDescr.Size = New System.Drawing.Size(110, 13)
-		lblDescr.TabIndex = 0
-		lblDescr.Text = "Description:"
-
         '
         'ToolStripButtons
         '
@@ -89,9 +45,9 @@ Partial Class FrmPrmuser01
         Me.ToolStripButtons.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStripButtons.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStripButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSave, Me.btnReset, Me.btnClose, Me.btnAudit, Me.loadProgress})
-        Me.ToolStripButtons.Location = New System.Drawing.Point(927, 0)
+        Me.ToolStripButtons.Location = New System.Drawing.Point(746, 0)
         Me.ToolStripButtons.Name = "ToolStripButtons"
-        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 540)
+        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 328)
         Me.ToolStripButtons.TabIndex = 0
         Me.ToolStripButtons.Text = "ToolStrip1"
         '
@@ -232,23 +188,61 @@ Partial Class FrmPrmuser01
         Me.rdbActiveYes.Text = "Yes"
         Me.rdbActiveYes.UseVisualStyleBackColor = True
         '
+        'txtPrmuser
+        '
+        Me.txtPrmuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPrmuser.ForeColor = System.Drawing.Color.Navy
+        Me.txtPrmuser.Location = New System.Drawing.Point(127, 20)
+        Me.txtPrmuser.MaxLength = 20
+        Me.txtPrmuser.Name = "txtPrmuser"
+        Me.txtPrmuser.Size = New System.Drawing.Size(250, 20)
+        Me.txtPrmuser.TabIndex = 1
+        '
+        'lblPrmuser
+        '
+        Me.lblPrmuser.AutoSize = True
+        Me.lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrmuser.Location = New System.Drawing.Point(8, 20)
+        Me.lblPrmuser.Name = "lblPrmuser"
+        Me.lblPrmuser.Size = New System.Drawing.Size(52, 13)
+        Me.lblPrmuser.TabIndex = 0
+        Me.lblPrmuser.Text = "User Id:"
+        '
+        'txtDescr
+        '
+        Me.txtDescr.ForeColor = System.Drawing.Color.Navy
+        Me.txtDescr.Location = New System.Drawing.Point(127, 44)
+        Me.txtDescr.MaxLength = 100
+        Me.txtDescr.Name = "txtDescr"
+        Me.txtDescr.Size = New System.Drawing.Size(250, 20)
+        Me.txtDescr.TabIndex = 2
+        '
+        'lblDescr
+        '
+        Me.lblDescr.AutoSize = True
+        Me.lblDescr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescr.Location = New System.Drawing.Point(8, 44)
+        Me.lblDescr.Name = "lblDescr"
+        Me.lblDescr.Size = New System.Drawing.Size(63, 13)
+        Me.lblDescr.TabIndex = 0
+        Me.lblDescr.Text = "Description:"
+        '
         'FrmPrmuser01
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(988, 540)
+        Me.ClientSize = New System.Drawing.Size(807, 328)
         Me.Controls.Add(Me.grpActive)
         Me.Controls.Add(Me.grpNotes)
         Me.Controls.Add(Me.ToolStripButtons)
-        		Me.Controls.Add(Me.txtPrmuser)
-		Me.Controls.Add(Me.lblPrmuser)
-		Me.Controls.Add(Me.txtDescr)
-		Me.Controls.Add(Me.lblDescr)
-
+        Me.Controls.Add(Me.txtPrmuser)
+        Me.Controls.Add(Me.lblPrmuser)
+        Me.Controls.Add(Me.txtDescr)
+        Me.Controls.Add(Me.lblDescr)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(520, 367)
+        Me.MinimumSize = New System.Drawing.Size(823, 367)
         Me.Name = "FrmPrmuser01"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.ToolStripButtons.ResumeLayout(False)
@@ -258,6 +252,7 @@ Partial Class FrmPrmuser01
         Me.grpActive.ResumeLayout(False)
         Me.grpActive.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -273,9 +268,9 @@ Partial Class FrmPrmuser01
     Friend WithEvents grpActive As GroupBox
     Friend WithEvents rdbActiveNo As RadioButton
     Friend WithEvents rdbActiveYes As RadioButton
-    	Friend WithEvents txtPrmuser As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblPrmuser As Label
-	Friend WithEvents txtDescr As TextBox
-	Friend WithEvents lblDescr As Label
-
+    Friend WithEvents txtPrmuser As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblPrmuser As Label
+    Friend WithEvents txtDescr As TextBox
+    Friend WithEvents lblDescr As Label
+    Private components As System.ComponentModel.IContainer
 End Class

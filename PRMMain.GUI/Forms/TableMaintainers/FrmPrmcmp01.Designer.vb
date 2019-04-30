@@ -11,87 +11,45 @@ Partial Class FrmPrmcmp01
         MyBase.Dispose(disposing)
     End Sub
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
-
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrmcmp01))
         Me.ToolStripButtons = New System.Windows.Forms.ToolStrip()
         Me.btnSave = New System.Windows.Forms.ToolStripButton()
-        Me.btnAudit = New System.Windows.Forms.ToolStripButton()
         Me.btnReset = New System.Windows.Forms.ToolStripButton()
         Me.btnClose = New System.Windows.Forms.ToolStripButton()
+        Me.btnAudit = New System.Windows.Forms.ToolStripButton()
+        Me.loadProgress = New System.Windows.Forms.ToolStripProgressBar()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.grpNotes = New System.Windows.Forms.GroupBox()
         Me.btnDate = New System.Windows.Forms.Button()
         Me.txtNotes = New System.Windows.Forms.TextBox()
         Me.grpActive = New System.Windows.Forms.GroupBox()
         Me.rdbActiveNo = New System.Windows.Forms.RadioButton()
         Me.rdbActiveYes = New System.Windows.Forms.RadioButton()
-        Me.loadProgress = New System.Windows.Forms.ToolStripProgressBar()
-        		Me.txtPrmcmp = New iShowRoomComponents.AlphaNumericUpper()
-		Me.lblPrmcmp = New System.Windows.Forms.Label()
-		Me.txtDescr = New System.Windows.Forms.TextBox()
-		Me.lblDescr = New System.Windows.Forms.Label()
-
+        Me.txtPrmcmp = New iShowRoomComponents.AlphaNumericUpper(Me.components)
+        Me.lblPrmcmp = New System.Windows.Forms.Label()
+        Me.txtDescr = New System.Windows.Forms.TextBox()
+        Me.lblDescr = New System.Windows.Forms.Label()
         Me.ToolStripButtons.SuspendLayout()
         Me.grpNotes.SuspendLayout()
         Me.grpActive.SuspendLayout()
         Me.SuspendLayout()
-        		'
-		'txtPrmcmp
-		'
-		Me.txtPrmcmp.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
-		Me.txtPrmcmp.ForeColor = System.Drawing.Color.Navy
-		Me.txtPrmcmp.Location = New System.Drawing.Point(127, 20)
-		Me.txtPrmcmp.MaxLength = 20
-		Me.txtPrmcmp.Name = "txtPrmcmp"
-		Me.txtPrmcmp.Size = New System.Drawing.Size(250, 20)
-		Me.txtPrmcmp.TabIndex = 1
-		'
-		'lblPrmcmp
-		'
-		Me.lblPrmcmp.AutoSize = True
-		lblPrmcmp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblPrmcmp.Location = New System.Drawing.Point(8, 20)
-		lblPrmcmp.Name = "lblPrmcmp"
-		lblPrmcmp.Size = New System.Drawing.Size(110, 13)
-		lblPrmcmp.TabIndex = 0
-		lblPrmcmp.Text = "Company Id:"
-		'
-		'txtDescr
-		'
-		Me.txtDescr.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
-		Me.txtDescr.ForeColor = System.Drawing.Color.Navy
-		Me.txtDescr.Location = New System.Drawing.Point(127, 44)
-		Me.txtDescr.MaxLength = 100
-		Me.txtDescr.Name = "txtDescr"
-		Me.txtDescr.Size = New System.Drawing.Size(250, 20)
-		Me.txtDescr.TabIndex = 2
-		'
-		'lblDescr
-		'
-		Me.lblDescr.AutoSize = True
-		lblDescr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblDescr.Location = New System.Drawing.Point(8, 44)
-		lblDescr.Name = "lblDescr"
-		lblDescr.Size = New System.Drawing.Size(110, 13)
-		lblDescr.TabIndex = 0
-		lblDescr.Text = "Description:"
-
         '
         'ToolStripButtons
         '
         Me.ToolStripButtons.BackColor = System.Drawing.Color.White
         Me.ToolStripButtons.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStripButtons.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStripButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSave, Me.btnReset, Me.btnClose, Me.btnAudit, Me.loadProgress})
-        Me.ToolStripButtons.Location = New System.Drawing.Point(927, 0)
+        Me.ToolStripButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSave, Me.btnReset, Me.btnClose, Me.btnAudit, Me.loadProgress, Me.ToolStripButton1, Me.ToolStripButton2})
+        Me.ToolStripButtons.Location = New System.Drawing.Point(746, 0)
         Me.ToolStripButtons.Name = "ToolStripButtons"
-        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 540)
+        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 328)
         Me.ToolStripButtons.TabIndex = 0
         Me.ToolStripButtons.Text = "ToolStrip1"
         '
@@ -154,6 +112,24 @@ Partial Class FrmPrmcmp01
         Me.loadProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee
         Me.loadProgress.Visible = False
         '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(58, 20)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(58, 20)
+        Me.ToolStripButton2.Text = "ToolStripButton2"
+        '
         'grpNotes
         '
         Me.grpNotes.Controls.Add(Me.btnDate)
@@ -175,7 +151,7 @@ Partial Class FrmPrmcmp01
         Me.btnDate.Location = New System.Drawing.Point(29, 18)
         Me.btnDate.Name = "btnDate"
         Me.btnDate.Size = New System.Drawing.Size(60, 60)
-        Me.btnDate.TabIndex = 200
+        Me.btnDate.TabIndex = 3
         Me.btnDate.Text = "To stamp"
         Me.btnDate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         Me.btnDate.UseVisualStyleBackColor = False
@@ -215,7 +191,7 @@ Partial Class FrmPrmcmp01
         Me.rdbActiveNo.Margin = New System.Windows.Forms.Padding(2)
         Me.rdbActiveNo.Name = "rdbActiveNo"
         Me.rdbActiveNo.Size = New System.Drawing.Size(39, 17)
-        Me.rdbActiveNo.TabIndex = 10
+        Me.rdbActiveNo.TabIndex = 5
         Me.rdbActiveNo.TabStop = True
         Me.rdbActiveNo.Text = "No"
         Me.rdbActiveNo.UseVisualStyleBackColor = True
@@ -227,28 +203,66 @@ Partial Class FrmPrmcmp01
         Me.rdbActiveYes.Margin = New System.Windows.Forms.Padding(2)
         Me.rdbActiveYes.Name = "rdbActiveYes"
         Me.rdbActiveYes.Size = New System.Drawing.Size(43, 17)
-        Me.rdbActiveYes.TabIndex = 9
+        Me.rdbActiveYes.TabIndex = 4
         Me.rdbActiveYes.TabStop = True
         Me.rdbActiveYes.Text = "Yes"
         Me.rdbActiveYes.UseVisualStyleBackColor = True
+        '
+        'txtPrmcmp
+        '
+        Me.txtPrmcmp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPrmcmp.ForeColor = System.Drawing.Color.Navy
+        Me.txtPrmcmp.Location = New System.Drawing.Point(127, 20)
+        Me.txtPrmcmp.MaxLength = 20
+        Me.txtPrmcmp.Name = "txtPrmcmp"
+        Me.txtPrmcmp.Size = New System.Drawing.Size(250, 20)
+        Me.txtPrmcmp.TabIndex = 1
+        '
+        'lblPrmcmp
+        '
+        Me.lblPrmcmp.AutoSize = True
+        Me.lblPrmcmp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrmcmp.Location = New System.Drawing.Point(8, 20)
+        Me.lblPrmcmp.Name = "lblPrmcmp"
+        Me.lblPrmcmp.Size = New System.Drawing.Size(77, 13)
+        Me.lblPrmcmp.TabIndex = 0
+        Me.lblPrmcmp.Text = "Company Id:"
+        '
+        'txtDescr
+        '
+        Me.txtDescr.ForeColor = System.Drawing.Color.Navy
+        Me.txtDescr.Location = New System.Drawing.Point(127, 44)
+        Me.txtDescr.MaxLength = 100
+        Me.txtDescr.Name = "txtDescr"
+        Me.txtDescr.Size = New System.Drawing.Size(250, 20)
+        Me.txtDescr.TabIndex = 2
+        '
+        'lblDescr
+        '
+        Me.lblDescr.AutoSize = True
+        Me.lblDescr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescr.Location = New System.Drawing.Point(8, 44)
+        Me.lblDescr.Name = "lblDescr"
+        Me.lblDescr.Size = New System.Drawing.Size(63, 13)
+        Me.lblDescr.TabIndex = 0
+        Me.lblDescr.Text = "Description:"
         '
         'FrmPrmcmp01
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(988, 540)
+        Me.ClientSize = New System.Drawing.Size(807, 328)
         Me.Controls.Add(Me.grpActive)
         Me.Controls.Add(Me.grpNotes)
         Me.Controls.Add(Me.ToolStripButtons)
-        		Me.Controls.Add(Me.txtPrmcmp)
-		Me.Controls.Add(Me.lblPrmcmp)
-		Me.Controls.Add(Me.txtDescr)
-		Me.Controls.Add(Me.lblDescr)
-
+        Me.Controls.Add(Me.txtPrmcmp)
+        Me.Controls.Add(Me.lblPrmcmp)
+        Me.Controls.Add(Me.txtDescr)
+        Me.Controls.Add(Me.lblDescr)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(520, 367)
+        Me.MinimumSize = New System.Drawing.Size(823, 367)
         Me.Name = "FrmPrmcmp01"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.ToolStripButtons.ResumeLayout(False)
@@ -258,6 +272,7 @@ Partial Class FrmPrmcmp01
         Me.grpActive.ResumeLayout(False)
         Me.grpActive.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -273,9 +288,11 @@ Partial Class FrmPrmcmp01
     Friend WithEvents grpActive As GroupBox
     Friend WithEvents rdbActiveNo As RadioButton
     Friend WithEvents rdbActiveYes As RadioButton
-    	Friend WithEvents txtPrmcmp As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblPrmcmp As Label
-	Friend WithEvents txtDescr As TextBox
-	Friend WithEvents lblDescr As Label
-
+    Friend WithEvents txtPrmcmp As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblPrmcmp As Label
+    Friend WithEvents txtDescr As TextBox
+    Friend WithEvents lblDescr As Label
+    Private components As System.ComponentModel.IContainer
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripButton2 As ToolStripButton
 End Class

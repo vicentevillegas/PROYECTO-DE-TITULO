@@ -753,7 +753,27 @@ Public Class FrmPrmreg
 
     End Sub
 
-    Private Sub TextBoxes_TextChanged(sender As Object, e As EventArgs) Handles txtWknum.TextChanged, txtPrmpro.TextChanged, txtPrmuser.TextChanged
+    'Private Sub txtWknum_TextChanged(sender As Object, e As EventArgs) Handles txtWknum.TextChanged
+
+    '    If filterLocally Then
+
+    '        Dim task As New Task(AddressOf FilterLocalData)
+    '        task.RunSynchronously()
+
+    '    Else
+
+    '        RefreshMessagesOnRemote()
+
+    '    End If
+
+    'End Sub
+
+
+    Private Sub TextBoxes_TextChanged(sender As Object, e As EventArgs) Handles txtWknum.TextChanged, txtPrmuser.TextChanged, txtPrmpro.TextChanged
+
+
+
+
 
         If filterLocally Then
 
@@ -769,6 +789,8 @@ Public Class FrmPrmreg
     End Sub
 
     Private Sub txt_KeyDown(sender As Object, e As KeyEventArgs) Handles txtWknum.KeyDown, txtPrmpro.KeyDown, txtPrmuser.KeyDown
+
+
 
         If Not filterLocally Then
 
@@ -981,8 +1003,8 @@ Public Class FrmPrmreg
         sqlQuery = $"select 
                             {sqlButtons}                                         
                             crsfile.Prmreg.wknum as wknum,
-							crsfile.Prmpro.descript as prmpro,
-							crsfile.Prmuser.descript as prmuser,
+							crsfile.Prmpro.descr as prmpro,
+							crsfile.Prmuser.descr as prmuser,
 							crsfile.Prmreg.strdate as strdate,
 							crsfile.Prmreg.wrkhrs as wrkhrs,
 							crsfile.Prmreg.active as active                            
@@ -1361,6 +1383,7 @@ Public Class FrmPrmreg
         End If
 
     End Sub
+
 
 #End Region
 

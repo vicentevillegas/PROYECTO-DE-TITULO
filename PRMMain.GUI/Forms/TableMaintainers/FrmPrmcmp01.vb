@@ -202,11 +202,14 @@ Public Class FrmPrmcmp01
             txtNotes.SelectionStart = txtNotes.TextLength + 1
             txtNotes.Select()
         Else
-            txtNotes.Text = Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") & " by " & FrmMain.SecusrBO.Secnam.Trim & ControlChars.NewLine
+            txtNotes.Text = Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") '& " by " & FrmMain.SecusrBO.Secnam.Trim & ControlChars.NewLine
             txtNotes.SelectionStart = txtNotes.TextLength + 1
             txtNotes.Select()
         End If
     End Sub
+
+
+
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         If rowAdding Then

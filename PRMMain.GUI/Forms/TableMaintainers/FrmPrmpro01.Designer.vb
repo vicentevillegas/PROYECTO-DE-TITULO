@@ -11,9 +11,6 @@ Partial Class FrmPrmpro01
         MyBase.Dispose(disposing)
     End Sub
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
-
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
@@ -54,9 +51,9 @@ Partial Class FrmPrmpro01
         Me.ToolStripButtons.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStripButtons.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStripButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSave, Me.btnReset, Me.btnClose, Me.btnAudit, Me.loadProgress})
-        Me.ToolStripButtons.Location = New System.Drawing.Point(725, 0)
+        Me.ToolStripButtons.Location = New System.Drawing.Point(746, 0)
         Me.ToolStripButtons.Name = "ToolStripButtons"
-        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 220)
+        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 328)
         Me.ToolStripButtons.TabIndex = 0
         Me.ToolStripButtons.Text = "ToolStrip1"
         '
@@ -123,7 +120,7 @@ Partial Class FrmPrmpro01
         '
         Me.grpNotes.Controls.Add(Me.btnDate)
         Me.grpNotes.Controls.Add(Me.txtNotes)
-        Me.grpNotes.Location = New System.Drawing.Point(382, 20)
+        Me.grpNotes.Location = New System.Drawing.Point(450, 9)
         Me.grpNotes.Margin = New System.Windows.Forms.Padding(2)
         Me.grpNotes.MinimumSize = New System.Drawing.Size(293, 126)
         Me.grpNotes.Name = "grpNotes"
@@ -163,13 +160,12 @@ Partial Class FrmPrmpro01
         '
         Me.grpActive.Controls.Add(Me.rdbActiveNo)
         Me.grpActive.Controls.Add(Me.rdbActiveYes)
-        Me.grpActive.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.grpActive.Location = New System.Drawing.Point(0, 174)
+        Me.grpActive.Location = New System.Drawing.Point(450, 139)
         Me.grpActive.Margin = New System.Windows.Forms.Padding(2)
         Me.grpActive.MinimumSize = New System.Drawing.Size(143, 46)
         Me.grpActive.Name = "grpActive"
         Me.grpActive.Padding = New System.Windows.Forms.Padding(2)
-        Me.grpActive.Size = New System.Drawing.Size(725, 46)
+        Me.grpActive.Size = New System.Drawing.Size(293, 46)
         Me.grpActive.TabIndex = 9
         Me.grpActive.TabStop = False
         Me.grpActive.Text = "Active:"
@@ -301,7 +297,7 @@ Partial Class FrmPrmpro01
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(786, 220)
+        Me.ClientSize = New System.Drawing.Size(807, 328)
         Me.Controls.Add(Me.grpActive)
         Me.Controls.Add(Me.grpNotes)
         Me.Controls.Add(Me.ToolStripButtons)
@@ -317,6 +313,7 @@ Partial Class FrmPrmpro01
         Me.Controls.Add(Me.lblDescr)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MinimumSize = New System.Drawing.Size(823, 367)
         Me.Name = "FrmPrmpro01"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.ToolStripButtons.ResumeLayout(False)
@@ -342,15 +339,15 @@ Partial Class FrmPrmpro01
     Friend WithEvents grpActive As GroupBox
     Friend WithEvents rdbActiveNo As RadioButton
     Friend WithEvents rdbActiveYes As RadioButton
-    	Friend WithEvents txtPrmpro As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblPrmpro As Label
-	Friend WithEvents cboPrmsts As ComboBox
-	Friend WithEvents lblPrmsts As Label
-	Friend WithEvents cboPrmcmp As ComboBox
-	Friend WithEvents lblPrmcmp As Label
-	Friend WithEvents dteStrdte As DateTimePicker
-	Friend WithEvents lblStrdte As Label
-	Friend WithEvents txtDescr As TextBox
-	Friend WithEvents lblDescr As Label
-
+    Friend WithEvents txtPrmpro As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblPrmpro As Label
+    Friend WithEvents cboPrmsts As ComboBox
+    Friend WithEvents lblPrmsts As Label
+    Friend WithEvents cboPrmcmp As ComboBox
+    Friend WithEvents lblPrmcmp As Label
+    Friend WithEvents dteStrdte As DateTimePicker
+    Friend WithEvents lblStrdte As Label
+    Friend WithEvents txtDescr As TextBox
+    Friend WithEvents lblDescr As Label
+    Private components As System.ComponentModel.IContainer
 End Class

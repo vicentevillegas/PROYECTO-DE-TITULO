@@ -14,22 +14,19 @@ Partial Class FrmPrmcmp
         End Try
     End Sub
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
-
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrmcmp))
         Me.gbFilter = New System.Windows.Forms.GroupBox()
         Me.btnClear = New System.Windows.Forms.LinkLabel()
-        		Me.txtPrmcmp = New iShowRoomComponents.AlphaNumericUpper(Me.components)
-		Me.lblPrmcmp = New System.Windows.Forms.Label()
-		Me.txtDescr = New System.Windows.Forms.TextBox()
-		Me.lblDescr = New System.Windows.Forms.Label()
-
+        Me.txtPrmcmp = New iShowRoomComponents.AlphaNumericUpper(Me.components)
+        Me.lblPrmcmp = New System.Windows.Forms.Label()
+        Me.txtDescr = New System.Windows.Forms.TextBox()
+        Me.lblDescr = New System.Windows.Forms.Label()
         Me.bgwLoadData = New System.ComponentModel.BackgroundWorker()
         Me.statusForm = New System.Windows.Forms.StatusStrip()
         Me.cbcActiveRecrods = New System.Windows.Forms.ToolStripDropDownButton()
@@ -55,11 +52,10 @@ Partial Class FrmPrmcmp
         'gbFilter
         '
         Me.gbFilter.Controls.Add(Me.btnClear)
-        		Me.gbFilter.Controls.Add(Me.txtPrmcmp)
-		Me.gbFilter.Controls.Add(Me.lblPrmcmp)
-		Me.gbFilter.Controls.Add(Me.txtDescr)
-		Me.gbFilter.Controls.Add(Me.lblDescr)
-
+        Me.gbFilter.Controls.Add(Me.txtPrmcmp)
+        Me.gbFilter.Controls.Add(Me.lblPrmcmp)
+        Me.gbFilter.Controls.Add(Me.txtDescr)
+        Me.gbFilter.Controls.Add(Me.lblDescr)
         Me.gbFilter.Dock = System.Windows.Forms.DockStyle.Top
         Me.gbFilter.Location = New System.Drawing.Point(0, 3)
         Me.gbFilter.Name = "gbFilter"
@@ -77,47 +73,46 @@ Partial Class FrmPrmcmp
         Me.btnClear.TabIndex = 172
         Me.btnClear.TabStop = True
         Me.btnClear.Text = "Clear Filter(s)."
-        		'
-		'txtPrmcmp
-		'
-		Me.txtPrmcmp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-		Me.txtPrmcmp.ForeColor = System.Drawing.Color.Navy
-		Me.txtPrmcmp.Location = New System.Drawing.Point(9, 33)
-		Me.txtPrmcmp.MaxLength = 20
-		Me.txtPrmcmp.Name = "txtPrmcmp"
-		Me.txtPrmcmp.Size = New System.Drawing.Size(110, 20)
-		Me.txtPrmcmp.TabIndex = 1
-		'
-		'lblPrmcmp
-		'
-		Me.lblPrmcmp.AutoSize = True
-		lblPrmcmp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblPrmcmp.Location = New System.Drawing.Point(9, 19)
-		lblPrmcmp.Name = "lblPrmcmp"
-		lblPrmcmp.Size = New System.Drawing.Size(110, 13)
-		lblPrmcmp.TabIndex = 171
-		lblPrmcmp.Text = "Company Id"
-		'
-		'txtDescr
-		'
-		Me.txtDescr.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-		Me.txtDescr.ForeColor = System.Drawing.Color.Navy
-		Me.txtDescr.Location = New System.Drawing.Point(129, 33)
-		Me.txtDescr.MaxLength = 100
-		Me.txtDescr.Name = "txtDescr"
-		Me.txtDescr.Size = New System.Drawing.Size(110, 20)
-		Me.txtDescr.TabIndex = 1
-		'
-		'lblDescr
-		'
-		Me.lblDescr.AutoSize = True
-		lblDescr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		lblDescr.Location = New System.Drawing.Point(129, 19)
-		lblDescr.Name = "lblDescr"
-		lblDescr.Size = New System.Drawing.Size(110, 13)
-		lblDescr.TabIndex = 171
-		lblDescr.Text = "Description"
-
+        '
+        'txtPrmcmp
+        '
+        Me.txtPrmcmp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPrmcmp.ForeColor = System.Drawing.Color.Navy
+        Me.txtPrmcmp.Location = New System.Drawing.Point(9, 33)
+        Me.txtPrmcmp.MaxLength = 20
+        Me.txtPrmcmp.Name = "txtPrmcmp"
+        Me.txtPrmcmp.Size = New System.Drawing.Size(110, 20)
+        Me.txtPrmcmp.TabIndex = 1
+        '
+        'lblPrmcmp
+        '
+        Me.lblPrmcmp.AutoSize = True
+        Me.lblPrmcmp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrmcmp.Location = New System.Drawing.Point(9, 19)
+        Me.lblPrmcmp.Name = "lblPrmcmp"
+        Me.lblPrmcmp.Size = New System.Drawing.Size(73, 13)
+        Me.lblPrmcmp.TabIndex = 171
+        Me.lblPrmcmp.Text = "Company Id"
+        '
+        'txtDescr
+        '
+        Me.txtDescr.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDescr.ForeColor = System.Drawing.Color.Navy
+        Me.txtDescr.Location = New System.Drawing.Point(129, 33)
+        Me.txtDescr.MaxLength = 100
+        Me.txtDescr.Name = "txtDescr"
+        Me.txtDescr.Size = New System.Drawing.Size(110, 20)
+        Me.txtDescr.TabIndex = 2
+        '
+        'lblDescr
+        '
+        Me.lblDescr.AutoSize = True
+        Me.lblDescr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescr.Location = New System.Drawing.Point(129, 19)
+        Me.lblDescr.Name = "lblDescr"
+        Me.lblDescr.Size = New System.Drawing.Size(60, 13)
+        Me.lblDescr.TabIndex = 171
+        Me.lblDescr.Text = "Description"
         '
         'bgwLoadData
         '
@@ -278,6 +273,7 @@ Partial Class FrmPrmcmp
         Me.grid.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.grid.BackColor = System.Drawing.Color.Transparent
         Me.grid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.grid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.grid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grid.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid.Location = New System.Drawing.Point(0, 62)
@@ -314,10 +310,10 @@ Partial Class FrmPrmcmp
     End Sub
     Friend WithEvents grid As iShowRoomComponents.gridTemplate
     Friend WithEvents gbFilter As GroupBox
-    	Friend WithEvents txtPrmcmp As iShowRoomComponents.AlphaNumericUpper
-	Friend WithEvents lblPrmcmp As Label
-	Friend WithEvents txtDescr As TextBox
-	Friend WithEvents lblDescr As Label
+    Friend WithEvents txtPrmcmp As iShowRoomComponents.AlphaNumericUpper
+    Friend WithEvents lblPrmcmp As Label
+    Friend WithEvents txtDescr As TextBox
+    Friend WithEvents lblDescr As Label
 
     Friend WithEvents bgwLoadData As System.ComponentModel.BackgroundWorker
     Friend WithEvents statusForm As StatusStrip
@@ -336,4 +332,5 @@ Partial Class FrmPrmcmp
     Friend WithEvents btnClear As LinkLabel
     Friend WithEvents btnSelect As ToolStripButton
     Friend WithEvents btnClose As ToolStripButton
+    Private components As System.ComponentModel.IContainer
 End Class
