@@ -123,17 +123,17 @@ Public Class FrmPrmreg
             newrow.Item("edtbut") = "+"
             newrow.Item("delbut") = "+"
             '
-		'Code to Get the newrow.Items Column for Main Grid.
-		'
-			newrow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
+            'Code to Get the newrow.Items Column for Main Grid.
+            '
+            newrow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
             newrow.Item("prmpro") = If(objectBO.prmpro Is Nothing, "", PrmproBLL.GetUnique(New PrmproBO With {.prmpro = objectBO.prmpro.Trim()}).prmpro)
             newrow.Item("prmuser") = If(objectBO.prmuser Is Nothing, "", PrmuserBLL.GetUnique(New PrmuserBO With {.prmuser = objectBO.prmuser.Trim()}).prmuser)
             newrow.Item("strdate") = objectBO.strdate
 			newrow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
 			newrow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
-		'
-		'End Code.
-		'
+            '
+            'End Code.
+            '
             table.Rows.Add(newrow)
             grid.myGrid.CurrentCell = grid.myGrid(0, addedRow)
             grid.myGrid.CurrentRow.Selected = True

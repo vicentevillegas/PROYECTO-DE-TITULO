@@ -28,6 +28,8 @@ Partial Class FrmPrmreg01
         Me.btnDate = New System.Windows.Forms.Button()
         Me.txtNotes = New System.Windows.Forms.TextBox()
         Me.grpActive = New System.Windows.Forms.GroupBox()
+        Me.cboPrmpro = New System.Windows.Forms.ComboBox()
+        Me.cboPrmuser = New System.Windows.Forms.ComboBox()
         Me.rdbActiveNo = New System.Windows.Forms.RadioButton()
         Me.rdbActiveYes = New System.Windows.Forms.RadioButton()
         Me.txtWknum = New iShowRoomComponents.AlphaNumericUpper(Me.components)
