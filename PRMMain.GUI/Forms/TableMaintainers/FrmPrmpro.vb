@@ -1039,10 +1039,10 @@ Public Class FrmPrmpro
 		'
 		grid.myGrid.Columns("prmpro").HeaderText = "Project Id"
         grid.myGrid.Columns("prmsts").HeaderText = "Status"
-        grid.myGrid.Columns("prmcmp").HeaderText = "Company"
+        grid.myGrid.Columns("prmcmp").HeaderText = "Company Name"
         grid.myGrid.Columns("strdte").HeaderText = "Start Date"
-		grid.myGrid.Columns("descr").HeaderText = "Description"
-		grid.myGrid.Columns("active").HeaderText = "Active (yes/no)"
+        grid.myGrid.Columns("descr").HeaderText = "Project Name"
+        grid.myGrid.Columns("active").HeaderText = "Active (yes/no)"
 		'
 		'End Code.
 		'

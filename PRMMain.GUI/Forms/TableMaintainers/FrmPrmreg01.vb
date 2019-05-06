@@ -66,10 +66,20 @@ Public Class FrmPrmreg01
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
+
+
+
+
+
+
+
+
+
+
         '
-		'Code for requiered fields.
-		'
-		If String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
+        'Code for requiered fields.
+        '
+        If String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
 			MessageBox.Show("Week Number must be entered", "Week Number Missing", MessageBoxButtons.OK, MessageBoxIcon.Error)
 			txtWknum.Select()
 			Exit Sub
@@ -89,9 +99,26 @@ Public Class FrmPrmreg01
 			txtWrkhrs.Select()
 			Exit Sub
 		End If
-		'
-		'End Code.
-		'        
+        '
+        'End Code.
+        '        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         If rowAdding Or rowCopy Then
 
@@ -212,7 +239,7 @@ Public Class FrmPrmreg01
 
     Private Sub btnDate_Click(sender As Object, e As EventArgs) Handles btnDate.Click
         If txtNotes.Text.Trim <> "" Then
-            txtNotes.Text = txtNotes.Text.Trim & vbCrLf & vbCrLf & Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") & " by " & FrmMain.SecusrBO.Secnam.Trim & ControlChars.NewLine
+            txtNotes.Text = txtNotes.Text.Trim & vbCrLf & vbCrLf & Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") & " by " & FrmMain.SecusrBO.secusr.Trim & ControlChars.NewLine
             txtNotes.SelectionStart = txtNotes.TextLength + 1
             txtNotes.Select()
         Else                                                                                         'no esta creado el bll
@@ -466,6 +493,39 @@ Public Class FrmPrmreg01
         g.Dispose()
 
     End Sub
+    ' current week of the year
+
+    Protected Sub txtWknum_Click(sender As Object, e As EventArgs) Handles txtWknum.Click
+
+        Dim nSemana = DatePart(DateInterval.WeekOfYear, Now, FirstDayOfWeek.Monday, FirstWeekOfYear.Jan1)
+        txtWknum.Text = nSemana
+
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #End Region
 

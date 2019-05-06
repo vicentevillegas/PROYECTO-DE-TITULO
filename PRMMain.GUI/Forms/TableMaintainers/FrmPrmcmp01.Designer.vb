@@ -47,9 +47,9 @@ Partial Class FrmPrmcmp01
         Me.ToolStripButtons.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStripButtons.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStripButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSave, Me.btnReset, Me.btnClose, Me.btnAudit, Me.loadProgress, Me.ToolStripButton1, Me.ToolStripButton2})
-        Me.ToolStripButtons.Location = New System.Drawing.Point(746, 0)
+        Me.ToolStripButtons.Location = New System.Drawing.Point(783, 0)
         Me.ToolStripButtons.Name = "ToolStripButtons"
-        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 328)
+        Me.ToolStripButtons.Size = New System.Drawing.Size(61, 211)
         Me.ToolStripButtons.TabIndex = 0
         Me.ToolStripButtons.Text = "ToolStrip1"
         '
@@ -134,12 +134,12 @@ Partial Class FrmPrmcmp01
         '
         Me.grpNotes.Controls.Add(Me.btnDate)
         Me.grpNotes.Controls.Add(Me.txtNotes)
-        Me.grpNotes.Location = New System.Drawing.Point(440, 11)
+        Me.grpNotes.Location = New System.Drawing.Point(382, 9)
         Me.grpNotes.Margin = New System.Windows.Forms.Padding(2)
         Me.grpNotes.MinimumSize = New System.Drawing.Size(293, 126)
         Me.grpNotes.Name = "grpNotes"
         Me.grpNotes.Padding = New System.Windows.Forms.Padding(2)
-        Me.grpNotes.Size = New System.Drawing.Size(293, 126)
+        Me.grpNotes.Size = New System.Drawing.Size(361, 126)
         Me.grpNotes.TabIndex = 6
         Me.grpNotes.TabStop = False
         Me.grpNotes.Text = "Notes:"
@@ -167,19 +167,20 @@ Partial Class FrmPrmcmp01
         Me.txtNotes.Multiline = True
         Me.txtNotes.Name = "txtNotes"
         Me.txtNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtNotes.Size = New System.Drawing.Size(187, 93)
+        Me.txtNotes.Size = New System.Drawing.Size(255, 93)
         Me.txtNotes.TabIndex = 201
         '
         'grpActive
         '
         Me.grpActive.Controls.Add(Me.rdbActiveNo)
         Me.grpActive.Controls.Add(Me.rdbActiveYes)
-        Me.grpActive.Location = New System.Drawing.Point(440, 141)
+        Me.grpActive.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.grpActive.Location = New System.Drawing.Point(0, 165)
         Me.grpActive.Margin = New System.Windows.Forms.Padding(2)
         Me.grpActive.MinimumSize = New System.Drawing.Size(143, 46)
         Me.grpActive.Name = "grpActive"
         Me.grpActive.Padding = New System.Windows.Forms.Padding(2)
-        Me.grpActive.Size = New System.Drawing.Size(293, 46)
+        Me.grpActive.Size = New System.Drawing.Size(783, 46)
         Me.grpActive.TabIndex = 9
         Me.grpActive.TabStop = False
         Me.grpActive.Text = "Active:"
@@ -222,7 +223,7 @@ Partial Class FrmPrmcmp01
         '
         Me.lblPrmcmp.AutoSize = True
         Me.lblPrmcmp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrmcmp.Location = New System.Drawing.Point(8, 20)
+        Me.lblPrmcmp.Location = New System.Drawing.Point(51, 26)
         Me.lblPrmcmp.Name = "lblPrmcmp"
         Me.lblPrmcmp.Size = New System.Drawing.Size(77, 13)
         Me.lblPrmcmp.TabIndex = 0
@@ -241,18 +242,18 @@ Partial Class FrmPrmcmp01
         '
         Me.lblDescr.AutoSize = True
         Me.lblDescr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescr.Location = New System.Drawing.Point(8, 44)
+        Me.lblDescr.Location = New System.Drawing.Point(43, 51)
         Me.lblDescr.Name = "lblDescr"
-        Me.lblDescr.Size = New System.Drawing.Size(63, 13)
+        Me.lblDescr.Size = New System.Drawing.Size(85, 13)
         Me.lblDescr.TabIndex = 0
-        Me.lblDescr.Text = "Description:"
+        Me.lblDescr.Text = "Company Name:"
         '
         'FrmPrmcmp01
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(807, 328)
+        Me.ClientSize = New System.Drawing.Size(844, 211)
         Me.Controls.Add(Me.grpActive)
         Me.Controls.Add(Me.grpNotes)
         Me.Controls.Add(Me.ToolStripButtons)
@@ -262,7 +263,6 @@ Partial Class FrmPrmcmp01
         Me.Controls.Add(Me.lblDescr)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(823, 367)
         Me.Name = "FrmPrmcmp01"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.ToolStripButtons.ResumeLayout(False)
