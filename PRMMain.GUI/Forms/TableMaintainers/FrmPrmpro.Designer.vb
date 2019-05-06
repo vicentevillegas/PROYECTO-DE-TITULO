@@ -146,9 +146,9 @@ Partial Class FrmPrmpro
         Me.statusForm.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statusForm.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
         Me.statusForm.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cbcActiveRecrods, Me.lblMessage, Me.pbLoadingData, Me.lblRecords})
-        Me.statusForm.Location = New System.Drawing.Point(0, 623)
+        Me.statusForm.Location = New System.Drawing.Point(0, 621)
         Me.statusForm.Name = "statusForm"
-        Me.statusForm.Size = New System.Drawing.Size(1234, 22)
+        Me.statusForm.Size = New System.Drawing.Size(1234, 24)
         Me.statusForm.TabIndex = 8
         Me.statusForm.Text = "StatusStrip1"
         '
@@ -159,7 +159,7 @@ Partial Class FrmPrmpro
         Me.cbcActiveRecrods.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.cbcActiveRecrods.Margin = New System.Windows.Forms.Padding(0)
         Me.cbcActiveRecrods.Name = "cbcActiveRecrods"
-        Me.cbcActiveRecrods.Size = New System.Drawing.Size(170, 22)
+        Me.cbcActiveRecrods.Size = New System.Drawing.Size(170, 24)
         Me.cbcActiveRecrods.Text = "Show only active records."
         '
         'mnuActive
@@ -184,7 +184,7 @@ Partial Class FrmPrmpro
         Me.lblMessage.ForeColor = System.Drawing.Color.Maroon
         Me.lblMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblMessage.Name = "lblMessage"
-        Me.lblMessage.Size = New System.Drawing.Size(987, 17)
+        Me.lblMessage.Size = New System.Drawing.Size(804, 19)
         Me.lblMessage.Spring = True
         Me.lblMessage.Text = "To search for a record, use the filter panel on the top of this form."
         Me.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -201,7 +201,7 @@ Partial Class FrmPrmpro
         '
         Me.lblRecords.Image = CType(resources.GetObject("lblRecords.Image"), System.Drawing.Image)
         Me.lblRecords.Name = "lblRecords"
-        Me.lblRecords.Size = New System.Drawing.Size(62, 17)
+        Me.lblRecords.Size = New System.Drawing.Size(62, 19)
         Me.lblRecords.Text = "records"
         '
         'bgReziseColumns
@@ -215,7 +215,7 @@ Partial Class FrmPrmpro
         Me.pnlButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSelect, Me.btnAdd, Me.btnCopy, Me.btnRefresh, Me.btnPrint, Me.btnClose})
         Me.pnlButtons.Location = New System.Drawing.Point(1180, 62)
         Me.pnlButtons.Name = "pnlButtons"
-        Me.pnlButtons.Size = New System.Drawing.Size(54, 561)
+        Me.pnlButtons.Size = New System.Drawing.Size(54, 559)
         Me.pnlButtons.TabIndex = 0
         '
         'btnSelect
@@ -303,7 +303,7 @@ Partial Class FrmPrmpro
         Me.grid.Location = New System.Drawing.Point(0, 62)
         Me.grid.Margin = New System.Windows.Forms.Padding(0)
         Me.grid.Name = "grid"
-        Me.grid.Size = New System.Drawing.Size(1180, 561)
+        Me.grid.Size = New System.Drawing.Size(1180, 559)
         Me.grid.TabIndex = 7
         '
         'FrmPrmpro
