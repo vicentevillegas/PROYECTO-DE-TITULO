@@ -26,29 +26,29 @@ Public Class PrmregBO
 	<Column(Order:=2)>
 	<MaxLength(20)>
 	Private _prmpro As String
-	Public Property prmpro() As String
-		Get
-			Return _prmpro
-		End Get
-		Set(ByVal value As String)
-			_prmpro = value
-		End Set
-	End Property
+    Public Property prmpro().Trim As String
+        Get
+            Return _prmpro
+        End Get
+        Set(ByVal value As String)
+            _prmpro = value
+        End Set
+    End Property
 
-	<Key>
+    <Key>
 	<Display(Name:="User Id", ShortName:="prmuser")>
 	<Required(ErrorMessage:="User Id is required.")>
 	<Column(Order:=3)>
 	<MaxLength(20)>
 	Private _prmuser As String
-	Public Property prmuser() As String
-		Get
-			Return _prmuser
-		End Get
-		Set(ByVal value As String)
-			_prmuser = value
-		End Set
-	End Property
+    Public Property prmuser().Trim As String
+        Get
+            Return _prmuser
+        End Get
+        Set(ByVal value As String)
+            _prmuser = value
+        End Set
+    End Property
 
     <Display(Name:="Start Date", ShortName:="strdate")>
     <Required(ErrorMessage:="Start Date is required.")>

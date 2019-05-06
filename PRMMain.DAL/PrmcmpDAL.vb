@@ -26,7 +26,7 @@ Public Class PrmcmpDAL
 
         Return _db.Execute($"delete from crsfile.prmcmp 
                              where  prmcmp = @prmcmp ",
-            New With { input.prmcmp})
+            New With {input.prmcmp})
 
     End Function
 

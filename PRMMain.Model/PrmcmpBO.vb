@@ -47,11 +47,12 @@ Public Class PrmcmpBO
 		End Set
 	End Property
 
-	<Display(Name:="Add Module", ShortName:="addmod")>
-	<Column(Order:=4)>
-	<MaxLength(30)>
-	Private _addmod As String
-	Public Property addmod() As String
+    <Display(Name:="Add Module", ShortName:="addmod")>
+    <Column(Order:=4)>
+    <MaxLength(30)>
+    Private _addmod
+    'Dim addmod As String
+    Public Property addmod() As String
 		Get
 			Return _addmod
 		End Get

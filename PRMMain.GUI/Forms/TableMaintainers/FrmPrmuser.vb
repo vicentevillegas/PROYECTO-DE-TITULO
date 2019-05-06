@@ -63,12 +63,12 @@ Public Class FrmPrmuser
 
             gbFilter.Text = "Filter locally by:"
             '
-		'GetCodeTextBoxesBackgroundColor_Filter_Local
-		'
-		txtPrmuser.BackColor = Color.Honeydew
-		'
-		'End Code.
-		'
+            'GetCodeTextBoxesBackgroundColor_Filter_Local
+            '
+            txtPrmuser.BackColor = Color.Honeydew
+            '
+            'End Code.
+            '
 
         Else
 
@@ -119,14 +119,14 @@ Public Class FrmPrmuser
             newrow.Item("edtbut") = "+"
             newrow.Item("delbut") = "+"
             '
-		'Code to Get the newrow.Items Column for Main Grid.
-		'
-			newrow.Item("prmuser") = If(objectBO.prmuser Is Nothing, "", objectBO.prmuser.Trim)
-			newrow.Item("descr") = If(objectBO.descr Is Nothing, "", objectBO.descr.Trim)
-			newrow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
-		'
-		'End Code.
-		'
+            'Code to Get the newrow.Items Column for Main Grid.
+            '
+            newrow.Item("prmuser") = If(objectBO.prmuser.Trim Is Nothing, "", objectBO.prmuser.Trim)
+            newrow.Item("descr") = If(objectBO.descr.Trim Is Nothing, "", objectBO.descr.Trim)
+            newrow.Item("active") = If(objectBO.active.Trim Is Nothing, "", objectBO.active.Trim)
+            '
+            'End Code.
+            '
             table.Rows.Add(newrow)
             grid.myGrid.CurrentCell = grid.myGrid(0, addedRow)
             grid.myGrid.CurrentRow.Selected = True
@@ -166,12 +166,12 @@ Public Class FrmPrmuser
         Form01.iUserLoc = iUserLoc
         Dim objectBO = New PrmuserBO
         '
-		'Code to Get Only the Object indexes(PKs).
-		'
-		objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
-		'
-		'End Code.
-		'
+        'Code to Get Only the Object indexes(PKs).
+        '
+        objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
+        '
+        'End Code.
+        '
         objectBO = PrmuserBLL.GetUnique(objectBO)
         Form01.objectBO = objectBO
         Form01.ShowDialog()
@@ -202,12 +202,12 @@ Public Class FrmPrmuser
         End If
 
         '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtPrmuser.Select()
-		'
-		'End Code.
-		'
+        'Code to get the focus on the first filter TextBox.
+        '
+        txtPrmuser.Select()
+        '
+        'End Code.
+        '
 
         Try
             Form01.Dispose()
@@ -250,12 +250,12 @@ Public Class FrmPrmuser
         Dim thisRow As DataRowView = grid.myGrid.CurrentRow.DataBoundItem
         Dim objectBO = New PrmuserBO
         '
-		'Code to Get Only the Object indexes(PKs).
-		'
-		objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
-		'
-		'End Code.
-		'
+        'Code to Get Only the Object indexes(PKs).
+        '
+        objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
+        '
+        'End Code.
+        '
         objectBO = PrmuserBLL.GetUnique(objectBO)
         FormSelectedObject = objectBO
         Me.Hide()
@@ -386,11 +386,10 @@ Public Class FrmPrmuser
 		'Code to Get Only the Object indexes(PKs).
 		'
 		objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
-		'
-		'End Code.
-		'
+            '
+            'End Code.
+            '
             objectBO = PrmuserBLL.GetUnique(objectBO)
-
             If objectBO.descr Is Nothing Then
 
                 MessageBox.Show("Row not found for selected line..please refresh grid", "Row Missing",
@@ -646,7 +645,7 @@ Public Class FrmPrmuser
 		'End Code.
 		'
         If Not String.IsNullOrEmpty(filter.ToString.Trim) Then
-            lblMessage.Text = $"Filtered by: {filter.ToString}."
+            lblMessage.Text = $"Filtered by: {filter.ToString.Trim}."
         Else
 
             If Not filterLocally Then
@@ -678,7 +677,7 @@ Public Class FrmPrmuser
         If Not String.IsNullOrEmpty(filter.ToString.Trim) Then
 
             If Not filterLocally Then
-                lblMessage.Text = $"Prepared to filter by: {filter.ToString}. press [ENTER] to get the results."
+                lblMessage.Text = $"Prepared to filter by: {filter.ToString.Trim}. press [ENTER] to get the results."
             End If
 
         Else
@@ -879,7 +878,7 @@ Public Class FrmPrmuser
 
         Else
 
-            Return $" and {filter.ToString()}"
+            Return $" and {filter.ToString().Trim}"
 
         End If
 

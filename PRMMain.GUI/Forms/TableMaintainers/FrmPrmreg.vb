@@ -652,8 +652,8 @@ Public Class FrmPrmreg
 		'Code for Get Filter Local Data Logic.
 		'
 		If Not String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
-			filter.Append("wknum like '" + txtWknum.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
-		End If
+            filter.Append("wknum like '" + txtWknum.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
+        End If
 		If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
 			If (filter.Length > 0) Then
 				filter.Append(" and ")

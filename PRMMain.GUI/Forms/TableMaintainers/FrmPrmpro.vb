@@ -642,8 +642,8 @@ Public Class FrmPrmpro
 		'Code for Get Filter Local Data Logic.
 		'
 		If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
-			filter.Append("prmpro like '" + txtPrmpro.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
-		End If
+            filter.Append("prmpro like '" + txtPrmpro.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
+        End If
 		If Not String.IsNullOrEmpty(txtPrmsts.Text.Trim()) Then
 			If (filter.Length > 0) Then
 				filter.Append(" and ")
@@ -798,11 +798,11 @@ Public Class FrmPrmpro
 
     Private Sub PerformClearFilters()
 
-        lblMessage.Text = "Removing filters..."
+        lblMessage.Text = "quitando filtros Removing filters..."
         '
-		'Code to get the TextBoxes for Clearing.
-		'
-		txtPrmpro.Clear()
+        'Code to get the TextBoxes for Clearing.
+        '
+        txtPrmpro.Clear()
 		txtPrmsts.Clear()
 		txtPrmcmp.Clear()
 		'
@@ -1038,9 +1038,9 @@ Public Class FrmPrmpro
 		'Code to Get Main Grid Columns.
 		'
 		grid.myGrid.Columns("prmpro").HeaderText = "Project Id"
-		grid.myGrid.Columns("prmsts").HeaderText = "Prmsts"
-		grid.myGrid.Columns("prmcmp").HeaderText = "Prmcmp"
-		grid.myGrid.Columns("strdte").HeaderText = "Start Date"
+        grid.myGrid.Columns("prmsts").HeaderText = "Status"
+        grid.myGrid.Columns("prmcmp").HeaderText = "Company"
+        grid.myGrid.Columns("strdte").HeaderText = "Start Date"
 		grid.myGrid.Columns("descr").HeaderText = "Description"
 		grid.myGrid.Columns("active").HeaderText = "Active (yes/no)"
 		'
@@ -1311,7 +1311,7 @@ Public Class FrmPrmpro
 #End Region
 
 #Region "### Bottom Status Bar"
-
+    'abajo a la izquierda de la ventana
     Private Sub cbcActiveRecrods_DropDownItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles cbcActiveRecrods.DropDownItemClicked
 
         Select Case e.ClickedItem.Tag

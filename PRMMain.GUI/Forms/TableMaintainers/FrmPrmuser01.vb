@@ -98,12 +98,12 @@ Public Class FrmPrmuser01
             If PrmuserBLL.Exists(objectBO) Then
                 MessageBox.Show("User " & indexesMsg & " already exists", "Duplicate User Detected", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtPrmuser.Select()
-		'
-		'End Code.
-		'
+                'Code to get the focus on the first filter TextBox.
+                '
+                txtPrmuser.Select()
+                '
+                'End Code.
+                '
                 Exit Sub
             End If
 

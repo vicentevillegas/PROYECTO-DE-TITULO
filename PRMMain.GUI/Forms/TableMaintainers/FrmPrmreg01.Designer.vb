@@ -28,10 +28,10 @@ Partial Class FrmPrmreg01
         Me.btnDate = New System.Windows.Forms.Button()
         Me.txtNotes = New System.Windows.Forms.TextBox()
         Me.grpActive = New System.Windows.Forms.GroupBox()
-        Me.cboPrmpro = New System.Windows.Forms.ComboBox()
-        Me.cboPrmuser = New System.Windows.Forms.ComboBox()
         Me.rdbActiveNo = New System.Windows.Forms.RadioButton()
         Me.rdbActiveYes = New System.Windows.Forms.RadioButton()
+        Me.cboPrmpro = New System.Windows.Forms.ComboBox()
+        Me.cboPrmuser = New System.Windows.Forms.ComboBox()
         Me.txtWknum = New iShowRoomComponents.AlphaNumericUpper(Me.components)
         Me.lblWknum = New System.Windows.Forms.Label()
         Me.txtPrmpro = New iShowRoomComponents.AlphaNumericUpper(Me.components)
@@ -42,8 +42,6 @@ Partial Class FrmPrmreg01
         Me.lblStrdate = New System.Windows.Forms.Label()
         Me.txtWrkhrs = New System.Windows.Forms.TextBox()
         Me.lblWrkhrs = New System.Windows.Forms.Label()
-        Me.cboPrmuser = New System.Windows.Forms.ComboBox()
-        Me.cboPrmpro = New System.Windows.Forms.ComboBox()
         Me.ToolStripButtons.SuspendLayout()
         Me.grpNotes.SuspendLayout()
         Me.grpActive.SuspendLayout()
@@ -198,6 +196,26 @@ Partial Class FrmPrmreg01
         Me.rdbActiveYes.Text = "Yes"
         Me.rdbActiveYes.UseVisualStyleBackColor = True
         '
+        'cboPrmpro
+        '
+        Me.cboPrmpro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboPrmpro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboPrmpro.FormattingEnabled = True
+        Me.cboPrmpro.Location = New System.Drawing.Point(127, 44)
+        Me.cboPrmpro.Name = "cboPrmpro"
+        Me.cboPrmpro.Size = New System.Drawing.Size(250, 21)
+        Me.cboPrmpro.TabIndex = 2
+        '
+        'cboPrmuser
+        '
+        Me.cboPrmuser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboPrmuser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboPrmuser.FormattingEnabled = True
+        Me.cboPrmuser.Location = New System.Drawing.Point(127, 68)
+        Me.cboPrmuser.Name = "cboPrmuser"
+        Me.cboPrmuser.Size = New System.Drawing.Size(250, 21)
+        Me.cboPrmuser.TabIndex = 3
+        '
         'txtWknum
         '
         Me.txtWknum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -291,26 +309,6 @@ Partial Class FrmPrmreg01
         Me.lblWrkhrs.Size = New System.Drawing.Size(67, 13)
         Me.lblWrkhrs.TabIndex = 0
         Me.lblWrkhrs.Text = "Work Hours:"
-        '
-        'cboPrmuser
-        '
-        Me.cboPrmuser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboPrmuser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboPrmuser.FormattingEnabled = True
-        Me.cboPrmuser.Location = New System.Drawing.Point(127, 68)
-        Me.cboPrmuser.Name = "cboPrmuser"
-        Me.cboPrmuser.Size = New System.Drawing.Size(250, 21)
-        Me.cboPrmuser.TabIndex = 3
-        '
-        'cboPrmpro
-        '
-        Me.cboPrmpro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboPrmpro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboPrmpro.FormattingEnabled = True
-        Me.cboPrmpro.Location = New System.Drawing.Point(127, 44)
-        Me.cboPrmpro.Name = "cboPrmpro"
-        Me.cboPrmpro.Size = New System.Drawing.Size(250, 21)
-        Me.cboPrmpro.TabIndex = 2
         '
         'FrmPrmreg01
         '
