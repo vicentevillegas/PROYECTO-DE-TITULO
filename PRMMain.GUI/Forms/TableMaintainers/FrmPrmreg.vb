@@ -1070,9 +1070,9 @@ Public Class FrmPrmreg
 		'Code to Get Main Grid Columns.
 		'
 		grid.myGrid.Columns("wknum").HeaderText = "Week Number"
-		grid.myGrid.Columns("prmpro").HeaderText = "Prmpro"
-		grid.myGrid.Columns("prmuser").HeaderText = "Prmuser"
-		grid.myGrid.Columns("strdate").HeaderText = "Start Date"
+        grid.myGrid.Columns("prmpro").HeaderText = "Project Name"
+        grid.myGrid.Columns("prmuser").HeaderText = "User Name"
+        grid.myGrid.Columns("strdate").HeaderText = "Start Date"
 		grid.myGrid.Columns("wrkhrs").HeaderText = "Work Hours"
 		grid.myGrid.Columns("active").HeaderText = "Active (yes/no)"
 		'

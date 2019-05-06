@@ -991,8 +991,8 @@ Public Class FrmPrmcmp
 		'Code to Get Main Grid Columns.
 		'
 		grid.myGrid.Columns("prmcmp").HeaderText = "Company Id"
-		grid.myGrid.Columns("descr").HeaderText = "Description"
-		grid.myGrid.Columns("active").HeaderText = "Active (yes/no)"
+        grid.myGrid.Columns("descr").HeaderText = "Company Name"
+        grid.myGrid.Columns("active").HeaderText = "Active (yes/no)"
 		'
 		'End Code.
 		'

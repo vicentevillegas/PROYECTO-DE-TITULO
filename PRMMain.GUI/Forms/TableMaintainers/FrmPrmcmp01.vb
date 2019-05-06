@@ -198,7 +198,7 @@ Public Class FrmPrmcmp01
 
     Private Sub btnDate_Click(sender As Object, e As EventArgs) Handles btnDate.Click
         If txtNotes.Text.Trim <> "" Then
-            txtNotes.Text = txtNotes.Text.Trim & vbCrLf & vbCrLf & Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") & " by " & FrmMain.SecusrBO.Secnam.Trim & ControlChars.NewLine
+            txtNotes.Text = txtNotes.Text.Trim & vbCrLf & vbCrLf & Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") & " by " & FrmMain.SecusrBO.secusr.Trim & ControlChars.NewLine
             txtNotes.SelectionStart = txtNotes.TextLength + 1
             txtNotes.Select()
         Else
