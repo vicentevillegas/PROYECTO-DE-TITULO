@@ -97,11 +97,11 @@ Public Class FrmPrmreg01
         If rowAdding Or rowCopy Then
 
             '
-		'Code to Get Only the Object indexes(PKs).
-		'
-		objectBO.wknum = txtWknum.Text.Trim
-		objectBO.prmpro = cboPrmpro.SelectedValue
-		objectBO.prmuser = cboPrmuser.SelectedValue
+            'Code to Get Only the Object indexes(PKs).
+            '
+            objectBO.wknum = txtWknum.Text.Trim
+            objectBO.prmpro = cboPrmpro.SelectedValue
+            objectBO.prmuser = cboPrmuser.SelectedValue
             '
             'End Code.
             '
