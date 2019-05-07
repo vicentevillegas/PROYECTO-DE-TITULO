@@ -103,10 +103,13 @@ Public Class FrmPrmpro01
             'End Code.
             '
 
-            Dim indexesMsg = $"prmpro: {txtPrmpro.Text.Trim}"
+            Dim indexesMsg = $"Project Id '{txtPrmpro.Text.Trim}'"
 
             If PrmproBLL.Exists(objectBO) Then
-                MessageBox.Show("Project " & indexesMsg & " already exists", "Duplicate Project Detected", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show(indexesMsg & " already exists", "Duplicate Project Detected", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                '"Project " &
+
+
                 '
                 'Code to get the focus on the first filter TextBox.
                 '

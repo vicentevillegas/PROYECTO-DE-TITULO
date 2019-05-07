@@ -60,8 +60,14 @@ Public Class PrmregDAL
 
     Public Function GetUnique(input As PrmregBO) As PrmregBO Implements IBaseDAL(Of PrmregBO).GetUnique
 
-        Return _db.Query(Of PrmregBO)("select * from crsfile.prmreg where  wknum = @wknum and prmpro = @prmpro and prmuser = @prmuser ",
-            New With { input.wknum, input.prmpro, input.prmuser}).SingleOrDefault()
+        Try
+
+            Return _db.Query(Of PrmregBO)("select * from crsfile.prmreg where  wknum = @wknum and prmpro = @prmpro and prmuser = @prmuser ",
+            New With {input.wknum, input.prmpro, input.prmuser}).SingleOrDefault()
+
+        Catch ex As Exception
+            Debug.Write(ex.Message)
+        End Try
 
     End Function
 

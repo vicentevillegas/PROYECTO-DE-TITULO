@@ -126,8 +126,8 @@ Public Class FrmPrmreg
             'Code to Get the newrow.Items Column for Main Grid.
             '
             newrow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
-            newrow.Item("prmpro") = If(objectBO.prmpro Is Nothing, "", PrmproBLL.GetUnique(New PrmproBO With {.prmpro = objectBO.prmpro.Trim()}).prmpro)
-            newrow.Item("prmuser") = If(objectBO.prmuser Is Nothing, "", PrmuserBLL.GetUnique(New PrmuserBO With {.prmuser = objectBO.prmuser.Trim()}).prmuser)
+            newrow.Item("prmpro") = If(objectBO.prmpro Is Nothing, "", PrmproBLL.GetUnique(New PrmproBO With {.prmpro = objectBO.prmpro.Trim()}).prmpro.Trim)
+            newrow.Item("prmuser") = If(objectBO.prmuser Is Nothing, "", PrmuserBLL.GetUnique(New PrmuserBO With {.prmuser = objectBO.prmuser.Trim()}).prmuser.Trim)
             newrow.Item("strdate") = objectBO.strdate
 			newrow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
 			newrow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
@@ -140,6 +140,8 @@ Public Class FrmPrmreg
             table.AcceptChanges()
             btnPrint.Enabled = True
             btnCopy.Enabled = True
+            'los datos se guardaban pero no se mostraban, por lo tanto:
+            btnRefresh_Click(sender, e)
 
         End If
 
@@ -193,9 +195,9 @@ Public Class FrmPrmreg
             newrow.Item("edtbut") = "+"
             newrow.Item("delbut") = "+"
             '
-		'Code to Get the newrow.Items Column for Main Grid.
-		'
-			newrow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
+            'Code to Get the newrow.Items Column for Main Grid.
+            '
+            newrow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
             newrow.Item("prmpro") = If(objectBO.prmuser Is Nothing, "", PrmproBLL.GetUnique(New PrmproBO With {.prmpro = objectBO.prmpro.Trim()}).prmpro)
             newrow.Item("prmuser") = If(objectBO.prmuser Is Nothing, "", PrmuserBLL.GetUnique(New PrmuserBO With {.prmuser = objectBO.prmuser.Trim()}).prmuser)
             newrow.Item("strdate") = objectBO.strdate
@@ -385,7 +387,7 @@ Public Class FrmPrmreg
 
         Dim columnName As String = grid.myGrid.Columns(e.ColumnIndex).Name.Trim
 
-        If columnName.Trim <> "edtButton" And columnName.Trim <> "delButton" And columnName.Trim <> "edtButton" Then
+        If columnName.Trim <> "edtButton" And columnName.Trim <> "delButton" Then
 
             Exit Sub
 
@@ -399,14 +401,14 @@ Public Class FrmPrmreg
 
             Dim objectBO As New PrmregBO
             '
-		'Code to Get Only the Object indexes(PKs).
-		'
-		objectBO.wknum = thisRow.Item("wknum").ToString.Trim
-		objectBO.prmpro = thisRow.Item("prmpro").ToString.Trim
-		objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
-		'
-		'End Code.
-		'
+            'Code to Get Only the Object indexes(PKs).
+            '
+            objectBO.wknum = thisRow.Item("wknum").ToString.Trim
+            objectBO.prmpro = thisRow.Item("prmpro").ToString.Trim
+            objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
+            '
+            'End Code.
+            '
             objectBO = PrmregBLL.GetUnique(objectBO)
 
             If objectBO.prmpro Is Nothing Then
@@ -468,15 +470,15 @@ Public Class FrmPrmreg
 
         If columnName.Trim = "delButton" And delCell.Enabled Then
 
-            If MessageBox.Show("Are you sure you wish to delete Resgistry: " & vbCrLf  & thisRow.Item("Prmreg").ToString.Trim & ", " & thisRow.Item("Prmreg").ToString.Trim & ", " & thisRow.Item("Prmreg").ToString.Trim  & " ?",
+            If MessageBox.Show("Are you sure you wish to delete Resgistry: " & vbCrLf & thisRow.Item("wknum").ToString.Trim & " ?",
             "Delete Verification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
                 '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
-		'
-		'End Code.
-		'
+                'Code to get the focus on the first filter TextBox.
+                '
+                txtWknum.Select()
+                '
+                'End Code.
+                '
                 Exit Sub
             End If
 
@@ -1003,8 +1005,10 @@ Public Class FrmPrmreg
         sqlQuery = $"select 
                             {sqlButtons}                                         
                             crsfile.Prmreg.wknum as wknum,
-							crsfile.Prmpro.descr as prmpro,
-							crsfile.Prmuser.descr as prmuser,
+							crsfile.Prmpro.prmpro as prmpro,
+							crsfile.Prmuser.prmuser as prmuser,
+                            crsfile.Prmpro.descr as prmprodes,
+							crsfile.Prmuser.descr as prmuserdes,
 							crsfile.Prmreg.strdate as strdate,
 							crsfile.Prmreg.wrkhrs as wrkhrs,
 							crsfile.Prmreg.active as active                            
@@ -1022,12 +1026,12 @@ Public Class FrmPrmreg
         Try
             table = PrmregBLL.GetTable(sqlQuery)
         Catch ex As Exception
-            'MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message)
             'Debug.Write(sqlQuery)
         End Try
 
     End Sub
-
+    'creando la grilla
     Private Sub bgwLoadData_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgwLoadData.RunWorkerCompleted
 
         view = New DataView(table)
@@ -1074,10 +1078,14 @@ Public Class FrmPrmreg
         grid.myGrid.Columns("prmuser").HeaderText = "User Name"
         grid.myGrid.Columns("strdate").HeaderText = "Start Date"
 		grid.myGrid.Columns("wrkhrs").HeaderText = "Work Hours"
-		grid.myGrid.Columns("active").HeaderText = "Active (yes/no)"
-		'
-		'End Code.
-		'
+        grid.myGrid.Columns("active").HeaderText = "Active (yes/no)"
+        grid.myGrid.Columns("prmprodes").HeaderText = "Project Name"
+        grid.myGrid.Columns("prmuserdes").HeaderText = "User Name"
+        grid.myGrid.Columns("prmpro").Visible = False
+        grid.myGrid.Columns("prmuser").Visible = False
+        '
+        'End Code.
+        '
         ResizeColumns()
 
         If grid.myGrid.Rows.Count = 0 Then

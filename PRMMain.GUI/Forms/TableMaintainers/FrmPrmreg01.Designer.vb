@@ -122,7 +122,7 @@ Partial Class FrmPrmreg01
         '
         Me.grpNotes.Controls.Add(Me.btnDate)
         Me.grpNotes.Controls.Add(Me.txtNotes)
-        Me.grpNotes.Location = New System.Drawing.Point(382, 9)
+        Me.grpNotes.Location = New System.Drawing.Point(370, 9)
         Me.grpNotes.Margin = New System.Windows.Forms.Padding(2)
         Me.grpNotes.MinimumSize = New System.Drawing.Size(293, 126)
         Me.grpNotes.Name = "grpNotes"
@@ -202,7 +202,7 @@ Partial Class FrmPrmreg01
         Me.cboPrmpro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cboPrmpro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboPrmpro.FormattingEnabled = True
-        Me.cboPrmpro.Location = New System.Drawing.Point(127, 44)
+        Me.cboPrmpro.Location = New System.Drawing.Point(107, 44)
         Me.cboPrmpro.Name = "cboPrmpro"
         Me.cboPrmpro.Size = New System.Drawing.Size(250, 21)
         Me.cboPrmpro.TabIndex = 2
@@ -212,7 +212,7 @@ Partial Class FrmPrmreg01
         Me.cboPrmuser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cboPrmuser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboPrmuser.FormattingEnabled = True
-        Me.cboPrmuser.Location = New System.Drawing.Point(127, 68)
+        Me.cboPrmuser.Location = New System.Drawing.Point(107, 68)
         Me.cboPrmuser.Name = "cboPrmuser"
         Me.cboPrmuser.Size = New System.Drawing.Size(250, 21)
         Me.cboPrmuser.TabIndex = 3
@@ -221,7 +221,7 @@ Partial Class FrmPrmreg01
         '
         Me.txtWknum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtWknum.ForeColor = System.Drawing.Color.Navy
-        Me.txtWknum.Location = New System.Drawing.Point(127, 20)
+        Me.txtWknum.Location = New System.Drawing.Point(107, 20)
         Me.txtWknum.MaxLength = 20
         Me.txtWknum.Name = "txtWknum"
         Me.txtWknum.Size = New System.Drawing.Size(250, 20)
@@ -231,7 +231,7 @@ Partial Class FrmPrmreg01
         '
         Me.lblWknum.AutoSize = True
         Me.lblWknum.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWknum.Location = New System.Drawing.Point(34, 27)
+        Me.lblWknum.Location = New System.Drawing.Point(14, 27)
         Me.lblWknum.Name = "lblWknum"
         Me.lblWknum.Size = New System.Drawing.Size(91, 13)
         Me.lblWknum.TabIndex = 0
@@ -249,7 +249,7 @@ Partial Class FrmPrmreg01
         '
         Me.lblPrmpro.AutoSize = True
         Me.lblPrmpro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrmpro.Location = New System.Drawing.Point(74, 52)
+        Me.lblPrmpro.Location = New System.Drawing.Point(54, 52)
         Me.lblPrmpro.Name = "lblPrmpro"
         Me.lblPrmpro.Size = New System.Drawing.Size(51, 13)
         Me.lblPrmpro.TabIndex = 0
@@ -267,7 +267,7 @@ Partial Class FrmPrmreg01
         '
         Me.lblPrmuser.AutoSize = True
         Me.lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrmuser.Location = New System.Drawing.Point(48, 76)
+        Me.lblPrmuser.Location = New System.Drawing.Point(32, 76)
         Me.lblPrmuser.Name = "lblPrmuser"
         Me.lblPrmuser.Size = New System.Drawing.Size(73, 13)
         Me.lblPrmuser.TabIndex = 0
@@ -277,7 +277,7 @@ Partial Class FrmPrmreg01
         '
         Me.dteStrdate.CustomFormat = "dd MMM yyyy"
         Me.dteStrdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dteStrdate.Location = New System.Drawing.Point(127, 92)
+        Me.dteStrdate.Location = New System.Drawing.Point(107, 92)
         Me.dteStrdate.Name = "dteStrdate"
         Me.dteStrdate.Size = New System.Drawing.Size(250, 20)
         Me.dteStrdate.TabIndex = 4
@@ -286,7 +286,7 @@ Partial Class FrmPrmreg01
         '
         Me.lblStrdate.AutoSize = True
         Me.lblStrdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStrdate.Location = New System.Drawing.Point(67, 100)
+        Me.lblStrdate.Location = New System.Drawing.Point(47, 99)
         Me.lblStrdate.Name = "lblStrdate"
         Me.lblStrdate.Size = New System.Drawing.Size(58, 13)
         Me.lblStrdate.TabIndex = 0
@@ -295,7 +295,7 @@ Partial Class FrmPrmreg01
         'txtWrkhrs
         '
         Me.txtWrkhrs.ForeColor = System.Drawing.Color.Navy
-        Me.txtWrkhrs.Location = New System.Drawing.Point(127, 116)
+        Me.txtWrkhrs.Location = New System.Drawing.Point(107, 116)
         Me.txtWrkhrs.MaxLength = 4
         Me.txtWrkhrs.Name = "txtWrkhrs"
         Me.txtWrkhrs.Size = New System.Drawing.Size(250, 20)
@@ -305,7 +305,7 @@ Partial Class FrmPrmreg01
         '
         Me.lblWrkhrs.AutoSize = True
         Me.lblWrkhrs.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWrkhrs.Location = New System.Drawing.Point(58, 123)
+        Me.lblWrkhrs.Location = New System.Drawing.Point(38, 123)
         Me.lblWrkhrs.Name = "lblWrkhrs"
         Me.lblWrkhrs.Size = New System.Drawing.Size(67, 13)
         Me.lblWrkhrs.TabIndex = 0

@@ -89,14 +89,14 @@ Public Class FrmPrmuser01
 		'Code to Get Only the Object indexes(PKs).
 		'
 		objectBO.prmuser = txtPrmuser.Text.Trim
-		'
-		'End Code.
-		'
+            '
+            'End Code.
+            '
 
-            Dim indexesMsg = $"prmuser: {txtPrmuser.Text.Trim}"
+            Dim indexesMsg = $"User Id '{txtPrmuser.Text.Trim}'"
 
             If PrmuserBLL.Exists(objectBO) Then
-                MessageBox.Show("User " & indexesMsg & " already exists", "Duplicate User Detected", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show(indexesMsg & " already exists", "Duplicate User Detected", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 '
                 'Code to get the focus on the first filter TextBox.
                 '
@@ -198,7 +198,7 @@ Public Class FrmPrmuser01
 
     Private Sub btnDate_Click(sender As Object, e As EventArgs) Handles btnDate.Click
         If txtNotes.Text.Trim <> "" Then
-            txtNotes.Text = txtNotes.Text.Trim & vbCrLf & vbCrLf & Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") & " by " & FrmMain.SecusrBO.Secnam.Trim & ControlChars.NewLine
+            txtNotes.Text = txtNotes.Text.Trim & vbCrLf & vbCrLf & Date.Now.ToString("dd MMM yyyy") & " @ " & Date.Now.ToString("hh:mm tt") & " by " & FrmMain.SecusrBO.secusr.Trim & ControlChars.NewLine
             txtNotes.SelectionStart = txtNotes.TextLength + 1
             txtNotes.Select()
         Else

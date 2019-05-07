@@ -134,7 +134,7 @@ Partial Class FrmPrmcmp01
         '
         Me.grpNotes.Controls.Add(Me.btnDate)
         Me.grpNotes.Controls.Add(Me.txtNotes)
-        Me.grpNotes.Location = New System.Drawing.Point(382, 9)
+        Me.grpNotes.Location = New System.Drawing.Point(370, 9)
         Me.grpNotes.Margin = New System.Windows.Forms.Padding(2)
         Me.grpNotes.MinimumSize = New System.Drawing.Size(293, 126)
         Me.grpNotes.Name = "grpNotes"
@@ -213,7 +213,7 @@ Partial Class FrmPrmcmp01
         '
         Me.txtPrmcmp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtPrmcmp.ForeColor = System.Drawing.Color.Navy
-        Me.txtPrmcmp.Location = New System.Drawing.Point(127, 20)
+        Me.txtPrmcmp.Location = New System.Drawing.Point(97, 20)
         Me.txtPrmcmp.MaxLength = 20
         Me.txtPrmcmp.Name = "txtPrmcmp"
         Me.txtPrmcmp.Size = New System.Drawing.Size(250, 20)
@@ -223,7 +223,7 @@ Partial Class FrmPrmcmp01
         '
         Me.lblPrmcmp.AutoSize = True
         Me.lblPrmcmp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrmcmp.Location = New System.Drawing.Point(49, 27)
+        Me.lblPrmcmp.Location = New System.Drawing.Point(18, 26)
         Me.lblPrmcmp.Name = "lblPrmcmp"
         Me.lblPrmcmp.Size = New System.Drawing.Size(77, 13)
         Me.lblPrmcmp.TabIndex = 0
@@ -232,7 +232,7 @@ Partial Class FrmPrmcmp01
         'txtDescr
         '
         Me.txtDescr.ForeColor = System.Drawing.Color.Navy
-        Me.txtDescr.Location = New System.Drawing.Point(127, 44)
+        Me.txtDescr.Location = New System.Drawing.Point(97, 44)
         Me.txtDescr.MaxLength = 100
         Me.txtDescr.Name = "txtDescr"
         Me.txtDescr.Size = New System.Drawing.Size(250, 20)
@@ -242,7 +242,7 @@ Partial Class FrmPrmcmp01
         '
         Me.lblDescr.AutoSize = True
         Me.lblDescr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescr.Location = New System.Drawing.Point(40, 52)
+        Me.lblDescr.Location = New System.Drawing.Point(9, 50)
         Me.lblDescr.Name = "lblDescr"
         Me.lblDescr.Size = New System.Drawing.Size(85, 13)
         Me.lblDescr.TabIndex = 0

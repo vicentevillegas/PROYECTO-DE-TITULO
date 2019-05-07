@@ -101,18 +101,18 @@ Public Class FrmPrmreg01
 		objectBO.wknum = txtWknum.Text.Trim
 		objectBO.prmpro = cboPrmpro.SelectedValue
 		objectBO.prmuser = cboPrmuser.SelectedValue
-		'
-		'End Code.
-		'
-
-            Dim indexesMsg = $"wknum: {txtWknum.Text.Trim}, prmpro: {cboPrmpro.SelectedText.Trim}, prmuser: {cboPrmuser.SelectedText.Trim}"
+            '
+            'End Code.
+            '
+            '                                                                            
+            Dim indexesMsg = $"Week Number '{txtWknum.Text.Trim}', Project Name '{cboPrmpro.SelectedText.Trim}' and User Name '{cboPrmuser.SelectedText.Trim}' "
 
             If PrmregBLL.Exists(objectBO) Then
-                MessageBox.Show("Resgistry " & indexesMsg & " already exists", "Duplicate Resgistry Detected", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show(indexesMsg & "already exists", "Duplicate Resgistry Detected", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'indexesMsg & 
+                'Code to get the focus on the first filter TextBox.
                 '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
+                txtWknum.Select()
 		'
 		'End Code.
 		'
@@ -305,16 +305,18 @@ Public Class FrmPrmreg01
         frmRecordAudit.lblChgmod.Text = ""
         frmRecordAudit.lblChgusr.Text = ""
 
-        txtNotes.Text = objectBO.notes.Trim
+        'txtNotes.Text = objectBO.notes.Trim
+        'txtNotes.Text = "hoala"
+        '
+        'Code to fill Control with object informatiuon.
+        '
+        dteStrdate.Value = If(objectBO.strdate = Nothing, DateTimePicker.MinimumDateTime, objectBO.strdate)
+        txtWrkhrs.Text = If(objectBO.wrkhrs Is Nothing, Nothing, objectBO.wrkhrs.Trim)
+
 
         '
-		'Code to fill Control with object informatiuon.
-		'
-		dteStrdate.Value = If(objectBO.strdate = Nothing, DateTimePicker.MinimumDateTime, objectBO.strdate)
-		txtWrkhrs.Text = If(objectBO.wrkhrs Is Nothing, Nothing, objectBO.wrkhrs.Trim)
-		'
-		'End Code.
-		'
+        'End Code.
+        '
 
         If objectBO.active.Trim = "T" Then
             rdbActiveYes.Checked = True
@@ -381,17 +383,17 @@ Public Class FrmPrmreg01
 		txtWknum.ReadOnly = True
 		txtWknum.TabStop = False
 		cboPrmpro.Enabled = False
-		cboPrmpro.TabStop = False
-		cboPrmuser.Enabled = False
-		cboPrmuser.TabStop = False
-		'
-		'End Code.
-		'
+        'cboPrmpro.TabStop = False
+        cboPrmuser.Enabled = False
+        'cboPrmuser.TabStop = False
+        '
+        'End Code.
+        '
 
         '
-		'Code to Get the first control filter.
-		'
-		txtWknum.Select()
+        'Code to Get the first control filter.
+        '
+        txtWknum.Select()
 		'
 		'End Code.
 		'
@@ -475,6 +477,10 @@ Public Class FrmPrmreg01
 
         ', FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFullWeek)
 
+
+    End Sub
+
+    Private Sub cboPrmpro_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPrmpro.SelectedIndexChanged
 
     End Sub
 

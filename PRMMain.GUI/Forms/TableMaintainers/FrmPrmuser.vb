@@ -959,9 +959,9 @@ Public Class FrmPrmuser
 
         End If
         '
-		'Code to Get Main Grid Columns.
-		'
-		grid.myGrid.Columns("prmuser").HeaderText = "User Id"
+        'Code to Get Main Grid Columns.
+        '
+        grid.myGrid.Columns("prmuser").HeaderText = "User Id"
         grid.myGrid.Columns("descr").HeaderText = "User Name"
         grid.myGrid.Columns("active").HeaderText = "Active (yes/no)"
 		'

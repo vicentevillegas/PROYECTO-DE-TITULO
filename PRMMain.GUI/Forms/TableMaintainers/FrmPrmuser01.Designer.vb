@@ -114,7 +114,7 @@ Partial Class FrmPrmuser01
         '
         Me.grpNotes.Controls.Add(Me.btnDate)
         Me.grpNotes.Controls.Add(Me.txtNotes)
-        Me.grpNotes.Location = New System.Drawing.Point(382, 11)
+        Me.grpNotes.Location = New System.Drawing.Point(362, 11)
         Me.grpNotes.Margin = New System.Windows.Forms.Padding(2)
         Me.grpNotes.MinimumSize = New System.Drawing.Size(293, 126)
         Me.grpNotes.Name = "grpNotes"
@@ -193,7 +193,7 @@ Partial Class FrmPrmuser01
         '
         Me.txtPrmuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtPrmuser.ForeColor = System.Drawing.Color.Navy
-        Me.txtPrmuser.Location = New System.Drawing.Point(127, 20)
+        Me.txtPrmuser.Location = New System.Drawing.Point(89, 20)
         Me.txtPrmuser.MaxLength = 20
         Me.txtPrmuser.Name = "txtPrmuser"
         Me.txtPrmuser.Size = New System.Drawing.Size(250, 20)
@@ -203,7 +203,7 @@ Partial Class FrmPrmuser01
         '
         Me.lblPrmuser.AutoSize = True
         Me.lblPrmuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrmuser.Location = New System.Drawing.Point(73, 27)
+        Me.lblPrmuser.Location = New System.Drawing.Point(35, 27)
         Me.lblPrmuser.Name = "lblPrmuser"
         Me.lblPrmuser.Size = New System.Drawing.Size(52, 13)
         Me.lblPrmuser.TabIndex = 0
@@ -212,7 +212,7 @@ Partial Class FrmPrmuser01
         'txtDescr
         '
         Me.txtDescr.ForeColor = System.Drawing.Color.Navy
-        Me.txtDescr.Location = New System.Drawing.Point(127, 44)
+        Me.txtDescr.Location = New System.Drawing.Point(89, 44)
         Me.txtDescr.MaxLength = 100
         Me.txtDescr.Name = "txtDescr"
         Me.txtDescr.Size = New System.Drawing.Size(250, 20)
@@ -222,7 +222,7 @@ Partial Class FrmPrmuser01
         '
         Me.lblDescr.AutoSize = True
         Me.lblDescr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescr.Location = New System.Drawing.Point(62, 51)
+        Me.lblDescr.Location = New System.Drawing.Point(24, 51)
         Me.lblDescr.Name = "lblDescr"
         Me.lblDescr.Size = New System.Drawing.Size(63, 13)
         Me.lblDescr.TabIndex = 0

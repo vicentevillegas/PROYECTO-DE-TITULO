@@ -89,18 +89,18 @@ Public Class FrmPrmcmp01
 		'Code to Get Only the Object indexes(PKs).
 		'
 		objectBO.prmcmp = txtPrmcmp.Text.Trim
-		'
-		'End Code.
-		'
+            '
+            'End Code.
+            '
 
-            Dim indexesMsg = $"prmcmp: {txtPrmcmp.Text.Trim}"
+            Dim indexesMsg = $"Id '{txtPrmcmp.Text.Trim}'"
 
             If PrmcmpBLL.Exists(objectBO) Then
-                MessageBox.Show("Company " & indexesMsg & " already exists", "Duplicate Company Detected", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show(indexesMsg & " already exists", "Duplicate Company Detected", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtPrmcmp.Select()
+                'Code to get the focus on the first filter TextBox.
+                '
+                txtPrmcmp.Select()
 		'
 		'End Code.
 		'
