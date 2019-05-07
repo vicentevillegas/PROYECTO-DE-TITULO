@@ -89,9 +89,10 @@ Public Class FrmPrmreg01
 			txtWrkhrs.Select()
 			Exit Sub
 		End If
-		'
-		'End Code.
-		'        
+        '
+        'End Code.
+        '        
+
 
         If rowAdding Or rowCopy Then
 
