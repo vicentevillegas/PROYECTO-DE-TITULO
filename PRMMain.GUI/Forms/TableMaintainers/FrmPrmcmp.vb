@@ -278,7 +278,7 @@ Public Class FrmPrmcmp
         Dim filter As String = GetFilterStringForRemoteData()
 
         If String.IsNullOrEmpty(filter.Trim()) Then
-
+            'estado activo o no
             filter = If(Not ShowAllRecors, " active = 'T' ", " active in ('T','F') ")
 
         Else
@@ -288,44 +288,46 @@ Public Class FrmPrmcmp
         End If
 
         Dim listObjectBO As List(Of PrmcmpBO) = PrmcmpBLL.GetDataforReport_Special(filter)
-        Dim rpt As New RptPrmcmp
-        rpt.Database.Tables.Item("FrmMain_Reports_RptPrmcmpBO").SetDataSource(listObjectBO)
+        Dim rpt As New RptPrmCmp
+        '"PRMMain_Report_RptPrmcmpBO"' archivo crystal report
+        rpt.Database.Tables.Item("PRMMain_Report_RptPrmcmpBO").SetDataSource(listObjectBO)
         Dim rptObject As Object
         '
         ' set report parameters
         '
-        rptObject = FrmMain.SecusrBO.Secnam.Trim
-        rpt.SetParameterValue("rptUser", rptObject)
+        rptObject = FrmMain.SecusrBO.secusr.Trim
+        rpt.SetParameterValue("rptuser", rptObject)
+
 
         '
-		'Code to get the Report's parameters.
-		'
-		rptObject = "Company Id......................................."
-		rpt.SetParameterValue("rptRunDescr01", rptObject)
-		rpt.SetParameterValue("rptRunValue01", IIf(String.IsNullOrEmpty(txtPrmcmp.Text.Trim()), "[not set]", "Start With: " & txtPrmcmp.Text.Trim()))
-		rptObject = "Description......................................"
-		rpt.SetParameterValue("rptRunDescr02", rptObject)
-		rpt.SetParameterValue("rptRunValue02", IIf(String.IsNullOrEmpty(txtDescr.Text.Trim()), "[not set]", "Contains: " & txtDescr.Text.Trim()))
-		rptObject = " "
-		rpt.SetParameterValue("rptRunDescr03", rptObject)
-		rpt.SetParameterValue("rptRunValue03", rptObject)
-		rpt.SetParameterValue("rptRunDescr04", rptObject)
-		rpt.SetParameterValue("rptRunValue04", rptObject)
-		rpt.SetParameterValue("rptRunDescr05", rptObject)
-		rpt.SetParameterValue("rptRunValue05", rptObject)
-		rpt.SetParameterValue("rptRunDescr06", rptObject)
-		rpt.SetParameterValue("rptRunValue06", rptObject)
-		rpt.SetParameterValue("rptRunDescr07", rptObject)
-		rpt.SetParameterValue("rptRunValue07", rptObject)
-		rpt.SetParameterValue("rptRunDescr08", rptObject)
-		rpt.SetParameterValue("rptRunValue08", rptObject)
-		rpt.SetParameterValue("rptRunDescr09", rptObject)
-		rpt.SetParameterValue("rptRunValue09", rptObject)
-		rpt.SetParameterValue("rptRunDescr10", rptObject)
-		rpt.SetParameterValue("rptRunValue10", rptObject)
-		'
-		'End Code.
-		'
+        'Code to get the Report's parameters.
+        '
+        rptObject = "Filtering by Id:"
+        rpt.SetParameterValue("rptRunDescr01", rptObject)
+        rpt.SetParameterValue("rptRunValue01", IIf(String.IsNullOrEmpty(txtPrmcmp.Text.Trim()), "[not set]", "CONTAINS: " & txtPrmcmp.Text.Trim()))
+        rptObject = "Filtering by Company:"
+        rpt.SetParameterValue("rptRunDescr02", rptObject)
+        rpt.SetParameterValue("rptRunValue02", IIf(String.IsNullOrEmpty(txtDescr.Text.Trim()), "[not set]", "CONTAINS: " & txtDescr.Text.Trim()))
+        'rptObject = " "
+        'rpt.SetParameterValue("rptRunDescr03", rptObject)
+        'rpt.SetParameterValue("rptRunValue03", rptObject)
+        'rpt.SetParameterValue("rptRunDescr04", rptObject)
+        'rpt.SetParameterValue("rptRunValue04", rptObject)
+        'rpt.SetParameterValue("rptRunDescr05", rptObject)
+        'rpt.SetParameterValue("rptRunValue05", rptObject)
+        'rpt.SetParameterValue("rptRunDescr06", rptObject)
+        'rpt.SetParameterValue("rptRunValue06", rptObject)
+        'rpt.SetParameterValue("rptRunDescr07", rptObject)
+        'rpt.SetParameterValue("rptRunValue07", rptObject)
+        'rpt.SetParameterValue("rptRunDescr08", rptObject)
+        'rpt.SetParameterValue("rptRunValue08", rptObject)
+        'rpt.SetParameterValue("rptRunDescr09", rptObject)
+        'rpt.SetParameterValue("rptRunValue09", rptObject)
+        'rpt.SetParameterValue("rptRunDescr10", rptObject)
+        'rpt.SetParameterValue("rptRunValue10", rptObject)
+        '
+        'End Code.
+        '
 
         'show time
         frmReport.CrystalReportViewer1.ReportSource = rpt
@@ -624,12 +626,13 @@ Public Class FrmPrmcmp
 
         Dim filter As StringBuilder = New StringBuilder()
         '
-		'Code for Get Filter Local Data Logic.
-		'
-		If Not String.IsNullOrEmpty(txtPrmcmp.Text.Trim()) Then
-			filter.Append("prmcmp like '" + txtPrmcmp.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
-		End If
-		If Not String.IsNullOrEmpty(txtDescr.Text.Trim()) Then
+        'Code for Get Filter Local Data Logic.
+        '
+        If Not String.IsNullOrEmpty(txtPrmcmp.Text.Trim()) Then
+            filter.Append("prmcmp like '" + txtPrmcmp.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
+        End If
+
+        If Not String.IsNullOrEmpty(txtDescr.Text.Trim()) Then
 			If (filter.Length > 0) Then
 				filter.Append(" and ")
 			End If
@@ -897,9 +900,9 @@ Public Class FrmPrmcmp
 			End If
 			filter.Append("upper(descr) like '%" + txtDescr.Text.Trim().ToUpper().Replace("%", "\%").Replace("'", "''") + "%' ESCAPE '\'")
 		End If
-		'
-		'End Code.
-		'
+        '
+        'End Code.
+        '
 
         If String.IsNullOrEmpty(filter.ToString().Trim) Then
 

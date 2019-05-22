@@ -281,7 +281,7 @@ Public Class FrmPrmpro
             Exit Sub
 
         End If
-
+        'reloj de arena
         Me.Cursor = Cursors.WaitCursor
         Dim filter As String = GetFilterStringForRemoteData()
 
@@ -295,46 +295,53 @@ Public Class FrmPrmpro
 
         End If
 
+
+        'linea de btnPrint_Click de proyecto PDM FrmStyleMC.vb
+        'Dim listObjectBO As List(Of PrmproBO) = PrmproBLL.GetAll(filter)
+
         Dim listObjectBO As List(Of PrmproBO) = PrmproBLL.GetDataforReport_Special(filter)
         Dim rpt As New RptPrmpro
-        rpt.Database.Tables.Item("FrmMain_Reports_RptPrmproBO").SetDataSource(listObjectBO)
+
+        rpt.Database.Tables.Item("PRMMain_Report_RptPrmproBO").SetDataSource(listObjectBO)
+        rpt.Database.Tables.Item("PRMMain_Report_RptPrmcmpBO").SetDataSource(listObjectBO)
+
         Dim rptObject As Object
         '
         ' set report parameters
         '
-        rptObject = FrmMain.SecusrBO.Secnam.Trim
+        rptObject = FrmMain.SecusrBO.secusr.Trim
         rpt.SetParameterValue("rptUser", rptObject)
 
         '
-		'Code to get the Report's parameters.
-		'
-		rptObject = "Project Id......................................."
-		rpt.SetParameterValue("rptRunDescr01", rptObject)
-		rpt.SetParameterValue("rptRunValue01", IIf(String.IsNullOrEmpty(txtPrmpro.Text.Trim()), "[not set]", "Start With: " & txtPrmpro.Text.Trim()))
-		rptObject = "Status Id........................................"
-		rpt.SetParameterValue("rptRunDescr02", rptObject)
-		rpt.SetParameterValue("rptRunValue02", IIf(String.IsNullOrEmpty(txtPrmsts.Text.Trim()), "[not set]", "Contains: " & txtPrmsts.Text.Trim()))
-		rptObject = "Company Id......................................."
-		rpt.SetParameterValue("rptRunDescr03", rptObject)
-		rpt.SetParameterValue("rptRunValue03", IIf(String.IsNullOrEmpty(txtPrmcmp.Text.Trim()), "[not set]", "Contains: " & txtPrmcmp.Text.Trim()))
-		rptObject = " "
-		rpt.SetParameterValue("rptRunDescr04", rptObject)
-		rpt.SetParameterValue("rptRunValue04", rptObject)
-		rpt.SetParameterValue("rptRunDescr05", rptObject)
-		rpt.SetParameterValue("rptRunValue05", rptObject)
-		rpt.SetParameterValue("rptRunDescr06", rptObject)
-		rpt.SetParameterValue("rptRunValue06", rptObject)
-		rpt.SetParameterValue("rptRunDescr07", rptObject)
-		rpt.SetParameterValue("rptRunValue07", rptObject)
-		rpt.SetParameterValue("rptRunDescr08", rptObject)
-		rpt.SetParameterValue("rptRunValue08", rptObject)
-		rpt.SetParameterValue("rptRunDescr09", rptObject)
-		rpt.SetParameterValue("rptRunValue09", rptObject)
-		rpt.SetParameterValue("rptRunDescr10", rptObject)
-		rpt.SetParameterValue("rptRunValue10", rptObject)
-		'
-		'End Code.
-		'
+        'Code to get the Report's parameters.
+        'filtros
+        rptObject = "Filtering by Id"
+        rpt.SetParameterValue("rptRunDescr01", rptObject)
+        rpt.SetParameterValue("rptRunValue01", IIf(String.IsNullOrEmpty(txtPrmpro.Text.Trim()), "[not set]", "CONTAINS: " & txtPrmpro.Text.Trim()))
+        rptObject = "Filtering by Status"
+        rpt.SetParameterValue("rptRunDescr02", rptObject)
+        rpt.SetParameterValue("rptRunValue02", IIf(String.IsNullOrEmpty(txtPrmsts.Text.Trim()), "[not set]", "CONTAINS: " & txtPrmsts.Text.Trim()))
+        rptObject = "Filtering by Company Id"
+        rpt.SetParameterValue("rptRunDescr03", rptObject)
+        rpt.SetParameterValue("rptRunValue03", IIf(String.IsNullOrEmpty(txtPrmcmp.Text.Trim()), "[not set]", "CONTAINS: " & txtPrmcmp.Text.Trim()))
+        rptObject = " "
+        'rpt.SetParameterValue("rptRunDescr04", rptObject)
+        'rpt.SetParameterValue("rptRunValue04", rptObject)
+        'rpt.SetParameterValue("rptRunDescr05", rptObject)
+        'rpt.SetParameterValue("rptRunValue05", rptObject)
+        'rpt.SetParameterValue("rptRunDescr06", rptObject)
+        'rpt.SetParameterValue("rptRunValue06", rptObject)
+        'rpt.SetParameterValue("rptRunDescr07", rptObject)
+        'rpt.SetParameterValue("rptRunValue07", rptObject)
+        'rpt.SetParameterValue("rptRunDescr08", rptObject)
+        'rpt.SetParameterValue("rptRunValue08", rptObject)
+        'rpt.SetParameterValue("rptRunDescr09", rptObject)
+        'rpt.SetParameterValue("rptRunValue09", rptObject)
+        'rpt.SetParameterValue("rptRunDescr10", rptObject)
+        'rpt.SetParameterValue("rptRunValue10", rptObject)
+        '
+        'End Code.
+        '
 
         'show time
         frmReport.CrystalReportViewer1.ReportSource = rpt
@@ -639,23 +646,25 @@ Public Class FrmPrmpro
 
         Dim filter As StringBuilder = New StringBuilder()
         '
-		'Code for Get Filter Local Data Logic.
-		'
-		If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
-            filter.Append("prmpro like '" + txtPrmpro.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
+        'Code for Get Filter Local Data Logic.
+        '
+        If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
+            filter.Append("prmpro like '%" + txtPrmpro.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
         End If
-		If Not String.IsNullOrEmpty(txtPrmsts.Text.Trim()) Then
+
+        If Not String.IsNullOrEmpty(txtPrmsts.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(" and ")
+            End If
+            filter.Append("prmsts like '%" + txtPrmsts.Text.Trim().Replace("%", "[%]").Replace("'", "'") + "%'")
+        End If
+
+        If Not String.IsNullOrEmpty(txtPrmcmp.Text.Trim()) Then
 			If (filter.Length > 0) Then
 				filter.Append(" and ")
 			End If
-			filter.Append("prmsts like '%" + txtPrmsts.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
-		End If
-		If Not String.IsNullOrEmpty(txtPrmcmp.Text.Trim()) Then
-			If (filter.Length > 0) Then
-				filter.Append(" and ")
-			End If
-			filter.Append("prmcmp like '%" + txtPrmcmp.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
-		End If
+            filter.Append("prmcmp like '%" + txtPrmcmp.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
+        End If
 		'
 		'End Code.
 		'
@@ -682,8 +691,8 @@ Public Class FrmPrmpro
 			If (filter.Length > 0) Then
 				filter.Append(", ")
 			End If
-			filter.Append($"Company Id(Contains: '{txtPrmcmp.Text.Trim()}')")
-		End If
+            filter.Append($"Company Id(Contains: '{txtPrmcmp.Text.Trim()}')")
+        End If
 		'
 		'End Code.
 		'
@@ -925,18 +934,35 @@ Public Class FrmPrmpro
 		If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
 			filter.Append($"upper(prmpro) like '{txtPrmpro.Text.Trim().ToUpper()}%'")
 		End If
-		If Not String.IsNullOrEmpty(txtPrmsts.Text.Trim()) Then
+        If Not String.IsNullOrEmpty(txtPrmsts.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(" and ")
+            End If
+            filter.Append("upper(prmsts) like '%" + txtPrmsts.Text.Trim().ToUpper().Replace("%", "\%").Replace("'", "''") + "%' ESCAPE '\'")
+            'filter.Append($"upper(prmsts) like '{txtPrmsts.Text.Trim().ToUpper()}%'")
+        End If
+
+
+
+
+
+        If Not String.IsNullOrEmpty(txtPrmsts.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(" and ")
+            End If
+            filter.Append("upper(prmsts) like '%" + txtPrmsts.Text.Trim().ToUpper().Replace("%", "\%").Replace("'", "''") + "%' ESCAPE '\'")
+            'filter.Append($"upper(prmsts) like '{txtPrmsts.Text.Trim().ToUpper()}%'")
+        End If
+
+
+
+
+        If Not String.IsNullOrEmpty(txtPrmcmp.Text.Trim()) Then
 			If (filter.Length > 0) Then
 				filter.Append(" and ")
 			End If
-			filter.Append("upper(prmsts) like '%" + txtPrmsts.Text.Trim().ToUpper().Replace("%", "\%").Replace("'", "''") + "%' ESCAPE '\'")
-		End If
-		If Not String.IsNullOrEmpty(txtPrmcmp.Text.Trim()) Then
-			If (filter.Length > 0) Then
-				filter.Append(" and ")
-			End If
-			filter.Append("upper(prmcmp) like '%" + txtPrmcmp.Text.Trim().ToUpper().Replace("%", "\%").Replace("'", "''") + "%' ESCAPE '\'")
-		End If
+            filter.Append($"upper(prmcmp) like '{txtPrmcmp.Text.Trim().ToUpper()}%'")
+        End If
 		'
 		'End Code.
 		'
@@ -1351,6 +1377,8 @@ Public Class FrmPrmpro
         End If
 
     End Sub
+
+
 
 #End Region
 

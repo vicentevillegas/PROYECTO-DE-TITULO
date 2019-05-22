@@ -42,12 +42,24 @@ Public Class PrmcmpDAL
 
     End Function
 
-    Public Function GetDataforReport_Special(Of PrmcmpBO)(where As String) As List(Of PrmcmpBO)
 
-        Dim sqlText As String = $"select * from crsfile.prmcmp where {where}"
+
+
+
+    Public Function GetDataforReport_Special(Of PrmcmpBO)(where As String) As List(Of PrmcmpBO)
+        If where.Trim.StartsWith("and") Then
+            where = where.Remove(0, 4)
+        End If
+        Dim sqlText As String = $"select * from crsfile.prmcmp where {where.Trim} order by prmcmp asc"
         Return _db.Query(Of PrmcmpBO)(sqlText).AsList()
 
     End Function
+
+
+
+
+
+
 
     Public Function GetTable(input As String) As DataTable Implements IBaseDAL(Of PrmcmpBO).GetTable
 

@@ -7,18 +7,18 @@ Public Class PrmregDAL
 
     Public Function Insert(input As PrmregBO) As Boolean Implements IBaseDAL(Of PrmregBO).Insert
 
-        Return _db.Execute($"insert into crsfile.prmreg (  wknum, prmpro, prmuser, strdate, wrkhrs, addloc, addmod, addusr, chgloc, chgmod, chgstm, chgusr, addstm, active, notes ) 
-                             values (  @wknum, @prmpro, @prmuser, @strdate, @wrkhrs, @addloc, @addmod, @addusr, @chgloc, @chgmod, @chgstm, @chgusr, @addstm, @active, @notes )",
-            New With { input.wknum, input.prmpro, input.prmuser, input.strdate, input.wrkhrs, input.addloc, input.addmod, input.addusr, input.chgloc, input.chgmod, input.chgstm, input.chgusr, input.addstm, input.active, input.notes}) > 0
+        Return _db.Execute($"insert into crsfile.prmreg (  wknum, prmpro, prmuser, wrkhrs, addloc, addmod, addusr, chgloc, chgmod, chgstm, chgusr, addstm, active, notes ) 
+                             values (  @wknum, @prmpro, @prmuser, @wrkhrs, @addloc, @addmod, @addusr, @chgloc, @chgmod, @chgstm, @chgusr, @addstm, @active, @notes )",
+            New With {input.wknum, input.prmpro, input.prmuser, input.wrkhrs, input.addloc, input.addmod, input.addusr, input.chgloc, input.chgmod, input.chgstm, input.chgusr, input.addstm, input.active, input.notes}) > 0
 
     End Function
 
     Public Function Update(input As PrmregBO) As Boolean Implements IBaseDAL(Of PrmregBO).Update
 
         Return _db.Execute($"update crsfile.prmreg 
-                             set  strdate = @strdate, wrkhrs = @wrkhrs, addloc = @addloc, addmod = @addmod, addusr = @addusr, chgloc = @chgloc, chgmod = @chgmod, chgstm = @chgstm, chgusr = @chgusr, addstm = @addstm, active = @active, notes = @notes 
+                             set  wrkhrs = @wrkhrs, addloc = @addloc, addmod = @addmod, addusr = @addusr, chgloc = @chgloc, chgmod = @chgmod, chgstm = @chgstm, chgusr = @chgusr, addstm = @addstm, active = @active, notes = @notes 
                              where  wknum = @wknum and prmpro = @prmpro and prmuser = @prmuser ",
-            New With { input.strdate, input.wrkhrs, input.addloc, input.addmod, input.addusr, input.chgloc, input.chgmod, input.chgstm, input.chgusr, input.addstm, input.active, input.notes, input.wknum, input.prmpro, input.prmuser}) > 0
+            New With {input.wrkhrs, input.addloc, input.addmod, input.addusr, input.chgloc, input.chgmod, input.chgstm, input.chgusr, input.addstm, input.active, input.notes, input.wknum, input.prmpro, input.prmuser}) > 0
 
     End Function
 
@@ -44,7 +44,17 @@ Public Class PrmregDAL
 
     Public Function GetDataforReport_Special(Of PrmregBO)(where As String) As List(Of PrmregBO)
 
-        Dim sqlText As String = $"select * from crsfile.prmreg where {where}"
+        If where.Trim.StartsWith("and") Then
+            where = where.Remove(0, 4)
+        End If
+
+        Dim sqlText As String = $"select reg.* from crsfile.prmreg reg
+                                left join crsfile.prmpro proyecto
+                                on reg.prmpro = proyecto.prmpro
+                                left join crsfile.prmuser usuario
+                                on reg.prmuser = usuario.prmuser
+                                where {where.Trim}"
+
         Return _db.Query(Of PrmregBO)(sqlText).AsList()
 
     End Function

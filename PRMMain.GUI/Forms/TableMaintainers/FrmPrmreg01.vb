@@ -121,10 +121,10 @@ Public Class FrmPrmreg01
             End If
 
             '
-		'Code to fill Object with controls informatiuon.
-		'
-		objectBO.strdate = If(dteStrdate.Value = DateTimePicker.MinimumDateTime, Nothing, dteStrdate.Value)
-		objectBO.wrkhrs = txtWrkhrs.Text.Trim
+            'Code to fill Object with controls informatiuon.
+            '
+
+            objectBO.wrkhrs = txtWrkhrs.Text.Trim
 		'
 		'End Code.
 		'
@@ -149,10 +149,10 @@ Public Class FrmPrmreg01
         Else
 
             '
-		'Code to fill Object with controls informatiuon.
-		'
-		objectBO.strdate = If(dteStrdate.Value = DateTimePicker.MinimumDateTime, Nothing, dteStrdate.Value)
-		objectBO.wrkhrs = txtWrkhrs.Text.Trim
+            'Code to fill Object with controls informatiuon.
+            '
+
+            objectBO.wrkhrs = txtWrkhrs.Text.Trim
 		'
 		'End Code.
 		'
@@ -237,18 +237,26 @@ Public Class FrmPrmreg01
         Me.Close()
     End Sub
 
-    Private Sub dte_ValueChanged(sender As Object, e As EventArgs) Handles dteStrdate.ValueChanged
 
-        Dim objectDTE As New DateTimePicker
-        objectDTE = CType(sender, DateTimePicker)
 
-        If objectDTE.Value = DateTimePicker.MinimumDateTime Then
-            objectDTE.CustomFormat = " "
-        Else
-            objectDTE.CustomFormat = "dd MMM yyyy"
-        End If
 
-    End Sub
+
+    'Private Sub dte_ValueChanged(sender As Object, e As EventArgs) Handles dteStrdate.ValueChanged
+
+    '    Dim objectDTE As New DateTimePicker
+    '    objectDTE = CType(sender, DateTimePicker)
+
+    '    If objectDTE.Value = DateTimePicker.MinimumDateTime Then
+    '        objectDTE.CustomFormat = " "
+    '    Else
+    '        objectDTE.CustomFormat = "dd MMM yyyy"
+    '    End If
+
+    'End Sub
+
+
+
+
 
 #End Region
 
@@ -273,8 +281,8 @@ Public Class FrmPrmreg01
 		txtWknum.Text = Nothing
 		cboPrmpro.SelectedValue = -1
 		cboPrmuser.SelectedValue = -1
-		dteStrdate.Value = DateTimePicker.MinimumDateTime
-		txtWrkhrs.Text = Nothing
+
+        txtWrkhrs.Text = Nothing
 		'
 		'End Code.
 		'
@@ -311,7 +319,7 @@ Public Class FrmPrmreg01
         '
         'Code to fill Control with object informatiuon.
         '
-        dteStrdate.Value = If(objectBO.strdate = Nothing, DateTimePicker.MinimumDateTime, objectBO.strdate)
+
         txtWrkhrs.Text = If(objectBO.wrkhrs Is Nothing, Nothing, objectBO.wrkhrs.Trim)
 
 
@@ -365,8 +373,8 @@ Public Class FrmPrmreg01
 		txtWknum.Text = If(objectBO.wknum Is Nothing, String.Empty, objectBO.wknum.Trim)
 		cboPrmpro.SelectedValue = If(objectBO.prmpro Is Nothing, -1, objectBO.prmpro.Trim)
 		cboPrmuser.SelectedValue = If(objectBO.prmuser Is Nothing, -1, objectBO.prmuser.Trim)
-		dteStrdate.Value = If(objectBO.strdate = Date.MinValue, DateTimePicker.MinimumDateTime, objectBO.strdate)
-		txtWrkhrs.Text = If(objectBO.wrkhrs Is Nothing, String.Empty, objectBO.wrkhrs.Trim)
+
+        txtWrkhrs.Text = If(objectBO.wrkhrs Is Nothing, String.Empty, objectBO.wrkhrs.Trim)
 		txtNotes.Text = If(objectBO.notes Is Nothing, String.Empty, objectBO.notes.Trim)
 		'
 		'End Code.

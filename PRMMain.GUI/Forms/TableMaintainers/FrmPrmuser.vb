@@ -287,42 +287,43 @@ Public Class FrmPrmuser
 
         Dim listObjectBO As List(Of PrmuserBO) = PrmuserBLL.GetDataforReport_Special(filter)
         Dim rpt As New RptPrmuser
-        rpt.Database.Tables.Item("FrmMain_Reports_RptPrmuserBO").SetDataSource(listObjectBO)
+        'FrmMain_Reports_RptPrmuserBO
+        rpt.Database.Tables.Item("PRMMain_Report_RptPrmuserBO").SetDataSource(listObjectBO)
         Dim rptObject As Object
         '
         ' set report parameters
         '
-        rptObject = FrmMain.SecusrBO.Secnam.Trim
+        rptObject = FrmMain.SecusrBO.secusr.Trim
         rpt.SetParameterValue("rptUser", rptObject)
 
         '
-		'Code to get the Report's parameters.
-		'
-		rptObject = "User Id.........................................."
-		rpt.SetParameterValue("rptRunDescr01", rptObject)
-		rpt.SetParameterValue("rptRunValue01", IIf(String.IsNullOrEmpty(txtPrmuser.Text.Trim()), "[not set]", "Start With: " & txtPrmuser.Text.Trim()))
-		rptObject = " "
-		rpt.SetParameterValue("rptRunDescr02", rptObject)
-		rpt.SetParameterValue("rptRunValue02", rptObject)
-		rpt.SetParameterValue("rptRunDescr03", rptObject)
-		rpt.SetParameterValue("rptRunValue03", rptObject)
-		rpt.SetParameterValue("rptRunDescr04", rptObject)
-		rpt.SetParameterValue("rptRunValue04", rptObject)
-		rpt.SetParameterValue("rptRunDescr05", rptObject)
-		rpt.SetParameterValue("rptRunValue05", rptObject)
-		rpt.SetParameterValue("rptRunDescr06", rptObject)
-		rpt.SetParameterValue("rptRunValue06", rptObject)
-		rpt.SetParameterValue("rptRunDescr07", rptObject)
-		rpt.SetParameterValue("rptRunValue07", rptObject)
-		rpt.SetParameterValue("rptRunDescr08", rptObject)
-		rpt.SetParameterValue("rptRunValue08", rptObject)
-		rpt.SetParameterValue("rptRunDescr09", rptObject)
-		rpt.SetParameterValue("rptRunValue09", rptObject)
-		rpt.SetParameterValue("rptRunDescr10", rptObject)
-		rpt.SetParameterValue("rptRunValue10", rptObject)
-		'
-		'End Code.
-		'
+        'Code to get the Report's parameters.
+        '
+        rptObject = "Filtering by User Id"
+        rpt.SetParameterValue("rptRunDescr01", rptObject)
+        rpt.SetParameterValue("rptRunValue01", IIf(String.IsNullOrEmpty(txtPrmuser.Text.Trim()), "[not set]", "CONTAINS: " & txtPrmuser.Text.Trim()))
+        rptObject = " "
+        'rpt.SetParameterValue("rptRunDescr02", rptObject)
+        'rpt.SetParameterValue("rptRunValue02", rptObject)
+        'rpt.SetParameterValue("rptRunDescr03", rptObject)
+        'rpt.SetParameterValue("rptRunValue03", rptObject)
+        'rpt.SetParameterValue("rptRunDescr04", rptObject)
+        'rpt.SetParameterValue("rptRunValue04", rptObject)
+        'rpt.SetParameterValue("rptRunDescr05", rptObject)
+        'rpt.SetParameterValue("rptRunValue05", rptObject)
+        'rpt.SetParameterValue("rptRunDescr06", rptObject)
+        'rpt.SetParameterValue("rptRunValue06", rptObject)
+        'rpt.SetParameterValue("rptRunDescr07", rptObject)
+        'rpt.SetParameterValue("rptRunValue07", rptObject)
+        'rpt.SetParameterValue("rptRunDescr08", rptObject)
+        'rpt.SetParameterValue("rptRunValue08", rptObject)
+        'rpt.SetParameterValue("rptRunDescr09", rptObject)
+        'rpt.SetParameterValue("rptRunValue09", rptObject)
+        'rpt.SetParameterValue("rptRunDescr10", rptObject)
+        'rpt.SetParameterValue("rptRunValue10", rptObject)
+        '
+        'End Code.
+        '
 
         'show time
         frmReport.CrystalReportViewer1.ReportSource = rpt
@@ -620,14 +621,14 @@ Public Class FrmPrmuser
 
         Dim filter As StringBuilder = New StringBuilder()
         '
-		'Code for Get Filter Local Data Logic.
-		'
-		If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
-			filter.Append("prmuser like '" + txtPrmuser.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
-		End If
-		'
-		'End Code.
-		'
+        'Code for Get Filter Local Data Logic.
+        '
+        If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
+            filter.Append("prmuser like '" + txtPrmuser.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
+        End If
+        '
+        'End Code.
+        '
         Return filter.ToString()
 
     End Function

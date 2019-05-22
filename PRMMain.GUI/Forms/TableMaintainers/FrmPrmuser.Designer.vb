@@ -42,6 +42,7 @@ Partial Class FrmPrmuser
         Me.btnPrint = New System.Windows.Forms.ToolStripButton()
         Me.btnClose = New System.Windows.Forms.ToolStripButton()
         Me.grid = New iShowRoomComponents.gridTemplate()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.gbFilter.SuspendLayout()
         Me.statusForm.SuspendLayout()
         Me.pnlButtons.SuspendLayout()
@@ -164,7 +165,7 @@ Partial Class FrmPrmuser
         Me.pnlButtons.BackColor = System.Drawing.Color.White
         Me.pnlButtons.Dock = System.Windows.Forms.DockStyle.Right
         Me.pnlButtons.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.pnlButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSelect, Me.btnAdd, Me.btnCopy, Me.btnRefresh, Me.btnPrint, Me.btnClose})
+        Me.pnlButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnSelect, Me.btnAdd, Me.btnCopy, Me.btnRefresh, Me.btnPrint, Me.btnClose, Me.ToolStripButton1})
         Me.pnlButtons.Location = New System.Drawing.Point(1180, 62)
         Me.pnlButtons.Name = "pnlButtons"
         Me.pnlButtons.Size = New System.Drawing.Size(54, 561)
@@ -258,6 +259,15 @@ Partial Class FrmPrmuser
         Me.grid.Size = New System.Drawing.Size(1180, 561)
         Me.grid.TabIndex = 7
         '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(51, 20)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
+        '
         'FrmPrmuser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -307,4 +317,5 @@ Partial Class FrmPrmuser
     Friend WithEvents btnSelect As ToolStripButton
     Friend WithEvents btnClose As ToolStripButton
     Private components As System.ComponentModel.IContainer
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class

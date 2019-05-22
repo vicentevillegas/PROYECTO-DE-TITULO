@@ -44,7 +44,11 @@ Public Class PrmuserDAL
 
     Public Function GetDataforReport_Special(Of PrmuserBO)(where As String) As List(Of PrmuserBO)
 
-        Dim sqlText As String = $"select * from crsfile.prmuser where {where}"
+        If where.Trim.StartsWith("and") Then
+            where = where.Remove(0, 4)
+        End If
+
+        Dim sqlText As String = $"select * from crsfile.prmuser where {where} order by prmuser asc"
         Return _db.Query(Of PrmuserBO)(sqlText).AsList()
 
     End Function

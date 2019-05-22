@@ -44,9 +44,12 @@ Public Class PrmproDAL
 
     Public Function GetDataforReport_Special(Of PrmproBO)(where As String) As List(Of PrmproBO)
 
-        Dim sqlText As String = $"select * from crsfile.prmpro where {where}"
-        Return _db.Query(Of PrmproBO)(sqlText).AsList()
+        If where.Trim.StartsWith("and") Then
+            where = where.Remove(0, 4)
+        End If
 
+        Dim sqlText As String = $"select * from crsfile.prmpro where {where} order by prmpro asc"
+        Return _db.Query(Of PrmproBO)(sqlText).AsList()
     End Function
 
     Public Function GetTable(input As String) As DataTable Implements IBaseDAL(Of PrmproBO).GetTable

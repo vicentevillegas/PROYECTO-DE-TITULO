@@ -1,8 +1,10 @@
 Imports System.ComponentModel
 Imports System.Text
 Imports PRMMain.BLL
-Imports PRMMain.MODEL
+Imports PRMMain.Model
 Imports PRMMain.Report
+Imports System.Net.Mail
+
 
 Public Class FrmPrmreg
 
@@ -50,7 +52,7 @@ Public Class FrmPrmreg
 
         Me.Text = $" {Me.meTitle.Trim}  ({Me.Name.Trim})"
         Me.KeyPreview = True
-        userID = FrmMain.SecusrBO.Secusr.Trim
+        userID = FrmMain.SecusrBO.secusr.Trim
         totalRecords = PrmregBLL.GetTotalRecords(False)
 
         If totalRecords > maxiumRecorsLocally Then
@@ -63,27 +65,27 @@ Public Class FrmPrmreg
 
             gbFilter.Text = "Filter locally by:"
             '
-		'GetCodeTextBoxesBackgroundColor_Filter_Local
-		'
-		txtWknum.BackColor = Color.Honeydew
-		txtPrmpro.BackColor = Color.Honeydew
-		txtPrmuser.BackColor = Color.Honeydew
-		'
-		'End Code.
-		'
+            'GetCodeTextBoxesBackgroundColor_Filter_Local
+            '
+            txtWknum.BackColor = Color.Honeydew
+            txtPrmpro.BackColor = Color.Honeydew
+            txtPrmuser.BackColor = Color.Honeydew
+            '
+            'End Code.
+            '
 
         Else
 
             gbFilter.Text = "Filter remotelly by:"
             '
-		'GetCodeTextBoxesBackgroundColor_Filter_Remote
-		'
-		txtWknum.BackColor = Color.LightYellow
-		txtPrmpro.BackColor = Color.LightYellow
-		txtPrmuser.BackColor = Color.LightYellow
-		'
-		'End Code.
-		'
+            'GetCodeTextBoxesBackgroundColor_Filter_Remote
+            '
+            txtWknum.BackColor = Color.LightYellow
+            txtPrmpro.BackColor = Color.LightYellow
+            txtPrmuser.BackColor = Color.LightYellow
+            '
+            'End Code.
+            '
 
         End If
 
@@ -128,12 +130,12 @@ Public Class FrmPrmreg
             newrow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
             newrow.Item("prmpro") = If(objectBO.prmpro Is Nothing, "", PrmproBLL.GetUnique(New PrmproBO With {.prmpro = objectBO.prmpro.Trim()}).prmpro.Trim)
             newrow.Item("prmuser") = If(objectBO.prmuser Is Nothing, "", PrmuserBLL.GetUnique(New PrmuserBO With {.prmuser = objectBO.prmuser.Trim()}).prmuser.Trim)
-            newrow.Item("strdate") = objectBO.strdate
-			newrow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
-			newrow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
+
+            newrow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
+            newrow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
             '
             'End Code.
-            '
+            ' 
             table.Rows.Add(newrow)
             grid.myGrid.CurrentCell = grid.myGrid(0, addedRow)
             grid.myGrid.CurrentRow.Selected = True
@@ -146,12 +148,12 @@ Public Class FrmPrmreg
         End If
 
         '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
-		'
-		'End Code.
-		'
+        'Code to get the focus on the first filter TextBox.
+        '
+        txtWknum.Select()
+        '
+        'End Code.
+        '
 
         Try
             Form01.Dispose()
@@ -175,14 +177,14 @@ Public Class FrmPrmreg
         Form01.iUserLoc = iUserLoc
         Dim objectBO = New PrmregBO
         '
-		'Code to Get Only the Object indexes(PKs).
-		'
-		objectBO.wknum = thisRow.Item("wknum").ToString.Trim
-		objectBO.prmpro = thisRow.Item("prmpro").ToString.Trim
-		objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
-		'
-		'End Code.
-		'
+        'Code to Get Only the Object indexes(PKs).
+        '
+        objectBO.wknum = thisRow.Item("wknum").ToString.Trim
+        objectBO.prmpro = thisRow.Item("prmpro").ToString.Trim
+        objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
+        '
+        'End Code.
+        '
         objectBO = PrmregBLL.GetUnique(objectBO)
         Form01.objectBO = objectBO
         Form01.ShowDialog()
@@ -200,12 +202,12 @@ Public Class FrmPrmreg
             newrow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
             newrow.Item("prmpro") = If(objectBO.prmuser Is Nothing, "", PrmproBLL.GetUnique(New PrmproBO With {.prmpro = objectBO.prmpro.Trim()}).prmpro)
             newrow.Item("prmuser") = If(objectBO.prmuser Is Nothing, "", PrmuserBLL.GetUnique(New PrmuserBO With {.prmuser = objectBO.prmuser.Trim()}).prmuser)
-            newrow.Item("strdate") = objectBO.strdate
-			newrow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
-			newrow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
-		'
-		'End Code.
-		'
+
+            newrow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
+            newrow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
+            '
+            'End Code.
+            '
             table.Rows.Add(newrow)
             grid.myGrid.CurrentCell = grid.myGrid(0, addedRow)
             grid.myGrid.CurrentRow.Selected = True
@@ -216,12 +218,12 @@ Public Class FrmPrmreg
         End If
 
         '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
-		'
-		'End Code.
-		'
+        'Code to get the focus on the first filter TextBox.
+        '
+        txtWknum.Select()
+        '
+        'End Code.
+        '
 
         Try
             Form01.Dispose()
@@ -264,14 +266,14 @@ Public Class FrmPrmreg
         Dim thisRow As DataRowView = grid.myGrid.CurrentRow.DataBoundItem
         Dim objectBO = New PrmregBO
         '
-		'Code to Get Only the Object indexes(PKs).
-		'
-		objectBO.wknum = thisRow.Item("wknum").ToString.Trim
-		objectBO.prmpro = thisRow.Item("prmpro").ToString.Trim
-		objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
-		'
-		'End Code.
-		'
+        'Code to Get Only the Object indexes(PKs).
+        '
+        objectBO.wknum = thisRow.Item("wknum").ToString.Trim
+        objectBO.prmpro = thisRow.Item("prmpro").ToString.Trim
+        objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
+        '
+        'End Code.
+        '
         objectBO = PrmregBLL.GetUnique(objectBO)
         FormSelectedObject = objectBO
         Me.Hide()
@@ -293,54 +295,56 @@ Public Class FrmPrmreg
 
         If String.IsNullOrEmpty(filter.Trim()) Then
 
-            filter = If(Not ShowAllRecors, " active = 'T' ", " active in ('T','F') ")
+            filter = If(Not ShowAllRecors, " reg.active = 'T' ", " reg.active  in ('T','F') ")
 
         Else
 
-            filter = filter & If(Not ShowAllRecors, " and active = 'T' ", " and active in ('T','F') ")
+            filter = filter & If(Not ShowAllRecors, " and reg.active  = 'T' ", " and reg.active  in ('T','F') ")
 
         End If
 
         Dim listObjectBO As List(Of PrmregBO) = PrmregBLL.GetDataforReport_Special(filter)
         Dim rpt As New RptPrmreg
-        rpt.Database.Tables.Item("FrmMain_Reports_RptPrmregBO").SetDataSource(listObjectBO)
+
+        rpt.Database.Tables.Item("PRMMain_Report_RptPrmregBO").SetDataSource(listObjectBO)
+        rpt.Database.Tables.Item("PRMMain_Report_RptPrmproBO").SetDataSource(listObjectBO)
+        rpt.Database.Tables.Item("PRMMain_Report_RptPrmuserBO").SetDataSource(listObjectBO)
         Dim rptObject As Object
         '
-        ' set report parameters
+        ' set report parameters 
         '
-        rptObject = FrmMain.SecusrBO.Secnam.Trim
+        rptObject = FrmMain.SecusrBO.secusr.Trim
         rpt.SetParameterValue("rptUser", rptObject)
-
         '
-		'Code to get the Report's parameters.
-		'
-		rptObject = "Week Number......................................"
-		rpt.SetParameterValue("rptRunDescr01", rptObject)
-		rpt.SetParameterValue("rptRunValue01", IIf(String.IsNullOrEmpty(txtWknum.Text.Trim()), "[not set]", "Start With: " & txtWknum.Text.Trim()))
-		rptObject = "Project Id......................................."
-		rpt.SetParameterValue("rptRunDescr02", rptObject)
-		rpt.SetParameterValue("rptRunValue02", IIf(String.IsNullOrEmpty(txtPrmpro.Text.Trim()), "[not set]", "Start With: " & txtPrmpro.Text.Trim()))
-		rptObject = "User Id.........................................."
-		rpt.SetParameterValue("rptRunDescr03", rptObject)
-		rpt.SetParameterValue("rptRunValue03", IIf(String.IsNullOrEmpty(txtPrmuser.Text.Trim()), "[not set]", "Start With: " & txtPrmuser.Text.Trim()))
-		rptObject = " "
-		rpt.SetParameterValue("rptRunDescr04", rptObject)
-		rpt.SetParameterValue("rptRunValue04", rptObject)
-		rpt.SetParameterValue("rptRunDescr05", rptObject)
-		rpt.SetParameterValue("rptRunValue05", rptObject)
-		rpt.SetParameterValue("rptRunDescr06", rptObject)
-		rpt.SetParameterValue("rptRunValue06", rptObject)
-		rpt.SetParameterValue("rptRunDescr07", rptObject)
-		rpt.SetParameterValue("rptRunValue07", rptObject)
-		rpt.SetParameterValue("rptRunDescr08", rptObject)
-		rpt.SetParameterValue("rptRunValue08", rptObject)
-		rpt.SetParameterValue("rptRunDescr09", rptObject)
-		rpt.SetParameterValue("rptRunValue09", rptObject)
-		rpt.SetParameterValue("rptRunDescr10", rptObject)
-		rpt.SetParameterValue("rptRunValue10", rptObject)
-		'
-		'End Code.
-		'
+        'Code to get the Report's parameters.
+        '
+        rptObject = "Filtering by Week Number"
+        rpt.SetParameterValue("rptRunDescr01", rptObject)
+        rpt.SetParameterValue("rptRunValue01", IIf(String.IsNullOrEmpty(txtWknum.Text.Trim()), "[Not set]", "CONTAINS: " & txtWknum.Text.Trim()))
+        rptObject = "Filtering by Project Id"
+        rpt.SetParameterValue("rptRunDescr02", rptObject)
+        rpt.SetParameterValue("rptRunValue02", IIf(String.IsNullOrEmpty(txtPrmpro.Text.Trim()), "[Not set]", "CONTAINS: " & txtPrmpro.Text.Trim()))
+        rptObject = "Filtering by User Id"
+        rpt.SetParameterValue("rptRunDescr03", rptObject)
+        rpt.SetParameterValue("rptRunValue03", IIf(String.IsNullOrEmpty(txtPrmuser.Text.Trim()), "[Not set]", "CONTAINS: " & txtPrmuser.Text.Trim()))
+        rptObject = " "
+        'rpt.SetParameterValue("rptRunValue04", rptObject)
+        'rpt.SetParameterValue("rptRunValue04", rptObject)
+        'rpt.SetParameterValue("rptRunDescr05", rptObject)
+        'rpt.SetParameterValue("rptRunValue05", rptObject)
+        'rpt.SetParameterValue("rptRunDescr06", rptObject)
+        'rpt.SetParameterValue("rptRunValue06", rptObject)
+        'rpt.SetParameterValue("rptRunDescr07", rptObject)
+        'rpt.SetParameterValue("rptRunValue07", rptObject)
+        'rpt.SetParameterValue("rptRunDescr08", rptObject)
+        'rpt.SetParameterValue("rptRunValue08", rptObject)
+        'rpt.SetParameterValue("rptRunDescr09", rptObject)
+        'rpt.SetParameterValue("rptRunValue09", rptObject)
+        'rpt.SetParameterValue("rptRunDescr10", rptObject)
+        'rpt.SetParameterValue("rptRunValue10", rptObject)
+        ''
+        'End Code.
+        '
 
         'show time
         frmReport.CrystalReportViewer1.ReportSource = rpt
@@ -353,12 +357,12 @@ Public Class FrmPrmreg
         If frmReport.wasDone Then
 
             '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
-		'
-		'End Code.
-		'
+            'Code to get the focus on the first filter TextBox.
+            '
+            txtWknum.Select()
+            '
+            'End Code.
+            '
 
         End If
 
@@ -375,6 +379,7 @@ Public Class FrmPrmreg
 
         Catch ex As Exception
         End Try
+
     End Sub
 
     Private Sub gridTemplate_myGridCellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grid.myGridCellClick
@@ -400,6 +405,7 @@ Public Class FrmPrmreg
         If columnName.Trim = "edtButton" And edtCell.Enabled Then
 
             Dim objectBO As New PrmregBO
+
             '
             'Code to Get Only the Object indexes(PKs).
             '
@@ -431,17 +437,17 @@ Public Class FrmPrmreg
                 thisRow.Item("edtbut") = "+"
                 thisRow.Item("delbut") = "+"
                 '
-			'Code to Get the thisRow.Items Columns for Main Grid.
-			'
-			thisRow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
+                'Code to Get the thisRow.Items Columns for Main Grid.
+                '
+                thisRow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
                 thisRow.Item("prmpro") = If(objectBO.prmpro Is Nothing, "", PrmproBLL.GetUnique(New PrmproBO With {.prmpro = objectBO.prmpro.Trim()}).prmpro)
                 thisRow.Item("prmuser") = If(objectBO.prmuser Is Nothing, "", PrmuserBLL.GetUnique(New PrmuserBO With {.prmuser = objectBO.prmuser.Trim()}).prmuser)
-                thisRow.Item("strdate") = objectBO.strdate
-			thisRow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
-			thisRow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
-			'
-			'End Code.
-			'
+
+                thisRow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
+                thisRow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
+                '
+                'End Code.
+                '
                 table.AcceptChanges()
                 edtCell.Enabled = True
                 edtCell.Value = "+"
@@ -451,12 +457,12 @@ Public Class FrmPrmreg
             End If
 
             '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
-		'
-		'End Code.
-		'
+            'Code to get the focus on the first filter TextBox.
+            '
+            txtWknum.Select()
+            '
+            'End Code.
+            '
 
             Try
 
@@ -484,14 +490,14 @@ Public Class FrmPrmreg
 
             Dim objectBO As New PrmregBO
             '
-		'Code to Get Only the Object indexes(PKs).
-		'
-		objectBO.wknum = thisRow.Item("wknum").ToString.Trim
-		objectBO.prmpro = thisRow.Item("prmpro").ToString.Trim
-		objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
-		'
-		'End Code.
-		'
+            'Code to Get Only the Object indexes(PKs).
+            '
+            objectBO.wknum = thisRow.Item("wknum").ToString.Trim
+            objectBO.prmpro = thisRow.Item("prmpro").ToString.Trim
+            objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
+            '
+            'End Code.
+            '
             Dim _message As String = ""
 
             Try
@@ -505,7 +511,7 @@ Public Class FrmPrmreg
 
                     If _message.Substring(0, 7) = "SQL0532" Then
 
-                        _message = _message & vbCrLf & "Resgistry: "  & thisRow.Item("Prmreg").ToString.Trim & ", " & thisRow.Item("Prmreg").ToString.Trim & ", " & thisRow.Item("Prmreg").ToString.Trim  & " is used in the above mentioned table" & vbCrLf & "Would You like to mark this code inactive?"
+                        _message = _message & vbCrLf & "Resgistry: " & thisRow.Item("Prmreg").ToString.Trim & ", " & thisRow.Item("Prmreg").ToString.Trim & ", " & thisRow.Item("Prmreg").ToString.Trim & " is used in the above mentioned table" & vbCrLf & "Would You like to mark this code inactive?"
 
                     End If
 
@@ -515,29 +521,29 @@ Public Class FrmPrmreg
                     MessageBoxButtons.YesNo, MessageBoxIcon.Error) = Windows.Forms.DialogResult.Yes Then
 
                     '
-		'Code to Get Only the Object indexes(PKs).
-		'
-		objectBO.wknum = thisRow.Item("wknum").ToString.Trim
-		objectBO.prmpro = thisRow.Item("prmpro").ToString.Trim
-		objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
-		'
-		'End Code.
-		'
+                    'Code to Get Only the Object indexes(PKs).
+                    '
+                    objectBO.wknum = thisRow.Item("wknum").ToString.Trim
+                    objectBO.prmpro = thisRow.Item("prmpro").ToString.Trim
+                    objectBO.prmuser = thisRow.Item("prmuser").ToString.Trim
+                    '
+                    'End Code.
+                    '
                     objectBO = PrmregBLL.GetUnique(objectBO)
                     objectBO.active = "F"
                     Dim updated As Boolean = PrmregBLL.Update(objectBO)
                     '
-			'Code to Get the thisRow.Items Columns for Main Grid.
-			'
-			thisRow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
+                    'Code to Get the thisRow.Items Columns for Main Grid.
+                    '
+                    thisRow.Item("wknum") = If(objectBO.wknum Is Nothing, "", objectBO.wknum.Trim)
                     thisRow.Item("prmpro") = If(objectBO.prmpro Is Nothing, "", PrmproBLL.GetUnique(New PrmproBO With {.prmpro = objectBO.prmpro.Trim()}).prmpro)
                     thisRow.Item("prmuser") = If(objectBO.prmuser Is Nothing, "", PrmuserBLL.GetUnique(New PrmuserBO With {.prmuser = objectBO.prmuser.Trim()}).prmuser)
-                    thisRow.Item("strdate") = objectBO.strdate
-			thisRow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
-			thisRow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
-			'
-			'End Code.
-			'
+
+                    thisRow.Item("wrkhrs") = If(objectBO.wrkhrs Is Nothing, "", objectBO.wrkhrs.Trim)
+                    thisRow.Item("active") = If(objectBO.active Is Nothing, "", objectBO.active.Trim)
+                    '
+                    'End Code.
+                    '
                     table.AcceptChanges()
                     edtCell.Enabled = True
                     edtCell.Value = "+"
@@ -554,12 +560,12 @@ Public Class FrmPrmreg
             table.AcceptChanges()
 
             '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
-		'
-		'End Code.
-		'
+            'Code to get the focus on the first filter TextBox.
+            '
+            txtWknum.Select()
+            '
+            'End Code.
+            '
 
             If grid.myGrid.Rows.Count = 0 Then
 
@@ -651,26 +657,26 @@ Public Class FrmPrmreg
 
         Dim filter As StringBuilder = New StringBuilder()
         '
-		'Code for Get Filter Local Data Logic.
-		'
-		If Not String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
+        'Code for Get Filter Local Data Logic.
+        '
+        If Not String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
             filter.Append("wknum like '" + txtWknum.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
         End If
-		If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
-			If (filter.Length > 0) Then
-				filter.Append(" and ")
-			End If
-			filter.Append("prmpro like '%" + txtPrmpro.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
-		End If
-		If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
-			If (filter.Length > 0) Then
-				filter.Append(" and ")
-			End If
-			filter.Append("prmuser like '%" + txtPrmuser.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
-		End If
-		'
-		'End Code.
-		'
+        If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(" and ")
+            End If
+            filter.Append("prmpro like '" + txtPrmpro.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
+        End If
+        If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(" and ")
+            End If
+            filter.Append("prmuser like '%" + txtPrmuser.Text.Trim().Replace("%", "[%]").Replace("'", "''") + "%'")
+        End If
+        '
+        'End Code.
+        '
         Return filter.ToString()
 
     End Function
@@ -679,26 +685,26 @@ Public Class FrmPrmreg
 
         Dim filter As StringBuilder = New StringBuilder()
         '
-		'Code for Get Filter String Message.
-		'
-		If Not String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
-			filter.Append($"Week Number(Start with: '{txtWknum.Text.Trim()}')")
-		End If
-		If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
-			If (filter.Length > 0) Then
-				filter.Append(", ")
-			End If
-			filter.Append($"Project Id(Contains: '{txtPrmpro.Text.Trim()}')")
-		End If
-		If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
-			If (filter.Length > 0) Then
-				filter.Append(", ")
-			End If
-			filter.Append($"User Id(Contains: '{txtPrmuser.Text.Trim()}')")
-		End If
-		'
-		'End Code.
-		'
+        'Code for Get Filter String Message.
+        '
+        If Not String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
+            filter.Append($"Week Number(Start with: '{txtWknum.Text.Trim()}')")
+        End If
+        If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(", ")
+            End If
+            filter.Append($"Project Id(Contains: '{txtPrmpro.Text.Trim()}')")
+        End If
+        If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(", ")
+            End If
+            filter.Append($"User Id(Contains: '{txtPrmuser.Text.Trim()}')")
+        End If
+        '
+        'End Code.
+        '
         If Not String.IsNullOrEmpty(filter.ToString.Trim) Then
             lblMessage.Text = $"Filtered by: {filter.ToString}."
         Else
@@ -721,26 +727,35 @@ Public Class FrmPrmreg
 
         Dim filter As StringBuilder = New StringBuilder()
         '
-		'Code for Get Filter String Message.
-		'
-		If Not String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
-			filter.Append($"Week Number(Start with: '{txtWknum.Text.Trim()}')")
-		End If
-		If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
-			If (filter.Length > 0) Then
-				filter.Append(", ")
-			End If
-			filter.Append($"Project Id(Contains: '{txtPrmpro.Text.Trim()}')")
-		End If
-		If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
-			If (filter.Length > 0) Then
-				filter.Append(", ")
-			End If
-			filter.Append($"User Id(Contains: '{txtPrmuser.Text.Trim()}')")
-		End If
-		'
-		'End Code.
-		'
+        'Code for Get Filter String Message.
+        '
+        If Not String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
+            filter.Append($"Week Number(Start with: '{txtWknum.Text.Trim()}')")
+        End If
+
+        If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(", ")
+            End If
+            filter.Append($"Project Id(Contains: '{txtPrmpro.Text.Trim()}')")
+        End If
+
+        If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(", ")
+            End If
+        End If
+
+        If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(", ")
+            End If
+            filter.Append($"User Id(Contains: '{txtPrmuser.Text.Trim()}')")
+        End If
+
+        '
+        'End Code.
+        '
         If Not String.IsNullOrEmpty(filter.ToString.Trim) Then
 
             If Not filterLocally Then
@@ -754,6 +769,7 @@ Public Class FrmPrmreg
         End If
 
     End Sub
+
 
     'Private Sub txtWknum_TextChanged(sender As Object, e As EventArgs) Handles txtWknum.TextChanged
 
@@ -790,7 +806,7 @@ Public Class FrmPrmreg
 
     End Sub
 
-    Private Sub txt_KeyDown(sender As Object, e As KeyEventArgs) Handles txtWknum.KeyDown, txtPrmpro.KeyDown, txtPrmuser.KeyDown
+    Private Sub txt_KeyDown(sender As Object, e As KeyEventArgs) Handles txtWknum.KeyDown, txtPrmuser.KeyDown, txtPrmpro.KeyDown
 
 
 
@@ -834,14 +850,14 @@ Public Class FrmPrmreg
 
         lblMessage.Text = "Removing filters..."
         '
-		'Code to get the TextBoxes for Clearing.
-		'
-		txtWknum.Clear()
-		txtPrmpro.Clear()
-		txtPrmuser.Clear()
-		'
-		'End Code.
-		'
+        'Code to get the TextBoxes for Clearing.
+        '
+        txtWknum.Clear()
+        txtPrmpro.Clear()
+        txtPrmuser.Clear()
+        '
+        'End Code.
+        '
         ShowAllRecors = False
         cbcActiveRecrods.Text = "Show only active records."
 
@@ -853,8 +869,7 @@ Public Class FrmPrmreg
         Else
 
             view = New DataView()
-            grid.myGrid.DataSource = view
-
+             grid.myGrid.DataSource = view
         End If
 
         setButtons()
@@ -906,12 +921,12 @@ Public Class FrmPrmreg
 
         RefreshMessages()
         '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
-		'
-		'End Code.
-		'
+        'Code to get the focus on the first filter TextBox.
+        '
+        txtWknum.Select()
+        '
+        'End Code.
+        '
 
     End Sub
 
@@ -954,26 +969,27 @@ Public Class FrmPrmreg
 
         Dim filter As StringBuilder = New StringBuilder()
         '
-		'Code for Get Filter Remote Data Logic.
-		'
-		If Not String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
-			filter.Append($"upper(wknum) like '{txtWknum.Text.Trim().ToUpper()}%'")
-		End If
-		If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
-			If (filter.Length > 0) Then
-				filter.Append(" and ")
-			End If
-			filter.Append("upper(prmpro) like '%" + txtPrmpro.Text.Trim().ToUpper().Replace("%", "\%").Replace("'", "''") + "%' ESCAPE '\'")
-		End If
-		If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
-			If (filter.Length > 0) Then
-				filter.Append(" and ")
-			End If
-			filter.Append("upper(prmuser) like '%" + txtPrmuser.Text.Trim().ToUpper().Replace("%", "\%").Replace("'", "''") + "%' ESCAPE '\'")
-		End If
-		'
-		'End Code.
-		'
+        'Code for Get Filter Remote Data Logic.
+        '
+        If Not String.IsNullOrEmpty(txtWknum.Text.Trim()) Then
+            filter.Append($"upper(wknum) like '{txtWknum.Text.Trim().ToUpper()}%'")
+        End If
+        If Not String.IsNullOrEmpty(txtPrmpro.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(" and ")
+            End If
+            'filter.Append("upper(prmpro) like '" + txtPrmpro.Text.Trim().ToUpper().Replace("%", "\%").Replace("'", "''") + "%' ESCAPE '\'")
+            filter.Append($"upper(reg.prmpro) like '{txtPrmpro.Text.Trim().ToUpper()}%'")
+        End If
+        If Not String.IsNullOrEmpty(txtPrmuser.Text.Trim()) Then
+            If (filter.Length > 0) Then
+                filter.Append(" and ")
+            End If
+            filter.Append($"upper(reg.prmuser) like'{txtPrmuser.Text.Trim().ToUpper()}%'")
+        End If
+        '
+        'End Code.
+        '
 
         If String.IsNullOrEmpty(filter.ToString().Trim) Then
 
@@ -1009,7 +1025,7 @@ Public Class FrmPrmreg
 							crsfile.Prmuser.prmuser as prmuser,
                             crsfile.Prmpro.descr as prmprodes,
 							crsfile.Prmuser.descr as prmuserdes,
-							crsfile.Prmreg.strdate as strdate,
+							
 							crsfile.Prmreg.wrkhrs as wrkhrs,
 							crsfile.Prmreg.active as active                            
                          from
@@ -1017,6 +1033,7 @@ Public Class FrmPrmreg
                                 left join crsfile.Prmpro
 									on crsfile.Prmreg.prmpro = crsfile.Prmpro.prmpro
 								left join crsfile.Prmuser
+
 									on crsfile.Prmreg.prmuser = crsfile.Prmuser.prmuser
 
                          where {If(Not ShowAllRecors, " crsfile.Prmreg.active = 'T' ", " crsfile.Prmreg.active in ('T','F') ")}
@@ -1071,16 +1088,17 @@ Public Class FrmPrmreg
 
         End If
         '
-		'Code to Get Main Grid Columns.
-		'
-		grid.myGrid.Columns("wknum").HeaderText = "Week Number"
-        grid.myGrid.Columns("prmpro").HeaderText = "Project Name"
-        grid.myGrid.Columns("prmuser").HeaderText = "User Name"
-        grid.myGrid.Columns("strdate").HeaderText = "Start Date"
-		grid.myGrid.Columns("wrkhrs").HeaderText = "Work Hours"
+        'Code to Get Main Grid Columns.
+        '
+        grid.myGrid.Columns("wknum").HeaderText = "Week Number"
+        grid.myGrid.Columns("prmpro").HeaderText = "Project Id"
+        grid.myGrid.Columns("prmuser").HeaderText = "User Id"
+
+        grid.myGrid.Columns("wrkhrs").HeaderText = "Work Hours"
         grid.myGrid.Columns("active").HeaderText = "Active (yes/no)"
         grid.myGrid.Columns("prmprodes").HeaderText = "Project Name"
         grid.myGrid.Columns("prmuserdes").HeaderText = "User Name"
+        'oculta los campos prmpro=Project Id y prmuser=User Id en regiatro 
         grid.myGrid.Columns("prmpro").Visible = False
         grid.myGrid.Columns("prmuser").Visible = False
         '
@@ -1100,12 +1118,12 @@ Public Class FrmPrmreg
             Me.Cursor = Cursors.Default
             lblMessage.Text = "Ready."
             '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
-		'
-		'End Code.
-		'
+            'Code to get the focus on the first filter TextBox.
+            '
+            txtWknum.Select()
+            '
+            'End Code.
+            '
             Exit Sub
 
         Else
@@ -1129,12 +1147,12 @@ Public Class FrmPrmreg
         pbLoadingData.Enabled = False
         RefreshMessages()
         '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
-		'
-		'End Code.
-		'
+        'Code to get the focus on the first filter TextBox.
+        '
+        txtWknum.Select()
+        '
+        'End Code.
+        '
         Me.Cursor = Cursors.Default
 
     End Sub
@@ -1159,12 +1177,12 @@ Public Class FrmPrmreg
     Private Sub bgReziseColumns_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgReziseColumns.RunWorkerCompleted
 
         '
-		'Code to get the focus on the first filter TextBox.
-		'
-		txtWknum.Select()
-		'
-		'End Code.
-		'
+        'Code to get the focus on the first filter TextBox.
+        '
+        txtWknum.Select()
+        '
+        'End Code.
+        '
 
     End Sub
 
@@ -1232,35 +1250,36 @@ Public Class FrmPrmreg
         End If
 
         '
-		'Code to get the Gridview Columns Standard Format.
-		'
-		If grid.myGrid.Columns(e.ColumnIndex).Name.ToUpper = "STRDATE" Then
-			If e.Value <> Nothing Then
-				e.CellStyle.Format = "dd MMM yyyy"
-				e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
-			Else
-				e.Value = ""
-			End If
-		End If
-		If grid.myGrid.Columns(e.ColumnIndex).Name.ToUpper = "CHGSTM" Then
-			If e.Value <> Nothing Then
-				e.CellStyle.Format = "dd MMM yyyy"
-				e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
-			Else
-				e.Value = ""
-			End If
-		End If
-		If grid.myGrid.Columns(e.ColumnIndex).Name.ToUpper = "ADDSTM" Then
-			If e.Value <> Nothing Then
-				e.CellStyle.Format = "dd MMM yyyy"
-				e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
-			Else
-				e.Value = ""
-			End If
-		End If
-		'
-		'End Code.
-		'
+        'Code to get the Gridview Columns Standard Format.
+        '
+        'If grid.myGrid.Columns(e.ColumnIndex).Name.ToUpper = "STRDATE" Then
+        '    If e.Value <> Nothing Then
+        '        e.CellStyle.Format = "dd MMM yyyy"
+        '        e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+        '    Else
+        '        e.Value = ""
+        '    End If
+        'End If
+
+        If grid.myGrid.Columns(e.ColumnIndex).Name.ToUpper = "CHGSTM" Then
+            If e.Value <> Nothing Then
+                e.CellStyle.Format = "dd MMM yyyy"
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            Else
+                e.Value = ""
+            End If
+        End If
+        If grid.myGrid.Columns(e.ColumnIndex).Name.ToUpper = "ADDSTM" Then
+            If e.Value <> Nothing Then
+                e.CellStyle.Format = "dd MMM yyyy"
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            Else
+                e.Value = ""
+            End If
+        End If
+        '
+        'End Code.
+        '
 
     End Sub
 
@@ -1268,7 +1287,7 @@ Public Class FrmPrmreg
 
 #Region "### Window Short Cuts"
 
-    Private Sub FrmPrmreg_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+    Private Sub FrmPrmreg_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
 
         If e.KeyCode = Keys.Escape Then
 
@@ -1391,7 +1410,6 @@ Public Class FrmPrmreg
         End If
 
     End Sub
-
 
 #End Region
 
